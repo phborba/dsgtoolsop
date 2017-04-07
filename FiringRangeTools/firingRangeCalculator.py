@@ -29,8 +29,11 @@ class FiringRangeCalculator(QObject):
     
     def prepareOutputLyr(self, outputFileName = None):
         fields = QgsFields()
+        fieldList = []
         fields.append(QgsField("nomeArmamento", QVariant.String))
-        fields.append(QgsField("alcance", typeName='Float', len=10, prec=10))
+        fields.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
+        fieldList.append(QgsField("nomeArmamento", QVariant.String))
+        fieldList.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
         if outputFileName:
             writer = QgsVectorFileWriter(outputFileName, "utf-8", fields, QGis.WKBPolygon, None, "ESRI Shapefile")
             if writer.hasError() != QgsVectorFileWriter.NoError:
@@ -38,7 +41,7 @@ class FiringRangeCalculator(QObject):
         else:
             outputLyr = QgsVectorLayer("Polygon", "Alcance_Armamento", "memory")
         pr = outputLyr.dataProvider()
-        pr.addAttributes(fields)
+        pr.addAttributes(fieldList)
         outputLyr.updateFields()
         return outputLyr, fields, pr
 
