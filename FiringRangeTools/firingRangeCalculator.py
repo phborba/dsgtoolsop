@@ -20,6 +20,8 @@
  *                                                                         *
  ***************************************************************************/
 """
+
+import operator
 from PyQt4.QtCore import QObject, QVariant
 from qgis.core import QgsVectorLayer, QGis, QgsVectorFileWriter, QgsFields, QgsField, QgsFeature
 
@@ -54,12 +56,14 @@ class FiringRangeCalculator(QObject):
     def calculateBuffer(self, rangeDict, outputFileName = None):
         outputLyr, fields, pr = self.prepareOutputLyr(outputFileName)
         outputLyrList = []
+        sorted_rangeDict = sorted(rangeDict.items(), key = operator.itemgetter(1), reverse = True)
+
         for feat in self.layer.getFeatures():
-            for weapon in rangeDict.keys():
+            for weapon, r in sorted_rangeDict:
                 newFeat = QgsFeature(fields)
-                geometryBuffer = feat.geometry().buffer(rangeDict[weapon],100)
+                geometryBuffer = feat.geometry().buffer(r,100)
                 newFeat['nomeArmamento'] = weapon
-                newFeat['alcance'] = float(rangeDict[weapon])
+                newFeat['alcance'] = float(r)
                 newFeat.setGeometry(geometryBuffer)
                 outputLyrList.append(newFeat)
         pr.addFeatures(outputLyrList)
