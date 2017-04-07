@@ -22,6 +22,8 @@
 """
 from PyQt4.QtCore import Qt
 from DsgTools.DsgToolsOp.MilitaryTools.MilitarySimbologyTools.militarySimbologyDock import MilitarySimbologyDock
+from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeDialog import FiringRangeDialog
+
 
 class ToolLoader:
     def __init__(self, parentMenu, parent, icon_path):
@@ -33,14 +35,22 @@ class ToolLoader:
         toolList = []
         action = self.parent.add_action(
             self.icon_path,
-            text='Military Simbology',
+            text='Simbologia Militar',
             callback=self.loadMilitarySimbologyDock,
             parent=self.parentMenu,
             add_to_menu=False,
             add_to_toolbar=False)
         self.parentMenu.addAction(action)
         toolList.append(action) #sempre adicione o action na tool list, para cada tool
-
+        action = self.parent.add_action(
+            self.icon_path,
+            text='Ferramenta de Alcance de Armamento',
+            callback=self.showFiringRangeTool,
+            parent=self.parentMenu,
+            add_to_menu=False,
+            add_to_toolbar=False)
+        self.parentMenu.addAction(action)
+        toolList.append(action) #sempre adicione o action na tool list, para cada tool
         return toolList
 
     
@@ -54,3 +64,13 @@ class ToolLoader:
             else:
                 self.parent.militaryDock = MilitarySimbologyDock(self.parent.iface)
             self.parent.iface.addDockWidget(Qt.LeftDockWidgetArea, self.parent.militaryDock)
+
+    def showFiringRangeTool(self):
+        """
+        Show sthe convert database dialog
+        """
+        dlg = FiringRangeDialog(self.parent.iface)
+        dlg.show()
+        result = dlg.exec_()
+        if result:
+            pass

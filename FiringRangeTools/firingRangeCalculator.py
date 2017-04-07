@@ -37,11 +37,11 @@ class FiringRangeCalculator(QObject):
         fieldList.append(QgsField("nomeArmamento", QVariant.String))
         fieldList.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
         if outputFileName:
-            writer = QgsVectorFileWriter(outputFileName, "utf-8", fields, QGis.WKBPolygon, None, "ESRI Shapefile")
+            writer = QgsVectorFileWriter(outputFileName, "utf-8", fields, QGis.WKBMultiPolygon, None, "ESRI Shapefile")
             if writer.hasError() != QgsVectorFileWriter.NoError:
                 raise Exception('Erro ao criar o arquivo '+outputFileName)
         else:
-            outputLyr = QgsVectorLayer("Polygon", "Alcance_Armamento", "memory")
+            outputLyr = QgsVectorLayer("Multipolygon", "Alcance_Armamento", "memory")
         pr = outputLyr.dataProvider()
         pr.addAttributes(fieldList)
         outputLyr.updateFields()
@@ -50,8 +50,6 @@ class FiringRangeCalculator(QObject):
     def testType(self, lyr):
         if not isinstance(lyr, QgsVectorLayer):
             raise Exception('Selecione uma camada vetorial!')
-        if lyr.geometryType() <> QGis.Point:
-            raise Exception('Selecione uma camada vetorial do tipo ponto!')
     
     def calculateBuffer(self, rangeDict, outputFileName = None):
         outputLyr, fields, pr = self.prepareOutputLyr(outputFileName)
