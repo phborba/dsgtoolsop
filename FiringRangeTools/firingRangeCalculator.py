@@ -56,13 +56,18 @@ class FiringRangeCalculator(QObject):
                 newFeat = QgsFeature(fields)
                 geometryBuffer = feat.geometry().buffer(rangeDict[weapon],100)
                 newFeat['nomeArmamento'] = weapon
-                newFeat['alcance'] = rangeDict[weapon]
+                newFeat['alcance'] = float(rangeDict[weapon])
                 newFeat.setGeometry(geometryBuffer)
                 outputLyrList.append(newFeat)
         pr.addFeatures(outputLyrList)
         outputLyr.updateExtents()
         return outputLyr
 
-
+if __name__ == '__init__':
+    from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeCalculator import FiringRangeCalculator
+    lyr = iface.activeLayer()
+    x = FiringRangeCalculator(lyr)
+    y = x.calculateBuffer({'mag':10000})
+    QgsMapLayerRegistry.instance().addMapLayer(y)
 
 
