@@ -104,7 +104,8 @@ class FiringRangeDialog(QtGui.QDialog, FORM_CLASS):
     
     @pyqtSlot(bool)
     def on_restorePushButton_clicked(self):
-        pass
+        self.customTableWidget.clearItems()
+        self.customTableWidget.addItems(itemList = self.rangeList)
     
     @pyqtSlot(int)
     def on_saveCheckBox_stateChanged(self, state):

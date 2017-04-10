@@ -30,9 +30,7 @@ class FiringRangeCalculator(QObject):
         self.layer = lyr
 
     def saveLyr(self, lyr, outputFileName):
-        writer = QgsVectorFileWriter(lyr, outputFileName, "utf-8", None, "ESRI Shapefile")
-        if writer.hasError() != QgsVectorFileWriter.NoError:
-            raise Exception('Erro ao criar o arquivo '+outputFileName)
+        QgsVectorFileWriter.writeAsVectorFormat(lyr, outputFileName, "utf-8", None, "ESRI Shapefile")
 
     def prepareOutputLyr(self, crs):
         fields = QgsFields()
