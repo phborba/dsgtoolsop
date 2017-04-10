@@ -21,27 +21,27 @@
  ***************************************************************************/
 """
 
-import operator
+import operator, os
 from PyQt4.QtCore import QObject, QVariant
 from qgis.core import QgsVectorLayer, QGis, QgsVectorFileWriter, QgsFields, QgsField, QgsFeature
 
 class FiringRangeCalculator(QObject):
     def __init__(self, lyr):
         self.layer = lyr
-    
-    def prepareOutputLyr(self, outputFileName = None):
+
+    def saveLyr(self, lyr, outputFileName):
+        writer = QgsVectorFileWriter(lyr, outputFileName, "utf-8", None, "ESRI Shapefile")
+        if writer.hasError() != QgsVectorFileWriter.NoError:
+            raise Exception('Erro ao criar o arquivo '+outputFileName)
+
+    def prepareOutputLyr(self, crs):
         fields = QgsFields()
         fieldList = []
         fields.append(QgsField("nomeArmamento", QVariant.String))
         fields.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
         fieldList.append(QgsField("nomeArmamento", QVariant.String))
         fieldList.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
-        if outputFileName:
-            writer = QgsVectorFileWriter(outputFileName, "utf-8", fields, QGis.WKBMultiPolygon, None, "ESRI Shapefile")
-            if writer.hasError() != QgsVectorFileWriter.NoError:
-                raise Exception('Erro ao criar o arquivo '+outputFileName)
-        else:
-            outputLyr = QgsVectorLayer("Multipolygon", "Alcance_Armamento", "memory")
+        outputLyr = QgsVectorLayer("Multipolygon?crs={0}".format(crs.authid()), "Alcance_Armamento", "memory")
         pr = outputLyr.dataProvider()
         pr.addAttributes(fieldList)
         outputLyr.updateFields()
@@ -51,12 +51,16 @@ class FiringRangeCalculator(QObject):
         if not isinstance(lyr, QgsVectorLayer):
             raise Exception('Selecione uma camada vetorial!')
     
-    def calculateBuffer(self, rangeDict, outputFileName = None):
-        outputLyr, fields, pr = self.prepareOutputLyr(outputFileName)
+    def calculateBuffer(self, rangeDict, outputFileName = None, onlySelected = False):
+        crs = self.layer.crs()
+        outputLyr, fields, pr = self.prepareOutputLyr(crs)
         outputLyrList = []
         sorted_rangeDict = sorted(rangeDict.items(), key = operator.itemgetter(1), reverse = True)
-
-        for feat in self.layer.getFeatures():
+        if onlySelected:
+            featureList = self.layer.selectedFeatures()
+        else:
+            featureList = [i for i in self.layer.getFeatures()]
+        for feat in featureList:
             for weapon, r in sorted_rangeDict:
                 newFeat = QgsFeature(fields)
                 geometryBuffer = feat.geometry().buffer(r,100)
@@ -66,6 +70,8 @@ class FiringRangeCalculator(QObject):
                 outputLyrList.append(newFeat)
         pr.addFeatures(outputLyrList)
         outputLyr.updateExtents()
+        if outputFileName:
+            self.saveLyr(outputLyr, outputFileName)
         return outputLyr
 
 if __name__ == '__init__':
