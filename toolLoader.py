@@ -21,9 +21,6 @@
  ***************************************************************************/
 """
 from PyQt4.QtCore import Qt
-from DsgTools.DsgToolsOp.MilitaryTools.MilitarySimbologyTools.militarySimbologyDock import MilitarySimbologyDock
-from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeDialog import FiringRangeDialog
-
 
 class ToolLoader:
     def __init__(self, parentMenu, parent, icon_path):
@@ -32,32 +29,29 @@ class ToolLoader:
         self.icon_path = icon_path
     
     def loadTools(self):
-        toolList = []
         action = self.parent.add_action(
             self.icon_path,
-            text='Simbologia Militar',
+            text=self.parent.tr('Simbologia Militar'),
             callback=self.loadMilitarySimbologyDock,
             parent=self.parentMenu,
             add_to_menu=False,
             add_to_toolbar=False)
         self.parentMenu.addAction(action)
-        toolList.append(action) #sempre adicione o action na tool list, para cada tool
+
         action = self.parent.add_action(
             self.icon_path,
-            text='Ferramenta de Alcance de Armamento',
+            text=self.parent.tr('Ferramenta de Alcance de Armamento'),
             callback=self.showFiringRangeTool,
             parent=self.parentMenu,
             add_to_menu=False,
             add_to_toolbar=False)
         self.parentMenu.addAction(action)
-        toolList.append(action) #sempre adicione o action na tool list, para cada tool
-        return toolList
-
     
     def loadMilitarySimbologyDock(self):
         """
         Shows the Military Simbology Dock
         """
+        from DsgTools.DsgToolsOp.MilitaryTools.MilitarySimbologyTools.militarySimbologyDock import MilitarySimbologyDock
         if self.parent:
             if self.parent.militaryDock:
                 self.parent.iface.removeDockWidget(self.parent.militaryDock)
@@ -69,6 +63,7 @@ class ToolLoader:
         """
         Show sthe convert database dialog
         """
+        from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeDialog import FiringRangeDialog
         dlg = FiringRangeDialog(self.parent.iface)
         dlg.show()
         result = dlg.exec_()
