@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/simbologia/view/icons" >
+        <file>militarySimbology.png</file>
+    </qresource>
+</RCC>

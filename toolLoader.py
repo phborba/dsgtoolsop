@@ -51,12 +51,13 @@ class ToolLoader:
         """
         Shows the Military Simbology Dock
         """
-        from DsgTools.DsgToolsOp.MilitaryTools.MilitarySimbologyTools.militarySimbologyDock import MilitarySimbologyDock
+        from DsgTools.DsgToolsOp.MilitaryTools.MilitarySimbologyTools.main import Main
         if self.parent:
             if self.parent.militaryDock:
                 self.parent.iface.removeDockWidget(self.parent.militaryDock)
             else:
-                self.parent.militaryDock = MilitarySimbologyDock(self.parent.iface)
+		main = Main()
+                self.parent.militaryDock = main.getDock()
             self.parent.iface.addDockWidget(Qt.LeftDockWidgetArea, self.parent.militaryDock)
 
     def showFiringRangeTool(self):
