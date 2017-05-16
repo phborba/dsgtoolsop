@@ -46,7 +46,21 @@ class ToolLoader:
             add_to_menu=False,
             add_to_toolbar=False)
         self.parentMenu.addAction(action)
-    
+
+        '''
+        action = self.parent.add_action(
+            self.icon_path,
+            text=self.parent.tr('Gerador de Campos Virtuais'),
+            callback=self.loadVirtualFieldGenerator,
+            parent=self.parentMenu,
+            add_to_menu=False,
+            add_to_toolbar=False)
+        self.parentMenu.addAction(action)
+        '''
+
+    def loadVirtualFieldGenerator(self):
+        pass
+
     def loadMilitarySimbologyDock(self):
         """
         Shows the Military Simbology Dock
@@ -56,7 +70,7 @@ class ToolLoader:
             if self.parent.militaryDock:
                 self.parent.iface.removeDockWidget(self.parent.militaryDock)
             else:
-		main = Main()
+                main = Main()
                 self.parent.militaryDock = main.getDock()
             self.parent.iface.addDockWidget(Qt.LeftDockWidgetArea, self.parent.militaryDock)
 

@@ -1,16 +1,16 @@
 #! -*- coding: UTF-8 -*-
 from PyQt4.QtCore import QObject
 from PyQt4.QtSql import QSqlDatabase
-from estilos import Estilos
+from styles import Styles
 from qgis.core import QgsDataSourceURI, QgsMapLayerRegistry, QgsVectorLayer, QgsProject, QgsLayerTreeLayer
 import re
 import sqlite3, os
 from PyQt4 import uic, QtGui
 
-class BaseDeDados(QObject):
+class DataBase(QObject):
     def __init__(self):
         QObject.__init__(self)
-        styles = Estilos()
+        styles = Styles()
         self.initVariables()
         self.setStyles(styles)
 

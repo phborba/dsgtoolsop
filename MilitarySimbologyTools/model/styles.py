@@ -4,7 +4,7 @@ from PyQt4.QtCore import QObject
 import os
 from qgis.core import QgsDataSourceURI, QgsMapLayerRegistry, QgsVectorLayer, QgsProject, QgsLayerTreeLayer
 
-class Estilos(QObject):
+class Styles(QObject):
     def __init__(self):
         QObject.__init__(self)
         self.initVariables()

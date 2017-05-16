@@ -1,11 +1,11 @@
 #! -*- coding: UTF-8 -*-
-from baseDeDados import BaseDeDados
+from dataBase import DataBase
 from qgis.utils import iface
 from qgis.core import QgsDataSourceURI, QgsMapLayerRegistry, QgsVectorLayer, QgsProject, QgsLayerTreeLayer
 
-class SimbologiaMilitar(BaseDeDados):
+class MilitarySimbology(DataBase):
     def __init__(self):
-        BaseDeDados.__init__(self)
+        DataBase.__init__(self)
         self.initVariables()
         
     def initVariables(self):
