@@ -60,7 +60,7 @@ class ToolLoader:
         """
         Show virtual field generator dialog
         """
-        from DsgTools.DsgToolsOp.MilitaryTools.virtualFieldGenerator.main import Main
+        from DsgTools.DsgToolsOp.MilitaryTools.VirtualFieldGenerator.main import Main
         main = Main()
         dlg = main.getDialog()
         if dlg:
