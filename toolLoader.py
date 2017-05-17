@@ -47,7 +47,6 @@ class ToolLoader:
             add_to_toolbar=False)
         self.parentMenu.addAction(action)
 
-        '''
         action = self.parent.add_action(
             self.icon_path,
             text=self.parent.tr('Gerador de Campos Virtuais'),
@@ -56,11 +55,17 @@ class ToolLoader:
             add_to_menu=False,
             add_to_toolbar=False)
         self.parentMenu.addAction(action)
-        '''
-
+    
     def loadVirtualFieldGenerator(self):
-        pass
-
+        """
+        Show virtual field generator dialog
+        """
+        from DsgTools.DsgToolsOp.MilitaryTools.virtualFieldGenerator.main import Main
+        main = Main()
+        dlg = main.getDialog()
+        if dlg:
+            dlg.show()
+    
     def loadMilitarySimbologyDock(self):
         """
         Shows the Military Simbology Dock
