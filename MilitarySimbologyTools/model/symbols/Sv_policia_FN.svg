@@ -39,20 +39,37 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="1366"
+     inkscape:window-height="735"
      id="namedview4"
      showgrid="false"
      inkscape:zoom="10.488889"
-     inkscape:cx="18.28125"
-     inkscape:cy="11.25"
-     inkscape:window-x="2195"
-     inkscape:window-y="240"
-     inkscape:window-maximized="0"
+     inkscape:cx="44.49947"
+     inkscape:cy="14.438228"
+     inkscape:window-x="0"
+     inkscape:window-y="312"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
-  <path
-     style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff"
-     d="M 6.8449943,15.001598 C 5.8593788,14.163493 5.0529661,13.134911 5.0529661,12.715859 c 0,-1.172006 2.3308864,-0.903032 3.6199417,0.417724 1.4072012,1.441807 4.7772032,1.157171 5.1331892,-0.433557 0.171521,-0.766453 -1.038671,-1.540232 -3.574904,-2.285739 C 6.8910877,9.4324872 6.3607993,8.9680852 6.1161706,6.8105423 5.8805069,4.7320686 6.2140471,4.2114041 8.1905326,3.572412 11.520269,2.4959178 12.630493,2.6108317 15.03386,4.2807329 16.72761,5.4575787 16.926623,5.9428905 16.032496,6.716 15.132757,7.4939613 14.686104,7.4143689 13.733236,6.3062752 13.082807,5.5498886 11.804288,5.0540249 10.892083,5.2043559 7.9206573,5.6940457 8.4669446,7.217421 11.950675,8.1563412 c 3.512289,0.9466176 5.646488,2.5810268 5.646488,4.3241848 0,1.781584 -3.509537,4.044898 -6.272098,4.044898 -1.4933572,0 -3.4844995,-0.677256 -4.4800707,-1.523826 z m 13.4402107,-4.952435 0,-6.4762605 4.896553,0 c 3.924046,0 5.080771,0.2926992 5.824091,1.4737367 2.140481,3.4009405 -0.07484,6.1453928 -4.960554,6.1453928 -2.913568,0 -3.072047,0.137568 -3.072047,2.666696 0,1.862454 -0.40534,2.666696 -1.344021,2.666696 -1.089273,0 -1.344022,-1.227527 -1.344022,-6.476261 z m 8.064127,-2.6153516 c 0,-1.5264873 -2.888379,-2.7926184 -4.472051,-1.9603401 -0.497219,0.261306 -0.904033,1.1405889 -0.904033,1.9539621 0,1.1352362 0.624586,1.47886 2.688042,1.47886 2.059457,0 2.688042,-0.3443325 2.688042,-1.472482 z"
-     id="path3338"
-     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-size:20.39235497px;
+     font-style:normal;
+     font-weight:normal;
+     line-height:125%;
+     letter-spacing:0px;
+     word-spacing:0px;
+     fill:param(outline) #ffffff;
+     fill-opacity:1;
+     stroke:none;
+     font-family:Sans"
+     x="3.7162378"
+     y="18.014351"
+     id="text2982"
+     sodipodi:linespacing="125%"
+     transform="scale(1.0876667,0.91939929)"><tspan
+       sodipodi:role="line"
+       id="tspan2984"
+       x="3.7162378"
+       y="18.014351"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial">SP</tspan></text>
 </svg>

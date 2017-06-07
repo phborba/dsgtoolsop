@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -44,7 +44,7 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="10.069333"
-     inkscape:cx="10.042373"
+     inkscape:cx="10.240996"
      inkscape:cy="11.71875"
      inkscape:window-x="1366"
      inkscape:window-y="0"
@@ -52,15 +52,15 @@
      inkscape:current-layer="svg2" />
   <text
      xml:space="preserve"
-     style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff"
-     x="2.3644326"
-     y="21.225302"
+     style="font-size:8.15852642px;line-height:125%;stroke:param(outline) #ffffff; fill:param(outline) #ffffff"
+     x="5.3874731"
+     y="14.751865"
      id="text3019"
      sodipodi:linespacing="125%"
-     transform="scale(1.0177364,0.98257268)"><tspan
+     transform="scale(0.98371832,1.0165512)"><tspan
        sodipodi:role="line"
        id="tspan3021"
-       x="2.3644326"
-       y="21.225302"
-       style="font-size:24.75400734px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial;-inkscape-font-specification:Arial">F</tspan></text>
+       x="5.3874731"
+       y="14.751865"
+       style="font-size:16.82968712px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial;-inkscape-font-specification:Arial">F</tspan></text>
 </svg>

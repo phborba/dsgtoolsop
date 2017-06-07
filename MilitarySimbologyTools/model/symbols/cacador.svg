@@ -53,8 +53,8 @@
      id="namedview3041"
      showgrid="false"
      inkscape:zoom="2"
-     inkscape:cx="-148.1113"
-     inkscape:cy="121.76167"
+     inkscape:cx="-147.1113"
+     inkscape:cy="89.167065"
      inkscape:window-x="1366"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -76,31 +76,35 @@
      inkscape:connector-curvature="0" />
   <g
      id="g3921"
-     transform="matrix(0.72839437,0,0,0.73684141,22.228451,23.105318)">
+     transform="matrix(0.43403238,0,0,0.38635496,46.027411,50.38137)">
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3081"
        d="M 153.86287,79.742891 107.5314,79.339481"
-       style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff;stroke-width:7.56400442px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;
+              stroke:param(outline) #ffffff;stroke-width:7.56400442px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3081-6"
        d="m 81.68654,5.951705 -0.11082,39.59659"
-       style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff;stroke-width:8.41540718px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;
+              stroke:param(outline) #ffffff;stroke-width:8.41540718px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3081-3"
        d="m 4.061543,77.951701 52.600379,0.59659"
-       style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff;stroke-width:8.86604595px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;
+              stroke:param(outline) #ffffff;stroke-width:8.86604595px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3081-2"
        d="m 82.167384,109.58076 -0.07251,43.82338"
-       style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff;stroke-width:7.16130114px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;
+              stroke:param(outline) #ffffff;stroke-width:7.16130114px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        transform="matrix(1.1578396,0,0,1.2733188,-27.389622,154.37581)"
        d="M 159.5,-59 C 159.5,-25.586773 129.61501,1.5 92.75,1.5 55.884993,1.5 26,-25.586773 26,-59 c 0,-33.413227 29.884993,-60.5 66.75,-60.5 36.86501,0 66.75,27.086773 66.75,60.5 z"
@@ -109,7 +113,8 @@
        sodipodi:cy="-59"
        sodipodi:cx="92.75"
        id="path3143"
-       style="fill:none;stroke:param(outline) #ffffff;stroke-width:6.11757231;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:none;
+              stroke:param(outline) #ffffff;stroke-width:6.11757231;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        sodipodi:type="arc" />
   </g>
 </svg>

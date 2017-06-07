@@ -44,23 +44,22 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="9.3234568"
-     inkscape:cx="17.34375"
-     inkscape:cy="26.349642"
+     inkscape:cx="17.772775"
+     inkscape:cy="7.4725234"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="312"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
-     
   <text
      xml:space="preserve"
-     style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff;font-size:27.02550888px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
-     x="-0.48078164"
-     y="22.868368"
+     style="stroke:param(outline) #ffffff; fill:param(outline) #ffffff;font-size:19.48291016px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial"
+     x="4.746696"
+     y="17.294931"
      id="text2982"
      sodipodi:linespacing="125%"
-     transform="scale(1.0250589,0.9755537)"><tspan
+     transform="scale(1.0749903,0.93024097)"><tspan
        sodipodi:role="line"
        id="tspan2984"
-       x="-0.48078164"
-       y="22.868368">FE</tspan></text>
+       x="4.746696"
+       y="17.294931">FE</tspan></text>
 </svg>
