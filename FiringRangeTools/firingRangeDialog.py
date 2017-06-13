@@ -44,11 +44,9 @@ from DsgTools.CustomWidgets.progressWidget import ProgressWidget
 
 #DSGToolsOp imports
 from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeCalculator import FiringRangeCalculator
+from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingrangeDialog_ui import FiringRangeDialog
 
-FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'firingRangeDialog.ui'))
-
-class FiringRangeDialog(QtGui.QDialog, FORM_CLASS):
+class FiringRangeDialog(QtGui.QDialog, FiringRangeDialog):
     def __init__(self, iface, parent=None):
         """Constructor."""
         super(self.__class__, self).__init__(parent)
