@@ -36,9 +36,12 @@ class FiringRangeCalculator(QObject):
         fields = QgsFields()
         fieldList = []
         fields.append(QgsField("nomeArmamento", QVariant.String))
-        fields.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
+        fields.append(QgsField("alcance", QVariant.Double))
         fieldList.append(QgsField("nomeArmamento", QVariant.String))
-        fieldList.append(QgsField("alcance", typeName = 'decimal', len=10, prec=10))
+        fieldList.append(QgsField("alcance", QVariant.Double))
+        for field in self.layer.fields().toList():
+            fields.append(field)
+            fieldList.append(field)
         outputLyr = QgsVectorLayer("Multipolygon?crs={0}".format(crs.authid()), "Alcance_Armamento", "memory")
         pr = outputLyr.dataProvider()
         pr.addAttributes(fieldList)
@@ -62,6 +65,7 @@ class FiringRangeCalculator(QObject):
             for weapon, r in sorted_rangeDict:
                 newFeat = QgsFeature(fields)
                 geometryBuffer = feat.geometry().buffer(r,100)
+                self.addAttributesOfLayerOrigin(feat, newFeat)
                 newFeat['nomeArmamento'] = weapon
                 newFeat['alcance'] = float(r)
                 newFeat.setGeometry(geometryBuffer)
@@ -71,6 +75,11 @@ class FiringRangeCalculator(QObject):
         if outputFileName:
             self.saveLyr(outputLyr, outputFileName)
         return outputLyr
+
+    def addAttributesOfLayerOrigin(self, f, newFeat):
+        for field in f.fields().toList():
+            newFeat[field.name()] = f.attribute(field.name())
+
 
 if __name__ == '__init__':
     from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeCalculator import FiringRangeCalculator

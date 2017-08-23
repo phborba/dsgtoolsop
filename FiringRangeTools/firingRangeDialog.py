@@ -44,17 +44,17 @@ from DsgTools.CustomWidgets.progressWidget import ProgressWidget
 
 #DSGToolsOp imports
 from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeCalculator import FiringRangeCalculator
-from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingrangeDialog_ui import FiringRangeDialog
+from DsgTools.DsgToolsOp.MilitaryTools.FiringRangeTools.firingRangeDialog_ui import Ui_FiringRangeDialog
 
-class FiringRangeDialog(QtGui.QDialog, FiringRangeDialog):
+class FiringRangeDialog(QtGui.QDialog, Ui_FiringRangeDialog):
     def __init__(self, iface, parent=None):
         """Constructor."""
         super(self.__class__, self).__init__(parent)
         self.iface = iface
         self.utils = Utils()
         self.setupUi(self)
-        self.customTableWidget.setHeaders(['Armamento', 'Alcance'])
-        validationList = [None, QtCore.QRegExp("[0-9]*[.][0-9]*")]
+        self.customTableWidget.setHeaders([u'Selecione', 'Armamento', 'Alcance'])#
+        validationList = [None, None, QtCore.QRegExp("[0-9]*[.][0-9]*")]
         self.customTableWidget.setValidator(validationList)
         self.rangeList = self.loadRanges()
         self.customTableWidget.addItems(itemList = self.rangeList)
@@ -67,15 +67,17 @@ class FiringRangeDialog(QtGui.QDialog, FiringRangeDialog):
         f = io.open(filepath,'r',encoding='utf8')
         newList = []
         for line in f.readlines():
-            newList.append(line.replace('\n','').split(';'))
+            row = ['']+line.replace('\n','').split(';')
+            newList.append(row)
         return newList
     
     def getRangeDict(self):
         rangeDict = dict()
         for row in range(self.customTableWidget.tableWidget.rowCount()):
-            weapon = self.customTableWidget.tableWidget.item(row,0).text()
-            dist = self.customTableWidget.tableWidget.item(row,1).text()
-            rangeDict[weapon] = float(dist)
+            if self.customTableWidget.tableWidget.item(row, 0).checkState():
+                weapon = self.customTableWidget.tableWidget.item(row,1).text()
+                dist = self.customTableWidget.tableWidget.item(row,2).text()
+                rangeDict[weapon] = float(dist)
         return rangeDict
     
     @pyqtSlot(bool)

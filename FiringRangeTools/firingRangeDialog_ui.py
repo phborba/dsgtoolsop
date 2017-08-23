@@ -36,8 +36,8 @@ class Ui_FiringRangeDialog(object):
         self.label = QtGui.QLabel(FiringRangeDialog)
         self.label.setObjectName(_fromUtf8("label"))
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-        self.customTableWidget = CustomTableWidget(FiringRangeDialog)
-        self.customTableWidget.setObjectName(_fromUtf8("customTableWidget"))
+        self.customTableWidget = CustomTableWidgetFiringRange(FiringRangeDialog)
+        self.customTableWidget.setObjectName(u"customTableWidget")
         self.gridLayout.addWidget(self.customTableWidget, 1, 0, 1, 3)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
@@ -77,6 +77,23 @@ class Ui_FiringRangeDialog(object):
         self.saveCheckBox.setText(_translate("FiringRangeDialog", "Salvar arquivo", None))
         self.onlySelectedCheckBox.setText(_translate("FiringRangeDialog", "Somente feições selecionadas", None))
 
+
 from qgis import gui
 from DsgTools.CustomWidgets.selectFileWidget import SelectFileWidget
 from DsgTools.CustomWidgets.customTableWidget import CustomTableWidget
+
+class CustomTableWidgetFiringRange(CustomTableWidget):
+    def __init__(self, parent = None):
+        super(CustomTableWidgetFiringRange, self).__init__(parent)
+        self.removePushButton.setVisible(False)
+
+    def addOneItem(self, oneItemList):
+        rowCount = self.tableWidget.rowCount()
+        self.tableWidget.insertRow(rowCount)
+        for i in range(len(oneItemList)):
+            newItem = QtGui.QTableWidgetItem(oneItemList[i])
+            if i == 0:
+                 newItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
+                 newItem.setCheckState(QtCore.Qt.Unchecked)
+            self.tableWidget.setItem(rowCount, i, newItem)
+

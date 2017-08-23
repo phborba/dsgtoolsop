@@ -11,9 +11,9 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   width="49.6875"
-   height="30"
+   inkscape:version="0.92.1 r15371"
+   width="53"
+   height="32"
    viewBox="0 0 49.6875 30"
    sodipodi:docname="art_autopropulsada2.svg">
   <metadata
@@ -59,66 +59,49 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="997"
+     inkscape:window-height="1001"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="15.733333"
-     inkscape:cx="14.137314"
-     inkscape:cy="17.415254"
-     inkscape:window-x="1366"
-     inkscape:window-y="0"
+     inkscape:zoom="11.125146"
+     inkscape:cx="15.909994"
+     inkscape:cy="14.525689"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
-  <rect
-     inkscape:transform-center-y="2.5014015"
-     inkscape:transform-center-x="-75.94083"
-     style="fill:none;stroke-width:2.21895194;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-     id="rect3045"
-     width="32.826931"
-     height="17.737797"
-     x="-34.782108"
-     y="9.1819487"
-     ry="6.8917546" />
+  <path
+     sodipodi:type="star"
+     style="opacity:1;fill:none;stroke-width:0.3707915;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1;stroke:param(outline) #000000"
+     id="path2988"
+     sodipodi:sides="4"
+     sodipodi:cx="-79.194916"
+     sodipodi:cy="12.20339"
+     sodipodi:r1="9.7881355"
+     sodipodi:r2="11.877263"
+     sodipodi:arg1="-1.5707964"
+     sodipodi:arg2="-0.78539823"
+     inkscape:flatsided="true"
+     inkscape:rounded="0"
+     inkscape:randomized="0"
+     d="m -79.194916,2.4152546 9.788136,9.7881344 -9.788135,9.788137 -9.788136,-9.788135 z"
+     transform="matrix(1.6203872,0,0,0.98628904,152.20964,2.842636)" />
   <g
-     id="g3829">
-    <path
-       transform="matrix(1.6203872,0,0,0.98628904,152.20964,2.842636)"
-       d="m -79.194916,2.4152546 9.788136,9.7881344 -9.788135,9.788137 -9.788136,-9.788135 z"
-       inkscape:randomized="0"
-       inkscape:rounded="0"
-       inkscape:flatsided="true"
-       sodipodi:arg2="-0.78539823"
-       sodipodi:arg1="-1.5707964"
-       sodipodi:r2="11.877263"
-       sodipodi:r1="9.7881355"
-       sodipodi:cy="12.20339"
-       sodipodi:cx="-79.194916"
-       sodipodi:sides="4"
-       id="path2988"
-       style="opacity:1;fill:none;stroke:param(outline) #ffffff;stroke-width:1.58204374999999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       sodipodi:type="star" />
+     transform="matrix(0.52979808,0,0,0.4821827,8.0023132,0.36113754)"
+     id="g3957"
+     style="fill-rule:evenodd;stroke:none;stroke-opacity:1;fill:param(outline) #000000;fill-opacity:1">
     <g
-       style="fill-rule:evenodd"
-       id="g3957"
-       transform="matrix(0.52979808,0,0,0.4821827,8.0023132,0.36113754)">
-      <g
-         id="Camada_x0020_1">
-        <metadata
-           id="CorelCorpID_0Corel-Layer" />
-        <!--<path class="fil0 str0" d="M30 25.774c2.20866,0 3.99921,1.89213 3.99921,4.22598 0,2.33386 -1.79055,4.22598 -3.99921,4.22598 -2.20866,0 -3.99921,-1.89213 -3.99921,-4.22598 0,-2.33386 1.79055,-4.22598 3.99921,-4.22598z"/> -->
-        <!--<circle class="fil0 str0" cx="29.9999" cy="30.0001" r="11.0125"/>-->
-        <circle
-           id="circle3949"
-           style="stroke-width:0.89999998;fill:param(outline) #ffffff"
-           r="11.0125"
-           cy="30.000099"
-           cx="29.999901"
-           sodipodi:cx="29.999901"
-           sodipodi:cy="30.000099"
-           sodipodi:rx="11.0125"
-           sodipodi:ry="11.0125"
-           d="m 41.012401,30.000099 c 0,6.082036 -4.930464,11.0125 -11.0125,11.0125 -6.082036,0 -11.0125,-4.930464 -11.0125,-11.0125 0,-6.082036 4.930464,-11.0125 11.0125,-11.0125 6.082036,0 11.0125,4.930464 11.0125,11.0125 z" />
-      </g>
+       id="Camada_x0020_1"
+       style="stroke:none;stroke-opacity:1;fill:param(outline) #000000;fill-opacity:1">
+      <metadata
+         id="CorelCorpID_0Corel-Layer" />
+      <!--<path class="fil0 str0" d="M30 25.774c2.20866,0 3.99921,1.89213 3.99921,4.22598 0,2.33386 -1.79055,4.22598 -3.99921,4.22598 -2.20866,0 -3.99921,-1.89213 -3.99921,-4.22598 0,-2.33386 1.79055,-4.22598 3.99921,-4.22598z"/> -->
+      <!--<circle class="fil0 str0" cx="29.9999" cy="30.0001" r="11.0125"/>-->
+      <circle
+         cx="29.999901"
+         cy="30.000099"
+         r="11.0125"
+         style="stroke-width:0.89999998;stroke:none;stroke-opacity:1;fill:param(outline) #000000;fill-opacity:1"
+         id="circle3949" />
     </g>
   </g>
 </svg>

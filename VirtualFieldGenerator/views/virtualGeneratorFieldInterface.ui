@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gerador de Campos Virtuais</string>
+   <string>Calculadora de Coordenadas e Dimensões</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>

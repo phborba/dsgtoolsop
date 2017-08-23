@@ -4,67 +4,80 @@ from PyQt4 import QtGui, uic, QtCore
 from qgis.utils import iface
 from PyQt4.QtCore import pyqtSlot, pyqtSignal
 from PyQt4.QtGui import QMessageBox, QFileDialog
-
-import time
+from createDataBaseInterface import CreateDataBaseInterface
 
 GUI, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'militarySimbologyInterface.ui'))
 
-class MilitarySimbologyInterface(QtGui.QDockWidget, GUI):
+class MilitarySimbologyInterface(QtGui.QFrame, GUI):
     def __init__(self):
-        QtGui.QDockWidget.__init__(self)
-        GUI.__init__(self)
+        super(MilitarySimbologyInterface, self).__init__()
         self.setupUi(self)
         self.initVariables()
-        
+        self.setCreateDataBaseInterface(CreateDataBaseInterface(self))
+
     def initVariables(self):
         self.controller = None
         self.sqlitePath = None
-        
+        self.createDataBaseInterface = None
+        self.currentScale = None
+
+    def showEvent(self, e):
+        self.configScaleCombo()
+
+    def configScaleCombo(self):
+        variableQgis =  self.getController().runCommand('get variable qgis')
+        indx = self.escalaCombo.findText( variableQgis )
+        if indx >= 0:
+            self.escalaCombo.setCurrentIndex(indx)
+        else:
+            self.getController().runCommand('set variable qgis', '1:25.000')
+
     def setController(self, c):
         self.controller = c
-    
+
     def getController(self):
         return self.controller
-    
-    def msg(self):
-        QMessageBox.warning(self, u"Aviso:", u"Selecione banco para carregar camadas !", QMessageBox.Close)
-        
+
+    def setCreateDataBaseInterface(self, i):
+        self.createDataBaseInterface = i
+
+    def getCreateDataBaseInterface(self):
+        return self.createDataBaseInterface
+
     def getDataBase(self):
         return self.sqlitePath
-         
-    def setDataBase(self):
+
+    def setCurrentScale(self, idx):
+        self.currentScale = idx
+
+    def getCurrentScale(self):
+        return self.currentScale
+
+    def msg(self, msg):
+        QMessageBox.warning(self, u"Aviso:", msg, QMessageBox.Close)
+
+    def setDataBase(self): #carrega
         sqlitePath = unicode(QFileDialog.getOpenFileName(self, 'Selecionar Sqlite', '',
                                                       "Selecione banco de dados (*.sqlite)")).encode('utf-8')
         if sqlitePath:
             self.sqlitePath = unicode(sqlitePath)
-            self.lineEdit.setText(self.getDataBase())
             self.getController().runCommand('set current database', self.getDataBase())
-       
-    def showDialog(self):
-        iface.addDockWidget(QtCore.Qt.LeftDockWidgetArea, self)
-     
-    @pyqtSlot(bool)
-    def on_createSqliteButton_clicked(self):
-	self.getController().runCommand('open interface to create database')
-        
-    @pyqtSlot(bool)
-    def on_selectDbButton_clicked(self):
-        self.getController().runCommand('select database')
-        
-    @pyqtSlot(bool)
-    def on_loadAlliedButton_clicked(self):
-        self.getController().runCommand('load allied', 'allied')
-        
-    @pyqtSlot(bool)
-    def on_loadEnemyButton_clicked(self):
-        self.getController().runCommand('load enemy', 'enemy')
-        
-    @pyqtSlot(bool)
-    def on_locateStyleButton_clicked(self):
-        self.getController().runCommand('set styles')
+            if self.getController().runCommand('load'):
+                self.msg( u'Arquivo de simbologia militar carregado com sucesso !')
+                return 1
+            return 0
 
-    def closeEvent(self, e):
- 	self.lineEdit.clear()
+    @pyqtSlot(bool)
+    def on_createSqliteButton_clicked(self): #modificado para criar e já carregar
+        self.getCreateDataBaseInterface().showDialog()
 
-                                           
+    @pyqtSlot(bool)
+    def on_loadSqliteButton_clicked(self): #seleciona o banco e já carrega
+        if self.setDataBase():
+            self.close()
+
+    @pyqtSlot(str)
+    def on_escalaCombo_currentIndexChanged(self, escala):
+        self.getController().runCommand('set variable qgis', escala)
+

@@ -89,6 +89,9 @@ class VirtualGeneratorFieldInterface(QtGui.QDialog, GUI):
     def on_okButton_clicked(self):
         layerName = self.layersCombo.currentText()
         self.getController().runCommand('generate fields', layerName, self.getCheckBoxSelections())
+        QtGui.QMessageBox.information(self, u"AVISO:", u"""<p>Operação realizada com sucesso!</p>
+                                                           <p>Confira o resultado na tabela de atributos.</p>
+                                                           <p><b>Nota : Os campos criados são temporários.</b></p>""")
         
     @pyqtSlot(bool)
     def on_cancelButton_clicked(self):
