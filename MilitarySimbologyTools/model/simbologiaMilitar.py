@@ -56,10 +56,10 @@ class SimbologiaMilitar(BaseDeDados):
 
     def validateSqlite(self):
         if self.getVersionSqlite() == 'not table':
-            self.getController().runCommand(u'message', u'Esse arquivo não é válido!')
+            self.getController().runCommand(u'message', u'<p>Este arquivo não é de Simbologia Militar.</p><p>Selecione o arquivo correto.</p>')
             return 0
         elif self.getVersionSqlite() != '1.0':
-            self.getController().runCommand(u'message', u'Esse Arquiva está na versão errada!')
+            self.getController().runCommand(u'message', u'<p>Este arquivo foi criado numa versão anterior do DsgToolsOp, não sendo compatível com a versão instalada.</p>')
             return 0
         return 1
 

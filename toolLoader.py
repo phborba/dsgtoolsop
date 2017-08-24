@@ -21,17 +21,19 @@
  ***************************************************************************/
 """
 from PyQt4.QtCore import Qt
+from PyQt4 import QtGui, QtCore
+import os
 
 class ToolLoader:
     def __init__(self, parentMenu, parent, icon_path):
         self.parentMenu = parentMenu
-        self.parent = parent
+	self.parent = parent
         self.icon_path = icon_path
     
     def loadTools(self):
-        action = self.parent.add_action(
-            self.icon_path,
-            text=self.parent.tr('Simbologia Militar'),
+	action = self.parent.add_action(
+            os.path.join(os.path.dirname(__file__), 'icons', 'eb.png'),
+            text=self.parent.tr(u'Simbologia Militar'),
             callback=self.loadMilitarySimbologyDock,
             parent=self.parentMenu,
             add_to_menu=False,
@@ -39,8 +41,8 @@ class ToolLoader:
         self.parentMenu.addAction(action)
 
         action = self.parent.add_action(
-            self.icon_path,
-            text=self.parent.tr('Ferramenta de Alcance de Armamento'),
+            os.path.join(os.path.dirname(__file__), 'icons', 'eb.png'),
+            text=self.parent.tr(u'Ferramenta de Alcance de Armamento'),
             callback=self.showFiringRangeTool,
             parent=self.parentMenu,
             add_to_menu=False,
@@ -48,8 +50,8 @@ class ToolLoader:
         self.parentMenu.addAction(action)
 
         action = self.parent.add_action(
-            self.icon_path,
-            text=self.parent.tr('Gerador de Campos Virtuais'),
+            os.path.join(os.path.dirname(__file__), 'icons', 'eb.png'),
+            text=self.parent.tr(u'Calculadora de Coordenadas e Dimensões'),
             callback=self.loadVirtualFieldGenerator,
             parent=self.parentMenu,
             add_to_menu=False,
