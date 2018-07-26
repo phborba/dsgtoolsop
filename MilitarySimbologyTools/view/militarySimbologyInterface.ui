@@ -43,41 +43,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Selecione a Escala :</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="escalaCombo">
-          <item>
-           <property name="text">
-            <string>1:25.000</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>1:50.000</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>1:100.000</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>1:250.000</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
      </layout>
     </widget>
    </item>

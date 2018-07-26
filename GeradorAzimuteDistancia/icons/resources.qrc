@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/plugins/DsgTools/DsgToolsOp/MilitaryTools/GeradorAzimuteDistancia/icons" >
+        <file>main.png</file>
+        <file>capturePoint.svg</file>
+        <file>captureLine.svg</file>
+        <file>capturePolygon.svg</file>
+        <file>document.svg</file>
+        <file>actionAzimute.png</file>
+    </qresource>
+</RCC>

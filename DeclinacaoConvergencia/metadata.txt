@@ -1,0 +1,36 @@
+; the next section is mandatory
+[general]
+; start of mandatory metadata
+name=Convergência Meridiana e Declinação Magnética
+qgisMinimumVersion=2.0
+description=
+	Convergência Meridiana e Declinação Magnética.
+about=
+	Plugin que calcula a convergência meridiana e a declinação
+	magnética para um ponto selecionado.
+	
+	Créditos a Christopher Weiss (cmweiss@gmail.com) pela biblioteca
+	"geomag" para cálculo de declinação magnética com base no World
+	Magnetic Model (WMM) da NOAA Satellite and Information Service -
+	National Geophysical Data Center.
+version=1.0
+author=Diego Benincasa
+icon=icons/main.png
+email=benincasa.diego@eb.mil.br
+; end of mandatory metadata
+
+; start of optional metadata
+
+; experimental flag
+experimental=false
+
+; changelog=false
+
+; tags are in comma separated value format, spaces are allowed
+tags=dsgtools, convergencia, declinacao, convergence, heading
+
+; these metadata can be empty
+; in a future version of the web application it will
+; be probably possible to create a project on redmine
+; if they are not filled
+

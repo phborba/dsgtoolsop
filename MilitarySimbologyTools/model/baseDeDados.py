@@ -105,6 +105,6 @@ class BaseDeDados(QObject):
         con.commit()
         con.close()
         if os.path.isfile(destino):
-            self.getController().runCommand('message', u'Arquivo de simbologia militar criado e carregado com sucesso !')
+            self.getController().runCommand('message', u'Arquivo de simbologia militar criado com sucesso ! Aguarde o carregamento automático')
         else:
             self.getController().runCommand('message', u'Erro na criação do arquivo de simbologia militar !')

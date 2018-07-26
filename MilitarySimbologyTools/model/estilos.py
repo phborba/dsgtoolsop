@@ -30,7 +30,8 @@ class Estilos(QObject):
                             'fogos': u'fogos',
                             'localizacao_comando_a': u'localizacao_comando',
                             'localizacao_comando_i': u'localizacao_comando',
-                          }
+							'concentracao_explosao' : u'concentracao',
+						    }
      
     def setStylePath(self, t):
         if t in self.nameStyles:

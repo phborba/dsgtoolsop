@@ -23,15 +23,8 @@ class MilitarySimbologyInterface(QtGui.QFrame, GUI):
         self.currentScale = None
 
     def showEvent(self, e):
-        self.configScaleCombo()
-
-    def configScaleCombo(self):
-        variableQgis =  self.getController().runCommand('get variable qgis')
-        indx = self.escalaCombo.findText( variableQgis )
-        if indx >= 0:
-            self.escalaCombo.setCurrentIndex(indx)
-        else:
-            self.getController().runCommand('set variable qgis', '1:25.000')
+		pass
+        #self.configScaleCombo()
 
     def setController(self, c):
         self.controller = c
@@ -47,12 +40,6 @@ class MilitarySimbologyInterface(QtGui.QFrame, GUI):
 
     def getDataBase(self):
         return self.sqlitePath
-
-    def setCurrentScale(self, idx):
-        self.currentScale = idx
-
-    def getCurrentScale(self):
-        return self.currentScale
 
     def msg(self, msg):
         QMessageBox.warning(self, u"Aviso:", msg, QMessageBox.Close)
@@ -77,7 +64,5 @@ class MilitarySimbologyInterface(QtGui.QFrame, GUI):
         if self.setDataBase():
             self.close()
 
-    @pyqtSlot(str)
-    def on_escalaCombo_currentIndexChanged(self, escala):
-        self.getController().runCommand('set variable qgis', escala)
+
 

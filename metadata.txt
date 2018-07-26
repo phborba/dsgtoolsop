@@ -1,0 +1,61 @@
+# This file contains metadata for your plugin. Since
+# version 2.0 of QGIS this is the proper way to supply
+# information about a plugin. The old method of
+# embedding metadata in __init__.py will
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=DSGTools Op
+qgisMinimumVersion=2.14
+description=Ferramentas para planejamento militar do Exército Brasileiro
+version=1.0
+author=Exército Brasileiro - Diretoria de Serviço Geográfico
+email=benincasa.diego@eb.mil.br
+about=
+	Ferramentas para planejamento de atividades militares.
+	Atualmente conta com as seguintes funcionalidades:
+	- Simbologia Militar (de acordo com Manual MD33-M-02)
+	- Calculador de coordenadas e dimensões
+	- Conversão de unidades angulares
+	- Criação de pontos por coordenadas
+	- Relocação de pontos por coordenadas 
+	- Gerador de azimutes e distâncias
+	- Declinação magnética e convergência meridiana
+	- Determinação de MI (índice de nomenclatura) de carta
+	- Perfil do terreno
+	- Geocodificação (direta e reversa)
+	- Medição na aquisição vetorial
+
+# End of mandatory metadata
+
+# Optional items:
+
+# Uncomment the following line and add your changelog:
+changelog=
+	1.0   - Versão inicial pronta como plugin independente do DSGTools
+	0.5   - Inserção de novas ferramentas
+	0.4.5 - Divisão dos símbolos militares em calcos
+	0.4.4 - Correção de bugs
+	0.4.3 - Atualização da Simbologia Militar
+	0.4.2 - Atualização da Simbologia Militar
+	0.4.1 - Correção de bugs
+	0.4   - Adição de funcionalidades
+	0.3   - Adição de funcionalidades
+	0.2   - Atualização da Simbologia Militar e adição de funcionalidades
+	0.1.1 - Atualização da Simbologia Militar
+	0.1   - Versão inicial com Simbologia Militar
+
+# Tags are comma separated with spaces allowed
+tags=Exército,Brasileiro,DSG,Diretoria,Serviço,Geográfico,BDGEx,Militar
+
+homepage=http://bit.ly/dsgtoolsop
+tracker=http://bit.ly/dsgtoolsop
+repository=http://bit.ly/dsgtoolsop-repo
+icon=icons/dsg.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False

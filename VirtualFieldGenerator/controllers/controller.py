@@ -20,8 +20,10 @@ class Controller(QObject):
                         'get type layer' : self.model.getTypeLayer, 
                         }
     
-    def runCommand(self, cmd, param1=None, param2=None):
-        if param1 and param2:
+    def runCommand(self, cmd, param1=None, param2=None, param3=None):
+        if param1 and param2 and param3:
+            r = self.commands[cmd](param1, param2, param3)
+        elif param1 and param2:
             r = self.commands[cmd](param1, param2)
         elif param1:
             r = self.commands[cmd](param1)

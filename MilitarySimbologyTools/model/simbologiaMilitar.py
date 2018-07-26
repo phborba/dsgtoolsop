@@ -27,30 +27,34 @@ class SimbologiaMilitar(BaseDeDados):
                     'posto_observacao_i': u'Posto de observação inimigo',
                     'seta_situacao': u'Seta de situação',
                     'area_coordenacao': u'Área de coordenação',
-                    'medida_restritiva': u'Medida Restritiva',
+                    'fortificacoes': u'Fortificações',    
                     'localizacao_comando_a': u'Localização de comando aliada',
                     'localizacao_comando_i': u'Localização de comando inimiga',
-                    'barragem_grupo_concentracao' : u'Barragem ou grupo de concentração',
-                    'concentracao_explosao' : u'Concentração ou explosão'
+                    'comunicacoes' : u'Comunicações',
+                    'concentracao_explosao' : u'Alvos'
                    }
 
         self.grupos = {
-           'limite_areas_atividades_pontos': {
-               'nome': u'Limites, Áreas, Atividades e Pontos',
-               'classes': ['limite_entre_fracoes', 'linha_de_controle', 'eixo_de_direcao', 'nucleo_defesa',
-                            'objetivo', 'ponto_coordenacao', 'medida_restritiva', 'area_coordenacao']
+           '1_calco_operacoes': {
+               'nome': u'CALCO DE OPERAÇÕES',
+               'classes': ['tropa_a', 'posto_observacao_a','armamento_a','limite_entre_fracoes', 'linha_de_controle', 'eixo_de_direcao', 'nucleo_defesa',
+                            'objetivo', 'ponto_coordenacao', 'medida_restritiva', 'area_coordenacao','seta_situacao']
            },
-           'representacao_forcas': {
-               'nome': u'Representação das forças',
-               'classes': ['tropa_a', 'instalacao_orgao_a', 'posto_observacao_a', 'localizacao_comando_a']
+           '5_calco_logistica': {
+               'nome': u'CALCO DE APOIO LOGÍSTICO',
+               'classes': [ 'instalacao_orgao_a', 'localizacao_comando_a']
            },
-           'armamentos_fogos': {
-               'nome': u'Armamentos e Fogos',
-               'classes': ['armamento_a', 'barragem_grupo_concentracao', 'concentracao_explosao']
-           }, #falta comunicacoes, guerra eletronica, estacoes, postos, fortificacoes, obstaculos, passagens (6.4.4 em diante)
-           'auxiliares': {
-               'nome': u'Auxiliares',
-               'classes': ['seta_situacao']
+           '2_calco_fogos': {
+               'nome': u'CALCO DE ALVOS DO PAF',
+               'classes': [ 'concentracao_explosao']
+           }, 
+           '4_plano_barreiras': {
+               'nome': u'PLANO DE BARREIRAS',
+               'classes': ['fortificacoes']
+           },		   
+           '5_calco_comu': {
+               'nome': u'CALCO DE COMUNICAÇÕES - DIAGRAMA DO SISTEMA MULTICANAL',
+               'classes': ['comunicacoes']
            }
         }
 
@@ -66,11 +70,11 @@ class SimbologiaMilitar(BaseDeDados):
     def loadLayer(self):
         if (not self.hasSqlite()) or (not self.validateSqlite()):
             return 0
-        fileName = self.getCurrentSqlite().split(os.sep)[-1].split('.')[0]
+        fileName = self.getCurrentSqlite().split('/')[-1].split('.')[0]
         root = QgsProject.instance().layerTreeRoot()
         groupMain = root.insertGroup(0, fileName)
-        simbolGroupA = groupMain.insertGroup(0, 'Aliado')
-        simbolGroupE = groupMain.insertGroup(0, 'Inimigo')
+        simbolGroupA = groupMain.insertGroup(0, 'CALCO DE SITUACÃO DAS TROPAS ALIADAS')
+        simbolGroupE = groupMain.insertGroup(0, 'CALCO DE SITUACÃO DO INIMIGO')
         subSimbol = {}
         for key, value in self.grupos.iteritems() :
             subSimbol[key] = simbolGroupA.insertGroup(0, value['nome'])

@@ -1,0 +1,36 @@
+; the next section is mandatory
+[general]
+; start of mandatory metadata
+name=Gerador de Azimutes e Distâncias
+qgisMinimumVersion=2.0
+description=
+	Gerador de Azimutes e Distâncias.
+about=
+	Gera uma lista de azimutes e distâncias a partir de uma lista
+	ou seleção de pontos, bem como executa o processo inverso -
+	cria feições com base em uma lista de azimutes e distâncias.
+	Créditos a Christopher Weiss (cmweiss@gmail.com) pela biblioteca
+	"geomag" para cálculo de declinação magnética com base no World
+	Magnetic Model (WMM) da NOAA Satellite and Information Service -
+	National Geophysical Data Center.
+version=1.0
+author=Diego Benincasa
+icon=icons/main.png
+email=benincasa.diego@eb.mil.br
+; end of mandatory metadata
+
+; start of optional metadata
+
+; experimental flag
+experimental=false
+
+; changelog=false
+
+; tags are in comma separated value format, spaces are allowed
+tags=dsgtools, unitconverter, topografia, topography
+
+; these metadata can be empty
+; in a future version of the web application it will
+; be probably possible to create a project on redmine
+; if they are not filled
+
