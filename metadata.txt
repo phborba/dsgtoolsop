@@ -33,7 +33,6 @@ about=
 	GIS tools for military planning, specially for the Brazilian Army.
 	Tools currently in the package:
 	- Military Simbology (Brazilian Army simbology manual MD33-M-02)
-	- Simbologia Militar (de acordo com Manual MD33-M-02)
 	- Coordinate calculator
 	- Angle unit converter
 	- Coordinate-based point creator
@@ -68,7 +67,7 @@ changelog=
 
 [ENGLISH]
 	1.0   - Initial version as an independent plugin
-	0.5   - Addition ofnew tools
+	0.5   - Addition of new tools
 	0.4.5 - Categorization of military symbols
 	0.4.4 - Bug fixes
 	0.4.3 - Military Simbology update
