@@ -14,6 +14,7 @@ version=1.0
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
+[PORTUGUÊS]
 	Ferramentas para planejamento de atividades militares.
 	Atualmente conta com as seguintes funcionalidades:
 	- Simbologia Militar (de acordo com Manual MD33-M-02)
@@ -27,6 +28,23 @@ about=
 	- Perfil do terreno
 	- Geocodificação (direta e reversa)
 	- Medição na aquisição vetorial
+	
+[ENGLISH]
+	GIS tools for military planning, specially for the Brazilian Army.
+	Tools currently in the package:
+	- Military Simbology (Brazilian Army simbology manual MD33-M-02)
+	- Simbologia Militar (de acordo com Manual MD33-M-02)
+	- Coordinate calculator
+	- Angle unit converter
+	- Coordinate-based point creator
+	- Coordinate-based point relocation
+	- Azimuths and distances generator
+	- Magnetic declination and meridian convergence calculator
+	- Chart MI (map naming index) determination
+	- Profile tool
+	- Geocoding (direct and reverse)
+	- In-digitize measure tool
+
 
 # End of mandatory metadata
 
@@ -34,6 +52,7 @@ about=
 
 # Uncomment the following line and add your changelog:
 changelog=
+[PORTUGUÊS]
 	1.0   - Versão inicial pronta como plugin independente do DSGTools
 	0.5   - Inserção de novas ferramentas
 	0.4.5 - Divisão dos símbolos militares em calcos
@@ -47,12 +66,26 @@ changelog=
 	0.1.1 - Atualização da Simbologia Militar
 	0.1   - Versão inicial com Simbologia Militar
 
+[ENGLISH]
+	1.0   - Initial version as an independent plugin
+	0.5   - Addition ofnew tools
+	0.4.5 - Categorization of military symbols
+	0.4.4 - Bug fixes
+	0.4.3 - Military Simbology update
+	0.4.2 - Military Simbology update
+	0.4.1 - Bug fixes
+	0.4   - Addition of new tools
+	0.3   - Addition ofnew tools
+	0.2   - Military Simbology update and addition of new tools
+	0.1.1 - Military Simbology update
+	0.1   - Initial DSGTools-dependent version, with Military Simbology
+
 # Tags are comma separated with spaces allowed
 tags=Exército,Brasileiro,DSG,Diretoria,Serviço,Geográfico,BDGEx,Militar
 
 homepage=http://bit.ly/dsgtoolsop
-tracker=http://bit.ly/dsgtoolsop
-repository=http://bit.ly/dsgtoolsop-repo
+tracker=https://github.com/dsgoficial/DSGToolsOp/issues
+repository=https://github.com/dsgoficial/DSGToolsOp
 icon=icons/dsg.png
 # experimental flag
 experimental=False
