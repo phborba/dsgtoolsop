@@ -14,7 +14,7 @@ version=1.0
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
-[PORTUGUÊS]
+	PORTUGUÊS
 	Ferramentas para planejamento de atividades militares.
 	Atualmente conta com as seguintes funcionalidades:
 	- Simbologia Militar (de acordo com Manual MD33-M-02)
@@ -29,7 +29,7 @@ about=
 	- Geocodificação (direta e reversa)
 	- Medição na aquisição vetorial
 	
-[ENGLISH]
+	ENGLISH
 	GIS tools for military planning, specially for the Brazilian Army.
 	Tools currently in the package:
 	- Military Simbology (Brazilian Army simbology manual MD33-M-02)
@@ -51,7 +51,7 @@ about=
 
 # Uncomment the following line and add your changelog:
 changelog=
-[PORTUGUÊS]
+	PORTUGUÊS
 	1.0   - Versão inicial pronta como plugin independente do DSGTools
 	0.5   - Inserção de novas ferramentas
 	0.4.5 - Divisão dos símbolos militares em calcos
@@ -65,7 +65,7 @@ changelog=
 	0.1.1 - Atualização da Simbologia Militar
 	0.1   - Versão inicial com Simbologia Militar
 
-[ENGLISH]
+	ENGLISH
 	1.0   - Initial version as an independent plugin
 	0.5   - Addition of new tools
 	0.4.5 - Categorization of military symbols
