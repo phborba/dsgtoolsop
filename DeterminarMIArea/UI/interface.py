@@ -268,7 +268,9 @@ class Interface(QtGui.QDockWidget, GUI):
             csvFile = open(filePath, 'w')
         
         csvFile.write(u'*********************************************\n')
-        csvFile.write(u'* Lista de cartas topográficas de interesse *\n')
+        head = u'* Lista de cartas topográficas de interesse *\n'
+        head = head.encode('utf-8')
+        csvFile.write(head)
         csvFile.write(u'*********************************************\n\n')
         
         itemCount = self.cartasList.invisibleRootItem().childCount()
