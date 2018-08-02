@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=2.14
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=1.0
+version=1.1
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -52,6 +52,7 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+	1.1   - Correção de bugs
 	1.0   - Versão inicial pronta como plugin independente do DSGTools
 	0.5   - Inserção de novas ferramentas
 	0.4.5 - Divisão dos símbolos militares em calcos
@@ -66,6 +67,7 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+	1.1   - Bug fixes
 	1.0   - Initial version as an independent plugin
 	0.5   - Addition of new tools
 	0.4.5 - Categorization of military symbols
