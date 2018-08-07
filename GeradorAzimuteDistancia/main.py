@@ -47,8 +47,8 @@ class Main:
         self.toolbar.addAction(self.actionImportar)
         
         #INICIAR VARIÁVEIS E SINAIS
-        # self.initVariables()
-        # self.initSignals()
+        self.initVariables()
+        self.initSignals()
         
     def unload(self):
         del self.toolbar
@@ -85,19 +85,20 @@ class Main:
         self.iface.mapCanvas().mapToolSet.connect(self.uncheckTools)
         
     def uncheckTools(self, tool):
-        if tool.toolName() == "Pontos para azimute":
-            self.actionSelecionarLin.setChecked(False)
-            self.actionSelecionarPol.setChecked(False)
-        elif tool.toolName() == "Linha para azimute":
-            self.actionSelecionarPnt.setChecked(False)
-            self.actionSelecionarPol.setChecked(False)
-        elif tool.toolName() == "Poligono para azimute":
-            self.actionSelecionarPnt.setChecked(False)
-            self.actionSelecionarLin.setChecked(False)
-        else:
-            self.actionSelecionarPnt.setChecked(False)
-            self.actionSelecionarLin.setChecked(False)
-            self.actionSelecionarPol.setChecked(False)
+        if tool:
+			if tool.toolName() == "Pontos para azimute":
+				self.actionSelecionarLin.setChecked(False)
+				self.actionSelecionarPol.setChecked(False)
+			elif tool.toolName() == "Linha para azimute":
+				self.actionSelecionarPnt.setChecked(False)
+				self.actionSelecionarPol.setChecked(False)
+			elif tool.toolName() == "Poligono para azimute":
+				self.actionSelecionarPnt.setChecked(False)
+				self.actionSelecionarLin.setChecked(False)
+			else:
+				self.actionSelecionarPnt.setChecked(False)
+				self.actionSelecionarLin.setChecked(False)
+				self.actionSelecionarPol.setChecked(False)
             
         for layer in self.canvas.layers():
             if layer.type() == QgsMapLayer.VectorLayer:
