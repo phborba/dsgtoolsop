@@ -86,19 +86,19 @@ class Main:
         
     def uncheckTools(self, tool):
         if tool:
-			if tool.toolName() == "Pontos para azimute":
-				self.actionSelecionarLin.setChecked(False)
-				self.actionSelecionarPol.setChecked(False)
-			elif tool.toolName() == "Linha para azimute":
-				self.actionSelecionarPnt.setChecked(False)
-				self.actionSelecionarPol.setChecked(False)
-			elif tool.toolName() == "Poligono para azimute":
-				self.actionSelecionarPnt.setChecked(False)
-				self.actionSelecionarLin.setChecked(False)
-			else:
-				self.actionSelecionarPnt.setChecked(False)
-				self.actionSelecionarLin.setChecked(False)
-				self.actionSelecionarPol.setChecked(False)
+            if tool.toolName() == "Pontos para azimute":
+                self.actionSelecionarLin.setChecked(False)
+                self.actionSelecionarPol.setChecked(False)
+            elif tool.toolName() == "Linha para azimute":
+                self.actionSelecionarPnt.setChecked(False)
+                self.actionSelecionarPol.setChecked(False)
+            elif tool.toolName() == "Poligono para azimute":
+                self.actionSelecionarPnt.setChecked(False)
+                self.actionSelecionarLin.setChecked(False)
+            else:
+                self.actionSelecionarPnt.setChecked(False)
+                self.actionSelecionarLin.setChecked(False)
+                self.actionSelecionarPol.setChecked(False)
             
         for layer in self.canvas.layers():
             if layer.type() == QgsMapLayer.VectorLayer:
