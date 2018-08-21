@@ -317,7 +317,7 @@ class Interface(QtGui.QDockWidget, GUI):
             
             selectedLayer.commitChanges()
             self.iface.messageBar().clearWidgets()
-            self.iface.messageBar().pushMessage(u'Geocodificação', u'localizados {} endereços; {} falharam.'.format(numFeatures, len(self.notfound)), level=QgsMessageBar.INFO)
+            self.iface.messageBar().pushMessage(u'Geocodificação', u'localizados {} endereços; {} falharam. Verifique a tabela de atributos.'.format(numFeatures, len(self.notfound)), level=QgsMessageBar.INFO)
         
         if len(self.notfound) > 0:
             csvFile = open(self.notfoundLineEdit.text(), 'w')
