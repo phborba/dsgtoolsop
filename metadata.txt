@@ -52,6 +52,7 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+	1.2.1 - Alteração da API de geocodificação - Google para Bing
 	1.2   - Correção de bugs
 	1.1   - Correção de bugs
 	1.0   - Versão inicial pronta como plugin independente do DSGTools
@@ -68,6 +69,7 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+	1.2.1 - Geocoding API changing - Google to Bing
 	1.2   - Bug fixes
 	1.1   - Bug fixes
 	1.0   - Initial version as an independent plugin
