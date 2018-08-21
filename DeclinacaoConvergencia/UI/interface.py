@@ -86,9 +86,9 @@ class Interface(QtGui.QDockWidget, GUI):
         xm = format( sign * math.modf( math.modf( ang )[0] * 60 )[1], '.0f' )
         xs = format( sign * math.modf( math.modf( ang )[0] * 60 )[0] * 60, '.3f' )
         
-        gms = str(xg) + "° " + str(xm) + u"' " + str(xs) + u'"'
-        
-        return gms
+        gms = str(xg) + u"° " + str(xm) + "' " + str(xs) + '"'
+        gms = gms.encode('utf8')
+        return gms.decode('utf8')
     
     def showMessage(self,text):
         self.msgBox.setIcon(QMessageBox.Information)
