@@ -193,6 +193,5 @@ class Ui_geocodingWindow(object):
         self.label_10.setText(_translate("geocodingWindow", "Log de não encontrados", None))
         self.notfoundButton.setText(_translate("geocodingWindow", "Selecionar...", None))
         self.doGeocodeButton.setText(_translate("geocodingWindow", "Geocodificar", None))
-        self.label_2.setText(_translate("geocodingWindow", "<html><head/><body><p>Google API key<br/>(Não tem uma? Clique <a href=\"http://bit.ly/dsgtoolsop-apikey\"><span style=\" text-decoration: underline; color:#0000ff;\">aqui</span></a>)</p></body></html>", None))
+        self.label_2.setText(_translate("geocodingWindow", "<html><head/><body><p>Bing API key<br/>(Não tem uma? Clique <a href=\"https://www.bingmapsportal.com\"><span style=\" text-decoration: underline; color:#0000ff;\">aqui</span></a>)</p></body></html>", None))
         self.lineEdit.setPlaceholderText(_translate("geocodingWindow", "Digite a API key", None))
-

@@ -10,16 +10,15 @@ from qgis.core import QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsV
 import math
 
 # LINHA MISTERIOSA!!!
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'dependencies'))
 
-import googlemaps
+#import googlemaps
+from geopy.geocoders import Bing
 
 # GUI, _ = uic.loadUiType(os.path.join(
 #     os.path.dirname(__file__), 'window.ui'))
 
 from window import Ui_geocodingWindow as GUI
-
-GOOGLE_API_KEY = 'AIzaSyByY83WdgfQ_Kf259o5NVEb2pxhYj3prEo'
 
 class Interface(QtGui.QDockWidget, GUI):
     def __init__(self, iface):
@@ -42,7 +41,7 @@ class Interface(QtGui.QDockWidget, GUI):
         self.msgBox = QMessageBox()
         
         self.notfound = []
-        self.apiKey = self.settings.value("DsgToolsOp/GoogleAPIKey")
+        self.apiKey = self.settings.value("DsgToolsOp/BingAPIKey")
         if self.apiKey is not None:
             self.lineEdit.setText(self.apiKey)
 
@@ -63,7 +62,8 @@ class Interface(QtGui.QDockWidget, GUI):
             self.notfoundLineEdit.setText(filePath)        
         
     def updateKey(self, k):
-        self.settings.setValue("DsgToolsOp/GoogleAPIKey", k)
+#         self.settings.setValue("DsgToolsOp/GoogleAPIKey", k)
+        self.settings.setValue("DsgToolsOp/BingAPIKey", k)
         
     def endPartesSelected(self, c):
         self.ruaComboBox.setEnabled(c)
@@ -127,10 +127,10 @@ class Interface(QtGui.QDockWidget, GUI):
             self.iface.messageBar().pushMessage(u'Erro', u'você deve selecionar uma camada de pontos para geocodificar.', QgsMessageBar.CRITICAL)
             return
 
-        apiKey = self.settings.value("DsgToolsOp/GoogleAPIKey")
+        apiKey = self.settings.value("DsgToolsOp/BingAPIKey")
         if apiKey is not None:
             self.setProxy()
-            self.gmaps = googlemaps.Client(key=apiKey, requests_kwargs={'proxies': self.proxy})
+            self.geolocator = Bing(api_key=apiKey, proxies={'proxies': self.proxy}, user_agent='dsgtoolsop-geocoding')
         else:
             self.iface.messageBar().pushMessage(u'Erro', u'você deve definir uma API key para utilizar na geocodificação.', QgsMessageBar.CRITICAL)
             return
@@ -166,6 +166,8 @@ class Interface(QtGui.QDockWidget, GUI):
                 field = QgsField(f, QVariant.String)
                 attrs.append(field)
                 
+            fieldAddrGeo = QgsField('ENDERECO_GEO', QVariant.String)
+            attrs.append(fieldAddrGeo)
             pr.addAttributes(attrs)
             self.geocodeLayer.updateFields()
             
@@ -212,26 +214,27 @@ class Interface(QtGui.QDockWidget, GUI):
                         return
                         
                     if ponto != '':
-                        lat = float(ponto['lat'])
-                        lon = float(ponto['lng'])
+                        print ponto
+                        lat = ponto.latitude
+                        lon = ponto.longitude
                         feat = QgsFeature()
                         feat.setFields(self.geocodeLayer.fields())
                         feat.setGeometry(QgsGeometry.fromPoint(QgsPoint(lon, lat)))
-    #                     attributes = []
+
                         i = 0
                         ats = l.split(';')
                         for f in ats:
                             feat.setAttribute(i, f)
                             i += 1
-    #                         attributes[i] = f
                         
-    #                     feat.setAttributes(attributes)
+                        end = ponto.address
+                        feat.setAttribute(i,end.decode('utf-8'))
                         
                         pr.addFeatures([feat])                    
                                             
                         self.listaPontos.append(ponto)
                     else:
-                        self.notfound.append(l.encode('utf-8'))
+                        self.notfound.append(l.decode('utf-8'))
                     ln = ln + 1
                     self.progressBar.setValue(ln)
                         
@@ -256,8 +259,9 @@ class Interface(QtGui.QDockWidget, GUI):
                         return
                     
                     if ponto != '':
-                        lat = float(ponto['lat'])
-                        lon = float(ponto['lng'])
+                        print ponto
+                        lat = ponto.latitude
+                        lon = ponto.longitude
                         feat = QgsFeature()
                         feat.setFields(self.geocodeLayer.fields())
                         feat.setGeometry(QgsGeometry.fromPoint(QgsPoint(lon, lat)))
@@ -267,14 +271,14 @@ class Interface(QtGui.QDockWidget, GUI):
                         for f in ats:
                             feat.setAttribute(i, f)
                             i += 1
-    #                         attributes[i] = f
-                        
-    #                     feat.setAttributes(attributes)
-                        
+                            
+                        end = ponto.address
+                        feat.setAttribute(i,end.decode('utf-8'))
+                      
                         pr.addFeatures([feat])                 
                         self.listaPontos.append(ponto)
                     else:
-                        self.notfound.append(l.encode('utf-8'))
+                        self.notfound.append(l.decode('utf-8'))
                     ln = ln + 1
                     self.progressBar.setValue(ln)
                     
@@ -332,18 +336,15 @@ class Interface(QtGui.QDockWidget, GUI):
     
     def doGeocode(self, r, b = '', c = '', e = ''):
         if b != '':
-            endereco = r + ', ' + b + ', ' + c + ', ' + e + ', '
+            endereco = r + ', ' + b + ', ' + c + ', ' + e
         else:
             endereco = r
         
         try:
-#             geocode_result = self.gmaps.geocode(endereco, region='br')
-            geocode_result = self.gmaps.geocode(endereco)
-            location = geocode_result[0]['geometry']['location']
+            location = self.geolocator.geocode(endereco)
+            if location is None:
+                print u'Não encontrado - ' + endereco
             return location
-        
-        except googlemaps.exceptions.TransportError:
-            return 'Network error'
         
         except:
             print u'Não encontrado - ' + endereco
@@ -353,9 +354,13 @@ class Interface(QtGui.QDockWidget, GUI):
         if p != '':
             try:
     #             geocode_result = self.gmaps.geocode(endereco, region='br')
-                geocode_result = self.gmaps.reverse_geocode((p.y(), p.x()))
-                location = geocode_result[0]['formatted_address']
-                return location
+#                 geocode_result = self.gmaps.reverse_geocode((p.y(), p.x()))
+#                 location = geocode_result[0]['formatted_address']
+                ponto = str(p.y()) + ', ' + str(p.x())
+                location = self.geolocator.reverse(ponto)
+                if location is None:
+                    print u'Não encontrado - (' + ponto + u')'
+                return location.address
             
             except:
                 print u'Não encontrado - ' + str((p.x(),p.y()))

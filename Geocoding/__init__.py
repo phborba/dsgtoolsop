@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from main import Main
-import googlemaps
 
 def name():
     return "Geocodificação"
