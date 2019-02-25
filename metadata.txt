@@ -10,7 +10,11 @@
 name=DSGTools Op
 qgisMinimumVersion=2.14
 description=Ferramentas para planejamento militar do Exército Brasileiro
+<<<<<<< HEAD
+version=1.2.2
+=======
 version=1.2.1
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -52,6 +56,10 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+<<<<<<< HEAD
+	1.2.2 - Atualização da Simbologia Militar
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
 	1.2.1 - Alteração da API de geocodificação - Google para Bing
 	1.2   - Correção de bugs
 	1.1   - Correção de bugs
@@ -69,6 +77,10 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+<<<<<<< HEAD
+	1.2.2 - Military Simbology update
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
 	1.2.1 - Geocoding API changing - Google to Bing
 	1.2   - Bug fixes
 	1.1   - Bug fixes

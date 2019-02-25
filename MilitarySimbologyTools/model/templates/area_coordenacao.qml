@@ -1,5 +1,9 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<<<<<<< HEAD
+<qgis version="2.18.16" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+=======
 <qgis version="2.18.12" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <edittypes>
     <edittype widgetv2type="Hidden" name="pkuid">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -40,6 +44,12 @@
         <value key="Sem Borda" value="0"/>
       </widgetv2config>
     </edittype>
+<<<<<<< HEAD
+    <edittype widgetv2type="Color" name="Cor">
+      <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </edittypes>
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{bf08afee-de2a-4654-8cdc-2d048a553fb7}">
@@ -759,8 +769,13 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
+<<<<<<< HEAD
+    <rules key="{2821116e-7b8e-430e-8338-b2287d8a527d}">
+      <rule description="Z Dsmb Helicopteros" filter="&quot;tipo&quot;= 15" key="{53e040d9-d6c9-4fd3-bdcc-e15867ed5f6b}">
+=======
     <rules key="{f6f20c9e-9555-4b60-9cf7-02626f7e225d}">
       <rule description="Z Dsmb Helicopteros" filter="&quot;tipo&quot;= 15" key="{b537c4a6-cc94-4ed4-904f-45290228620c}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -781,7 +796,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="B Pa" filter="&quot;tipo&quot;= 2" key="{3196ca93-2cbc-48bf-9e56-433b56fe64a6}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="B Pa" filter="&quot;tipo&quot;= 2" key="{00f58460-bfa1-46b1-98d5-25dfb86bd2af}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'B Pa'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -801,7 +820,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="B Pa" filter="&quot;tipo&quot;= 2" key="{24b5e8ad-bfd1-4b31-a8ea-5bff1450c58c}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="B Pa" filter="&quot;tipo&quot;= 2" key="{4795f26b-1373-4dfc-b2c9-a62798925682}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="225" fieldName="'B Pa'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -821,7 +844,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="1000000" description="B Pa" filter="&quot;tipo&quot;= 2" key="{5835f4ca-9c33-44f8-a8c4-bc2232114c4d}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="1000000" description="B Pa" filter="&quot;tipo&quot;= 2" key="{93769209-c1c3-478f-b643-5022a847f1bc}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="250" fieldName="'B Pa'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -841,7 +868,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="Z Ater" filter="&quot;tipo&quot;= 6" key="{eb8a2ba6-8e5e-4d69-94a5-90485ef0c3a1}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="Z Ater" filter="&quot;tipo&quot;= 6" key="{03f590ed-741c-41ae-a6eb-010e189adea5}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'Z Ater'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -861,7 +892,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="Z Ater" filter="&quot;tipo&quot;= 6" key="{7cb27a63-9067-4232-96e9-c5b874dda46a}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="Z Ater" filter="&quot;tipo&quot;= 6" key="{b4147843-08dd-4cce-8fa1-d06307df527d}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="145" fieldName="'Z Ater'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -881,7 +916,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="1000000" description="Z Ater" filter="&quot;tipo&quot;= 6" key="{4999ea19-09ad-4aa7-862b-7d1455fca83a}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="1000000" description="Z Ater" filter="&quot;tipo&quot;= 6" key="{61d24f09-59af-480c-bedd-990ce4ef4b9d}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="260" fieldName="'Z Ater'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -901,7 +940,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="Z Ater(Alt)" filter="&quot;tipo&quot;= 7" key="{2e257b64-3590-4cf0-a5d6-5ce62c580223}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="Z Ater(Alt)" filter="&quot;tipo&quot;= 7" key="{89f4625c-968a-4956-8b62-a6c4172d5dee}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'Z Ater(Altn)'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -921,7 +964,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="Z Ater(Alt)" filter="&quot;tipo&quot;= 7" key="{9b1c85ac-d61f-41b4-8ee0-cc9086e080a2}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="Z Ater(Alt)" filter="&quot;tipo&quot;= 7" key="{dd6a5d2e-34b9-48c6-9f12-040827b795fe}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="145" fieldName="'Z Ater(Altn)'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -941,7 +988,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="1000000" description="Z Ater(Alt)" filter="&quot;tipo&quot;= 7" key="{52c89464-9238-433a-bc1e-d167f0f1b9b2}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="1000000" description="Z Ater(Alt)" filter="&quot;tipo&quot;= 7" key="{f776bd1b-5d00-4541-8bc2-166988e19e5e}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="260" fieldName="'Z Ater(Altn)'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -961,7 +1012,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="A Ap Log" filter="&quot;tipo&quot;= 3" key="{6345df32-2423-4401-a930-360376cfbfd4}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="A Ap Log" filter="&quot;tipo&quot;= 3" key="{80895f46-955f-4320-b5a5-1fd61a391192}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'A Ap Log'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -982,7 +1037,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="A Ap Log" filter="&quot;tipo&quot;= 3" key="{6e5ccad4-f654-4583-a65c-1957f54c21be}" scalemindenom="49999">
+=======
       <rule scalemaxdenom="99999" description="A Ap Log" filter="&quot;tipo&quot;= 3" key="{83c4bdab-1d5c-4ac3-bd84-6c20bc39008b}" scalemindenom="49999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'A Ap Log'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1003,7 +1062,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="999999" description="A Ap Log" filter="&quot;tipo&quot;= 3" key="{7c2f36b0-2980-49cc-bc09-ac2318f39044}" scalemindenom="100000">
+=======
       <rule scalemaxdenom="999999" description="A Ap Log" filter="&quot;tipo&quot;= 3" key="{d87703c2-f788-4ce6-8256-1bcd90cce719}" scalemindenom="100000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'A Ap Log'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1024,7 +1087,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="ZPH" filter="&quot;tipo&quot;= 5" key="{2d0eba5d-da55-4118-80d6-0ff690ce354a}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="ZPH" filter="&quot;tipo&quot;= 5" key="{803eae59-4425-43c7-a1a9-20f6411444bb}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="10" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="120" fieldName="'ZPH'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1044,7 +1111,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="ZPH" filter="&quot;tipo&quot;= 5" key="{b3c3b8f1-0b29-4fea-92a3-cfb397ba18e6}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="ZPH" filter="&quot;tipo&quot;= 5" key="{10ffd932-2648-4ab1-bcc3-51f36109d16e}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="10" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="230" fieldName="'ZPH'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1064,7 +1135,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="999999" description="ZPH" filter="&quot;tipo&quot;= 5" key="{91780fbd-84f9-4c37-bf4c-94913d23d36f}" scalemindenom="100000">
+=======
       <rule scalemaxdenom="999999" description="ZPH" filter="&quot;tipo&quot;= 5" key="{18f96079-4064-4cd3-bd80-804f8c0a1e6d}" scalemindenom="100000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="10" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="330" fieldName="'ZPH'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1084,7 +1159,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="AOGI" filter="&quot;tipo&quot;= 13" key="{aec0b363-1054-4bd0-b3d3-6473690c80bb}">
+=======
       <rule description="AOGI" filter="&quot;tipo&quot;= 13" key="{f8ae0584-d9a0-46e4-9a13-902bd2e7918b}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'AOGI'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1104,7 +1183,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Local de Aterragem" filter="&quot;tipo&quot;= 11" key="{82f34d1d-e7d4-4105-8e01-d191ef4b7630}">
+=======
       <rule description="Local de Aterragem" filter="&quot;tipo&quot;= 11" key="{add13a31-4c6c-4290-b278-8c107a199194}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'Loc Ater'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1124,7 +1207,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="Fogos" filter="&quot;tipo&quot; in(12,8,9)" key="{ab64728b-0fbd-4dc8-9f19-716b2f8630ed}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="Fogos" filter="&quot;tipo&quot; in(12,8,9)" key="{9f77fc1d-6252-4444-b01b-367e3b918208}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="120" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1141,7 +1228,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="Fogos" filter="&quot;tipo&quot; in(12,8,9)" key="{16c4b8f6-b6df-4bf1-9666-63d718c383cd}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="Fogos" filter="&quot;tipo&quot; in(12,8,9)" key="{38c2d2d6-2cf7-4efb-a08f-1a6c60e8f89b}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="180" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1158,7 +1249,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="999999" description="Fogos" filter="&quot;tipo&quot; in(12,8,9)" key="{e8cd1e73-f353-4a01-89f5-89a2923d4111}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="999999" description="Fogos" filter="&quot;tipo&quot; in(12,8,9)" key="{efad3f44-466d-4d50-b989-f40f9ff0c09e}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="280" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1175,7 +1270,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Área Interditada" filter="&quot;tipo&quot;= 1" key="{f6b8853b-c135-4a7f-a0b5-dbb12cc64cd5}">
+=======
       <rule description="Área Interditada" filter="&quot;tipo&quot;= 1" key="{7c0c6d3f-4940-4317-8569-6e536f3359d2}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="'Área Interditada'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1191,7 +1290,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Z Desb" filter="&quot;tipo&quot;= 4" key="{70783120-4e30-4904-ba07-e86d9c465b6f}">
+=======
       <rule description="Z Desb" filter="&quot;tipo&quot;= 4" key="{02d2b008-1db5-48f8-9504-7a062f43fa36}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="80" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1207,7 +1310,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="Objetivo" filter=" &quot;tipo&quot;  = 16" key="{946939a8-c7d0-430f-b810-372bbf61446e}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="Objetivo" filter=" &quot;tipo&quot;  = 16" key="{b9b6c737-3251-4e2f-987d-99675ad4ea68}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="120" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1224,7 +1331,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="Objetivo" filter=" &quot;tipo&quot;  = 16" key="{f3f82f23-f5fb-4211-b3f8-477ba46b9231}" scalemindenom="49999">
+=======
       <rule scalemaxdenom="99999" description="Objetivo" filter=" &quot;tipo&quot;  = 16" key="{9db74275-510c-4ce9-b29e-af9364ad0d62}" scalemindenom="49999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="180" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1241,7 +1352,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="999999" description="Objetivo" filter=" &quot;tipo&quot;  = 16" key="{46bab57c-7e23-467c-b2e4-0441df8eb75f}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="999999" description="Objetivo" filter=" &quot;tipo&quot;  = 16" key="{1ddb864d-b1e3-41e8-8ba2-e609063b1b41}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="260" fieldName="nome" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1456,13 +1571,21 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>../../PROGRA~1/QGIS2~1.18/bin</annotationform>
+=======
   <annotationform>../../../../PROGRA~1/QGIS2~1.18/bin</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="tipo" index="1" name="Tipo"/>
     <alias field="nome" index="2" name="Nome"/>
     <alias field="situacao" index="3" name="Situação"/>
     <alias field="Borda" index="4" name=""/>
+<<<<<<< HEAD
+    <alias field="Cor" index="5" name=""/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -1475,12 +1598,22 @@
       <column width="-1" hidden="0" type="field" name="nome"/>
       <column width="-1" hidden="0" type="field" name="situacao"/>
       <column width="-1" hidden="0" type="field" name="Borda"/>
+<<<<<<< HEAD
+      <column width="-1" hidden="0" type="field" name="Cor"/>
+    </columns>
+  </attributetableconfig>
+  <editform>../../PROGRA~1/QGIS2~1.18/bin</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>../../PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+=======
     </columns>
   </attributetableconfig>
   <editform>../../../../PROGRA~1/QGIS2~1.18/bin</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../../PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- coding: utf-8 -*-"""QGIS forms can have a Python function that is called when the form isopened.Use this function to add extra logic to your forms.Enter the name of the function in the "Python Init function"field.An example follows:"""from qgis.PyQt.QtWidgets import QWidgetdef my_form_open(dialog, layer, feature):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
@@ -1495,6 +1628,10 @@
     <default field="nome" expression=""/>
     <default field="situacao" expression="1"/>
     <default field="Borda" expression="0"/>
+<<<<<<< HEAD
+    <default field="Cor" expression="'#000000'"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </defaults>
   <previewExpression>COALESCE("pkuid", '&lt;NULL>')</previewExpression>
   <layerGeometryType>2</layerGeometryType>

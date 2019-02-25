@@ -1,5 +1,9 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<<<<<<< HEAD
+<qgis version="2.18.16" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+=======
 <qgis version="2.18.12" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <edittypes>
     <edittype widgetv2type="Hidden" name="pkuid">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -45,6 +49,12 @@
         <value key="Sem Borda" value="0"/>
       </widgetv2config>
     </edittype>
+<<<<<<< HEAD
+    <edittype widgetv2type="Color" name="Cor">
+      <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </edittypes>
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{6ad5d531-05d2-49f4-ae76-7db1a41ebd32}">
@@ -4072,13 +4082,21 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>../../PROGRA~1/QGIS2~1.18/bin</annotationform>
+=======
   <annotationform>../../../../PROGRA~1/QGIS2~1.18/bin</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="designacao" index="1" name="Designação"/>
     <alias field="escalao" index="2" name="Escalão"/>
     <alias field="situacao" index="3" name="Situação"/>
     <alias field="Borda" index="4" name=""/>
+<<<<<<< HEAD
+    <alias field="Cor" index="5" name=""/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -4091,12 +4109,22 @@
       <column width="-1" hidden="1" type="actions"/>
       <column width="-1" hidden="0" type="field" name="situacao"/>
       <column width="-1" hidden="0" type="field" name="Borda"/>
+<<<<<<< HEAD
+      <column width="-1" hidden="0" type="field" name="Cor"/>
+    </columns>
+  </attributetableconfig>
+  <editform>../../PROGRA~1/QGIS2~1.18/bin</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>../../PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+=======
     </columns>
   </attributetableconfig>
   <editform>../../../../PROGRA~1/QGIS2~1.18/bin</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../../PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- coding: utf-8 -*-"""QGIS forms can have a Python function that is called when the form isopened.Use this function to add extra logic to your forms.Enter the name of the function in the "Python Init function"field.An example follows:"""from qgis.PyQt.QtWidgets import QWidgetdef my_form_open(dialog, layer, feature):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
@@ -4111,6 +4139,10 @@
     <default field="escalao" expression=""/>
     <default field="situacao" expression="1"/>
     <default field="Borda" expression="0"/>
+<<<<<<< HEAD
+    <default field="Cor" expression="'#000000'"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </defaults>
   <previewExpression>COALESCE("pkuid", '&lt;NULL>')</previewExpression>
   <layerGeometryType>2</layerGeometryType>

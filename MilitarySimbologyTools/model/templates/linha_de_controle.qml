@@ -1,5 +1,9 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<<<<<<< HEAD
+<qgis version="2.18.16" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+=======
 <qgis version="2.18.12" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <edittypes>
     <edittype widgetv2type="Hidden" name="pkuid">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -33,6 +37,19 @@
         <value key="Sem Borda" value="0"/>
       </widgetv2config>
     </edittype>
+<<<<<<< HEAD
+    <edittype widgetv2type="Color" name="Cor">
+      <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="rot_simb">
+      <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="x_label">
+      <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+    <edittype widgetv2type="TextEdit" name="y_label">
+      <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+=======
     <edittype widgetv2type="Hidden" name="rot_simb">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
@@ -41,6 +58,7 @@
     </edittype>
     <edittype widgetv2type="Hidden" name="y_label">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
     </edittype>
   </edittypes>
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
@@ -80,6 +98,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -124,6 +149,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -174,6 +206,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -220,6 +259,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -262,6 +308,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -306,6 +359,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -352,6 +412,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -398,6 +465,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MapUnit"/>
@@ -438,8 +512,13 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
+<<<<<<< HEAD
+    <rules key="{21153a1e-574d-474c-9f4a-eddd1ee7f5c6}">
+      <rule description="Linha de Partida (Esq)" filter=" &quot;tipo&quot; = 1" key="{d5e09c4e-1a2a-489f-b147-6a67c97991ba}">
+=======
     <rules key="{1926a15a-0401-4c83-b841-a12a25879f6d}">
       <rule description="Linha de Partida (Esq)" filter=" &quot;tipo&quot; = 1" key="{e61a5a39-cd9e-4097-8125-4e9d16c51030}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LP'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -459,7 +538,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Contato (Esq)" filter=" &quot;tipo&quot; = 2" key="{55b2eaf6-ddb4-465f-b5f9-2a4a2a97b3d3}">
+=======
       <rule description="Linha de Contato (Esq)" filter=" &quot;tipo&quot; = 2" key="{46f03270-c893-4186-9582-85ed4eb1f758}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LC'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -479,7 +562,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Controle (Esq)" filter=" &quot;tipo&quot; = 3" key="{3c46cff4-945d-4919-9f18-cb0d36847e96}">
+=======
       <rule description="Linha de Controle (Esq)" filter=" &quot;tipo&quot; = 3" key="{df931f4b-e9e8-4aae-95db-a491a768af75}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LCt ' +  &quot;nome&quot; " namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -499,7 +586,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Limite Anterior à Área de Defesa Avançada (Esq)" filter=" &quot;tipo&quot; = 6" key="{15752d14-5bcf-4e06-a8d4-cbb238d7cfec}">
+=======
       <rule description="Limite Anterior à Área de Defesa Avançada (Esq)" filter=" &quot;tipo&quot; = 6" key="{20ceb078-31f9-471f-8684-84b28380f3e2}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LAADA'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -519,7 +610,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Partida e Contato (Esq)" filter=" &quot;tipo&quot; = 7" key="{9b4c9b05-0f6d-422c-b23f-03563cb677f9}">
+=======
       <rule description="Linha de Partida e Contato (Esq)" filter=" &quot;tipo&quot; = 7" key="{7b60e8da-1c3e-444b-a9bc-d73a09e1c9c3}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LP / LC'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -539,7 +634,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Limite Avançado de Trabalho (Esq)" filter=" &quot;tipo&quot; = 9" key="{382e7478-73ae-4083-89fd-acc48dabc7e3}">
+=======
       <rule description="Limite Avançado de Trabalho (Esq)" filter=" &quot;tipo&quot; = 9" key="{7dc7fb14-ced6-4fc1-a458-a67461c34075}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LAT'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -559,7 +658,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Limite Avançado das Posições Amigas (Esq)" filter=" &quot;tipo&quot; = 10" key="{1f4d900a-babd-458e-a34d-66142e28927d}">
+=======
       <rule description="Limite Avançado das Posições Amigas (Esq)" filter=" &quot;tipo&quot; = 10" key="{fb823728-d4c4-402e-a074-2976d8e5fe00}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LAPA'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -579,7 +682,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Partida (Dir)" filter=" &quot;tipo&quot; = 1" key="{5eac86ae-6f89-4e6c-aa65-801d7ae65561}">
+=======
       <rule description="Linha de Partida (Dir)" filter=" &quot;tipo&quot; = 1" key="{158e0442-df81-4e4e-9004-a0e4044e4529}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LP'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -599,7 +706,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Contato (Dir)" filter=" &quot;tipo&quot; = 2" key="{00778d04-e498-4d2f-8842-f0ee205016f6}">
+=======
       <rule description="Linha de Contato (Dir)" filter=" &quot;tipo&quot; = 2" key="{87050451-18ad-4947-af2a-db1a1959d9c0}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LC'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -619,7 +730,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Controle (Dir)" filter=" &quot;tipo&quot; = 3" key="{5aaa360d-6fda-4954-a432-df76f5c6b1b8}">
+=======
       <rule description="Linha de Controle (Dir)" filter=" &quot;tipo&quot; = 3" key="{26e5d10e-5161-4aec-9efe-71eea8018303}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LCt '  +   &quot;nome&quot; " namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -639,7 +754,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Limite Anterior à Área de Defesa Avançada (Dir)" filter=" &quot;tipo&quot; = 6" key="{e4289bee-a1bf-4890-b062-e57e6647917c}">
+=======
       <rule description="Limite Anterior à Área de Defesa Avançada (Dir)" filter=" &quot;tipo&quot; = 6" key="{3efe67e9-3c8c-4a69-9b60-b5512894159a}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LAADA'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -659,7 +778,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Partida e Contato (Dir)" filter=" &quot;tipo&quot; = 7" key="{b6c0b3a3-cbc1-4c46-bd9c-9f6318404a0f}">
+=======
       <rule description="Linha de Partida e Contato (Dir)" filter=" &quot;tipo&quot; = 7" key="{fc4d1443-1215-4ff3-a11c-78f4cc75c19e}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LP/ LC'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -679,7 +802,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Limite Avançado de Trabalho (Dir)" filter=" &quot;tipo&quot; =9" key="{bae9caa2-f52f-4feb-9aca-b3b2a741bfee}">
+=======
       <rule description="Limite Avançado de Trabalho (Dir)" filter=" &quot;tipo&quot; =9" key="{12130a2e-5503-4738-a9ce-9b3e00ccddb4}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LAT'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -699,7 +826,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description=" Limite Avançado das Posições Amigas (Dir)" filter=" &quot;tipo&quot; = 10" key="{6a6b5c4b-c9c4-41bb-842c-3b7e1dd56b62}">
+=======
       <rule description=" Limite Avançado das Posições Amigas (Dir)" filter=" &quot;tipo&quot; = 10" key="{0531a2d7-23af-4276-b9fc-7e9d1d80aa07}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LAPA'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -719,7 +850,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="LC Pnt Amv " filter=" &quot;tipo&quot;  = 4" key="{fbadaed8-7128-4647-8529-322da5a609ff}">
+=======
       <rule description="LC Pnt Amv " filter=" &quot;tipo&quot;  = 4" key="{67bcc6de-d39e-4b6b-8782-ceb4fc47cc28}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LC Pnt Amv'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -740,7 +875,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="LC Pnt Ae" filter=" &quot;tipo&quot;  = 5" key="{4aec5688-8d4f-45d7-b290-8fe83a433c58}">
+=======
       <rule description="LC Pnt Ae" filter=" &quot;tipo&quot;  = 5" key="{4acaf2d8-4004-4b4a-8897-e062fbec333c}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LC Pnt Ae'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -761,7 +900,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="LET" filter=" &quot;tipo&quot;  = 8" key="{4338fa85-8151-4a8e-aabe-54086cebc4c1}">
+=======
       <rule description="LET" filter=" &quot;tipo&quot;  = 8" key="{801fa6fd-104c-4b0f-8fa0-cc13b6b66232}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LET'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -782,7 +925,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="LCP" filter=" &quot;tipo&quot;  = 11" key="{f3698dab-2c8f-4e02-b6b5-5b30558f305a}">
+=======
       <rule description="LCP" filter=" &quot;tipo&quot;  = 11" key="{235fdfac-d9a4-4239-873d-abb4642aa766}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LCP'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -803,7 +950,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Linha de Cerco" filter=" &quot;tipo&quot;  = 12" key="{6becec55-bc82-4384-a2a3-b2970ee2ee8b}">
+=======
       <rule description="Linha de Cerco" filter=" &quot;tipo&quot;  = 12" key="{0981ee7e-87ad-4a4b-a882-35d77a35ce9e}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="125" fieldName="'L Cerco'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -824,7 +975,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Local de Reorganização" filter=" &quot;tipo&quot;  = 15" key="{1247b2fa-7c4b-4df0-b767-5c4418c060d9}">
+=======
       <rule description="Local de Reorganização" filter=" &quot;tipo&quot;  = 15" key="{7f67a1dd-827b-47b8-a8cc-35034f95ce46}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="125" fieldName="'L Reo'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -845,7 +1000,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="LRS" filter=" &quot;tipo&quot;  = 13" key="{9c13ac7d-fd7e-48e8-96f9-9123ec9ab8fd}">
+=======
       <rule description="LRS" filter=" &quot;tipo&quot;  = 13" key="{5872f4ff-bf25-46f7-9372-b90df55e8dc6}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'LRS'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -866,7 +1025,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Limite Posterior do Teatro de Operações" filter=" &quot;tipo&quot;  = 14" key="{f7f7d5d8-5342-4cdb-9098-5f4653ec2275}">
+=======
       <rule description="Limite Posterior do Teatro de Operações" filter=" &quot;tipo&quot;  = 14" key="{1b4429cd-5206-403c-9057-6a920404931e}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'XXXXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1083,15 +1246,26 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="2" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>PROGRA~1/QGIS2~1.18/bin</annotationform>
+=======
   <annotationform>../../../../PROGRA~1/QGIS2~1.18/bin</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="tipo" index="1" name="Tipo"/>
     <alias field="nome" index="2" name="Nome"/>
     <alias field="Borda" index="3" name=""/>
+<<<<<<< HEAD
+    <alias field="Cor" index="4" name=""/>
+    <alias field="rot_simb" index="5" name=""/>
+    <alias field="x_label" index="6" name=""/>
+    <alias field="y_label" index="7" name=""/>
+=======
     <alias field="rot_simb" index="4" name=""/>
     <alias field="x_label" index="5" name=""/>
     <alias field="y_label" index="6" name=""/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -1106,12 +1280,22 @@
       <column width="-1" hidden="0" type="field" name="x_label"/>
       <column width="-1" hidden="0" type="field" name="y_label"/>
       <column width="-1" hidden="0" type="field" name="Borda"/>
+<<<<<<< HEAD
+      <column width="-1" hidden="0" type="field" name="Cor"/>
+    </columns>
+  </attributetableconfig>
+  <editform>PROGRA~1/QGIS2~1.18/bin</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+=======
     </columns>
   </attributetableconfig>
   <editform>../../../../PROGRA~1/QGIS2~1.18/bin</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../../PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- codificação: utf-8 -*-"""Os formulários do QGIS podem ter uma função Python que é chamada quandoo formulário é aberto.QGIS forms can have a Python function that is called when the form isopened.Use esta função para adicionar lógica extra aos seus formulários.Entre com o nome da função no campo "Python Init function".Un exemplo a seguir:"""a partir de PyQt4.QtGui importe QWidgetdef my_form_open(diálogo, camada, feição):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
@@ -1125,6 +1309,10 @@
     <default field="tipo" expression=""/>
     <default field="nome" expression=""/>
     <default field="Borda" expression="0"/>
+<<<<<<< HEAD
+    <default field="Cor" expression="'#000000'"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
     <default field="rot_simb" expression="degrees(  &#xd;&#xa;atan2(  &#xd;&#xa;y(line_interpolate_point($geometry,  length(  $geometry )/2+580.0020)) &#xd;&#xa;-y(line_interpolate_point($geometry,  length(  $geometry )/2-580.0020)),&#xd;&#xa;x(line_interpolate_point($geometry,  length(  $geometry )/2+580.0020)) &#xd;&#xa;-x(line_interpolate_point($geometry,  length(  $geometry )/2-580.0020))))"/>
     <default field="x_label" expression="x(line_interpolate_point($geometry, length ($geometry)/2))"/>
     <default field="y_label" expression="y(line_interpolate_point($geometry, length ($geometry)/2- 580.005)) + 0.0000"/>

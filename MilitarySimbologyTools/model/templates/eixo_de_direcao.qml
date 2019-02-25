@@ -1,5 +1,9 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<<<<<<< HEAD
+<qgis version="2.18.16" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+=======
 <qgis version="2.18.12" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <edittypes>
     <edittype widgetv2type="Hidden" name="pkuid">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -10,6 +14,10 @@
         <value key="Direção de ataque principal" value="2"/>
         <value key="Eixo de progressão" value="1"/>
         <value key="Estrada principal de suprimento" value="4"/>
+<<<<<<< HEAD
+        <value key="Itinerário de Progressão" value="5"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
       </widgetv2config>
     </edittype>
     <edittype widgetv2type="UniqueValues" name="nome">
@@ -22,6 +30,12 @@
         <value key="Sem Borda" value="0"/>
       </widgetv2config>
     </edittype>
+<<<<<<< HEAD
+    <edittype widgetv2type="Color" name="Cor">
+      <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </edittypes>
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{abe70e90-79f8-46e1-9eb4-818b6ab1f92e}">
@@ -34,10 +48,20 @@
       <rule scalemaxdenom="49999" filter=" &quot;tipo&quot;  = 3" key="{33f0787f-12d8-4170-bfcf-d0069c31b2eb}" symbol="6" scalemindenom="1000" label="Direção de Ataque "/>
       <rule scalemaxdenom="99999" filter=" &quot;tipo&quot;  = 3" key="{d6cf6742-4c16-4021-b991-c71cc2c7b5b8}" symbol="7" scalemindenom="50000" label="Direção de Ataque "/>
       <rule scalemaxdenom="999999" filter=" &quot;tipo&quot;  = 3" key="{3dfb5b12-dbb0-49e7-9b87-b09abf7aa8c1}" symbol="8" scalemindenom="99999" label="Direção de Ataque "/>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" filter=" &quot;tipo&quot;  = 4" key="{18b34806-5528-4ca6-b0d7-3ec138e79eda}" symbol="9" scalemindenom="1000" label="Estrada Principal de Suprimento"/>
+      <rule scalemaxdenom="99999" filter=" &quot;tipo&quot;  = 4" key="{8fcde2fe-2f00-499f-92d5-907064737821}" symbol="10" scalemindenom="50000" label="Estrada Principal de Suprimento"/>
+      <rule scalemaxdenom="999999" filter=" &quot;tipo&quot;  = 4" key="{c1a12987-2667-43b7-88ec-994375f85a1e}" symbol="11" scalemindenom="100000" label="Estrada Principal de Suprimento"/>
+      <rule scalemaxdenom="49999" filter=" &quot;tipo&quot;  = 5" key="{86e36ac9-129f-44e1-b1bc-21f6a8e0e6a5}" symbol="12" scalemindenom="1000" label="Itinerário de Progressão"/>
+      <rule scalemaxdenom="99999" filter=" &quot;tipo&quot;  = 5" key="{801a9f0c-14c7-4eb0-91bb-9377a5b53b80}" symbol="13" scalemindenom="50000" label="Itinerário de Progressão"/>
+      <rule scalemaxdenom="999999" filter=" &quot;tipo&quot;  = 5" key="{8dcaeb71-d2f6-4c55-aac8-99e8ce4d490b}" symbol="14" scalemindenom="100000" label="Itinerário de Progressão"/>
+      <rule filter="ELSE" key="{b49fbab3-2d19-4597-bb75-51140e40a40c}" symbol="15"/>
+=======
       <rule scalemaxdenom="49999" filter=" &quot;tipo&quot;  = 4" key="{86e36ac9-129f-44e1-b1bc-21f6a8e0e6a5}" symbol="9" scalemindenom="1000" label="Estrada Principal de Suprimento"/>
       <rule scalemaxdenom="99999" filter=" &quot;tipo&quot;  = 4" key="{801a9f0c-14c7-4eb0-91bb-9377a5b53b80}" symbol="10" scalemindenom="50000" label="Estrada Principal de Suprimento"/>
       <rule scalemaxdenom="999999" filter=" &quot;tipo&quot;  = 4" key="{8dcaeb71-d2f6-4c55-aac8-99e8ce4d490b}" symbol="11" scalemindenom="100000" label="Estrada Principal de Suprimento"/>
       <rule filter="ELSE" key="{b49fbab3-2d19-4597-bb75-51140e40a40c}" symbol="12"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
     </rules>
     <symbols>
       <symbol alpha="1" clip_to_extent="1" type="line" name="0">
@@ -133,6 +157,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -153,6 +184,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -173,6 +211,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -236,6 +281,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -253,6 +305,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -362,6 +421,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -382,6 +448,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -402,6 +475,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -465,6 +545,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -482,6 +569,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -522,6 +616,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -577,6 +678,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -621,6 +729,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -676,6 +791,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -701,6 +823,141 @@
           <prop k="capstyle" v="square"/>
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+<<<<<<< HEAD
+          <prop k="customdash_unit" v="MapUnit"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="250,250,250,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="21"/>
+          <prop k="line_width_unit" v="MapUnit"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MapUnit"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_dd_active" v="1"/>
+          <prop k="width_dd_expression" v=""/>
+          <prop k="width_dd_field" v="Borda"/>
+          <prop k="width_dd_useexpr" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MapUnit"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="0,0,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="20"/>
+          <prop k="line_width_unit" v="MapUnit"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MapUnit"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" clip_to_extent="1" type="line" name="13">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MapUnit"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="250,250,250,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="21"/>
+          <prop k="line_width_unit" v="MapUnit"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MapUnit"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_dd_active" v="1"/>
+          <prop k="width_dd_expression" v="2* &quot;Borda&quot;"/>
+          <prop k="width_dd_field" v="Borda"/>
+          <prop k="width_dd_useexpr" v="1"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MapUnit"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="0,0,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="55"/>
+          <prop k="line_width_unit" v="MapUnit"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MapUnit"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" clip_to_extent="1" type="line" name="14">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MapUnit"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="250,250,250,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="21"/>
+          <prop k="line_width_unit" v="MapUnit"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MapUnit"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_dd_active" v="1"/>
+          <prop k="width_dd_expression" v="3.5* &quot;Borda&quot;"/>
+          <prop k="width_dd_field" v="Borda"/>
+          <prop k="width_dd_useexpr" v="1"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="customdash_unit" v="MapUnit"/>
+          <prop k="draw_inside_polygon" v="0"/>
+          <prop k="joinstyle" v="bevel"/>
+          <prop k="line_color" v="0,0,0,255"/>
+          <prop k="line_style" v="solid"/>
+          <prop k="line_width" v="85"/>
+          <prop k="line_width_unit" v="MapUnit"/>
+          <prop k="offset" v="0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MapUnit"/>
+          <prop k="use_custom_dash" v="0"/>
+          <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+        </layer>
+      </symbol>
+      <symbol alpha="1" clip_to_extent="1" type="line" name="15">
+        <layer pass="0" class="SimpleLine" locked="0">
+          <prop k="capstyle" v="square"/>
+          <prop k="customdash" v="5;2"/>
+          <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash_unit" v="MM"/>
           <prop k="draw_inside_polygon" v="0"/>
           <prop k="joinstyle" v="bevel"/>
@@ -808,6 +1065,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -828,6 +1092,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -848,6 +1119,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -911,6 +1189,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -928,6 +1213,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1033,6 +1325,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1053,6 +1352,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -1073,6 +1379,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1132,6 +1445,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1174,6 +1494,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1191,6 +1518,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="0"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1212,6 +1546,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1317,6 +1658,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1337,6 +1685,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -1357,6 +1712,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1416,6 +1778,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1479,6 +1848,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1496,6 +1872,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1601,6 +1984,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1621,6 +2011,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -1641,6 +2038,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1700,6 +2104,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
@@ -1763,6 +2174,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1780,6 +2198,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1820,6 +2245,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1851,6 +2283,13 @@
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="0,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="fill_dd_active" v="1"/>
+              <prop k="fill_dd_expression" v=""/>
+              <prop k="fill_dd_field" v="Cor"/>
+              <prop k="fill_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="symbol/poi_peak.svg"/>
               <prop k="offset" v="0,0"/>
@@ -1897,6 +2336,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -1928,6 +2374,13 @@
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="0,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="fill_dd_active" v="1"/>
+              <prop k="fill_dd_expression" v=""/>
+              <prop k="fill_dd_field" v="Cor"/>
+              <prop k="fill_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="symbol/poi_peak.svg"/>
               <prop k="offset" v="0,0"/>
@@ -1974,6 +2427,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -2005,6 +2465,13 @@
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="90"/>
               <prop k="color" v="0,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="fill_dd_active" v="1"/>
+              <prop k="fill_dd_expression" v=""/>
+              <prop k="fill_dd_field" v="Cor"/>
+              <prop k="fill_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="symbol/poi_peak.svg"/>
               <prop k="offset" v="0,0"/>
@@ -2051,6 +2518,13 @@
         </layer>
         <layer pass="0" class="SimpleLine" locked="0">
           <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="customdash" v="5;2"/>
           <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="customdash_unit" v="MapUnit"/>
@@ -2106,6 +2580,13 @@
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+              <prop k="color_border_dd_active" v="1"/>
+              <prop k="color_border_dd_expression" v=""/>
+              <prop k="color_border_dd_field" v="Cor"/>
+              <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="arrowhead"/>
@@ -2129,8 +2610,13 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
+<<<<<<< HEAD
+    <rules key="{696d05eb-2bbb-45a6-9dac-c35abd1ddf3a}">
+      <rule scalemaxdenom="49999" description="Eixo de Progressão" filter=" &quot;tipo&quot;  =  1" key="{6e786b05-d798-41be-93ef-7ee9c924689d}" scalemindenom="1000">
+=======
     <rules key="{46bc24a6-67fd-4f60-8b53-837024ad136f}">
       <rule scalemaxdenom="49999" description="Eixo de Progressão" filter=" &quot;tipo&quot;  =  1" key="{d5d30aa9-888d-4ee8-b141-eddf186e1281}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="nome" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2146,7 +2632,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="Eixo de Progressão" filter=" &quot;tipo&quot;  =  1" key="{56d9ab9a-00f1-433f-91b5-f83e95438920}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="Eixo de Progressão" filter=" &quot;tipo&quot;  =  1" key="{6ada7db9-8b48-4745-a8b2-47f82a2b433a}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="175" fieldName="nome" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2162,7 +2652,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="999999" description="Eixo de Progressão" filter=" &quot;tipo&quot;  =  1" key="{9e041ae6-3d68-4691-bc13-f880fff49dfd}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="999999" description="Eixo de Progressão" filter=" &quot;tipo&quot;  =  1" key="{6de81125-b9af-4947-bb06-f7cd2bb984cc}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="nome" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2178,7 +2672,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="49999" description="Estrada de Suprimento" filter=" &quot;tipo&quot;  =  4" key="{436e4d52-fbaf-4ae5-a0df-ecf4aab634fa}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="49999" description="Estrada de Suprimento" filter=" &quot;tipo&quot;  =  4" key="{a8231d04-cfd6-49d1-b9f4-12e7fc7b5314}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="nome" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2194,7 +2692,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="99999" description="Estrada de Suprimento" filter=" &quot;tipo&quot;  =  4" key="{36c73728-8544-4834-8369-ef014520b24b}" scalemindenom="50000">
+=======
       <rule scalemaxdenom="99999" description="Estrada de Suprimento" filter=" &quot;tipo&quot;  =  4" key="{732a0b77-aa5d-4c6d-b09f-099a4d74d04f}" scalemindenom="50000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="175" fieldName="nome" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2210,7 +2712,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="999999" description="Estrada de Suprimento" filter=" &quot;tipo&quot;  =  4" key="{3793ca4c-e332-4606-ab99-08df78766387}" scalemindenom="99999">
+=======
       <rule scalemaxdenom="999999" description="Estrada de Suprimento" filter=" &quot;tipo&quot;  =  4" key="{15fd236e-eda4-45e6-8d3c-a1028b641925}" scalemindenom="99999">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="250" fieldName="nome" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2422,12 +2928,20 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="2" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>PROGRA~1/QGIS2~1.18/bin</annotationform>
+=======
   <annotationform>../../../../PROGRA~1/QGIS2~1.18/bin</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="tipo" index="1" name="Tipo"/>
     <alias field="nome" index="2" name="Nome"/>
     <alias field="Borda" index="3" name=""/>
+<<<<<<< HEAD
+    <alias field="Cor" index="4" name=""/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -2439,12 +2953,22 @@
       <column width="175" hidden="0" type="field" name="tipo"/>
       <column width="-1" hidden="1" type="actions"/>
       <column width="-1" hidden="0" type="field" name="Borda"/>
+<<<<<<< HEAD
+      <column width="-1" hidden="0" type="field" name="Cor"/>
+    </columns>
+  </attributetableconfig>
+  <editform>PROGRA~1/QGIS2~1.18/bin</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+=======
     </columns>
   </attributetableconfig>
   <editform>../../../../PROGRA~1/QGIS2~1.18/bin</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../../PROGRA~1/QGIS2~1.18/bin</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- codificação: utf-8 -*-"""Os formulários do QGIS podem ter uma função Python que é chamada quandoo formulário é aberto.QGIS forms can have a Python function that is called when the form isopened.Use esta função para adicionar lógica extra aos seus formulários.Entre com o nome da função no campo "Python Init function".Un exemplo a seguir:"""a partir de PyQt4.QtGui importe QWidgetdef my_form_open(diálogo, camada, feição):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
@@ -2458,6 +2982,10 @@
     <default field="tipo" expression=""/>
     <default field="nome" expression=""/>
     <default field="Borda" expression="0"/>
+<<<<<<< HEAD
+    <default field="Cor" expression="'#000000'"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </defaults>
   <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
   <layerGeometryType>1</layerGeometryType>

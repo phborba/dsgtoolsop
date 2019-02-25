@@ -27,7 +27,19 @@ class SimbologiaMilitar(BaseDeDados):
                     'posto_observacao_i': u'Posto de observação inimigo',
                     'seta_situacao': u'Seta de situação',
                     'area_coordenacao': u'Área de coordenação',
+<<<<<<< HEAD
+                    'fortificacoes': u'Fortificações - Abrigos', 
+					'fortificacoes_ot': u'Fortificações - Trabahos de OT',
+					'fortificacoes_pf': u'Fortificações - Pontos Fortes2',
+					'obstaculos': u'Obstáculos',
+					'redes': u'Redes',
+					'fumaca': u'Fumaça',
+					'minas': u'Minas',
+					'campos_minados': u'Campos Minados',
+					'barreiras': u'Barreiras',
+=======
                     'fortificacoes': u'Fortificações',    
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
                     'localizacao_comando_a': u'Localização de comando aliada',
                     'localizacao_comando_i': u'Localização de comando inimiga',
                     'comunicacoes' : u'Comunicações',
@@ -40,7 +52,11 @@ class SimbologiaMilitar(BaseDeDados):
                'classes': ['tropa_a', 'posto_observacao_a','armamento_a','limite_entre_fracoes', 'linha_de_controle', 'eixo_de_direcao', 'nucleo_defesa',
                             'objetivo', 'ponto_coordenacao', 'medida_restritiva', 'area_coordenacao','seta_situacao']
            },
+<<<<<<< HEAD
+           '3_calco_logistica': {
+=======
            '5_calco_logistica': {
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
                'nome': u'CALCO DE APOIO LOGÍSTICO',
                'classes': [ 'instalacao_orgao_a', 'localizacao_comando_a']
            },
@@ -50,7 +66,11 @@ class SimbologiaMilitar(BaseDeDados):
            }, 
            '4_plano_barreiras': {
                'nome': u'PLANO DE BARREIRAS',
+<<<<<<< HEAD
+               'classes': ['fortificacoes','fortificacoes_ot','fortificacoes_pf','obstaculos','redes','fumaca','minas','campos_minados','barreiras']
+=======
                'classes': ['fortificacoes']
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
            },		   
            '5_calco_comu': {
                'nome': u'CALCO DE COMUNICAÇÕES - DIAGRAMA DO SISTEMA MULTICANAL',

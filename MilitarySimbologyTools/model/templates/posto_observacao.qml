@@ -178,6 +178,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="95,141,91,0"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="triangle"/>
@@ -1021,7 +1028,11 @@
           <prop k="angle_dd_useexpr" v="0"/>
           <prop k="color" v="0,0,0,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
+<<<<<<< HEAD
+          <prop k="name" v="../Users/Pedro Reis/.qgis2/python/plugins/DsgTools/DsgToolsOp/MilitaryTools/MilitarySimbologyTools/model/symbols/ancora.svg"/>
+=======
           <prop k="name" v="{path}/ancora.svg"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="offset" v="-0.80000000000000004,-0.59999999999999998"/>
           <prop k="offset_dd_active" v="0"/>
           <prop k="offset_dd_expression" v=""/>
@@ -1850,7 +1861,11 @@
           <prop k="angle_dd_useexpr" v="0"/>
           <prop k="color" v="0,0,0,255"/>
           <prop k="horizontal_anchor_point" v="1"/>
+<<<<<<< HEAD
+          <prop k="name" v="../Users/Pedro Reis/.qgis2/python/plugins/DsgTools/DsgToolsOp/MilitaryTools/MilitarySimbologyTools/model/symbols/helice.svg"/>
+=======
           <prop k="name" v="{path}/helice.svg"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="offset" v="0,-0.00015"/>
           <prop k="offset_dd_active" v="1"/>
           <prop k="offset_dd_expression" v="0"/>
@@ -5233,8 +5248,13 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
+<<<<<<< HEAD
+    <rules key="{1973b106-a408-46e7-bff9-2a9b90e6310e}">
+      <rule scalemaxdenom="250001" description="1:50.000 &lt;> 1:250.000" key="{4e52e089-7d6f-43f0-b899-33a0dd2dd6ce}" scalemindenom="50002">
+=======
     <rules key="{d7276460-c513-4f3c-8f16-5030f81d8d3b}">
       <rule scalemaxdenom="250001" description="1:50.000 &lt;> 1:250.000" key="{a74f331a-fe7d-4cae-a225-53ff4cff81ae}" scalemindenom="50002">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8.25" fieldName="" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -5247,7 +5267,11 @@
           <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
           <data-defined/>
         </settings>
+<<<<<<< HEAD
+        <rule description="Designação" key="{6fae3cfb-824a-41cf-b472-278d308d7596}">
+=======
         <rule description="Designação" key="{adc6ff30-ef44-495a-a511-3d2b584b1e27}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="designacao" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5267,7 +5291,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Subordinação" key="{44e1dffd-9285-42f4-be61-c3b6d3712d6f}">
+=======
         <rule description="Subordinação" key="{92117727-721a-4a7f-b10f-829627676902}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="subordinacao" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5286,7 +5314,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Outras Informações" key="{84d4c125-936e-46b2-bc3a-932a49b8a962}">
+=======
         <rule description="Outras Informações" key="{f7d02123-cba8-46cf-baf6-d5028920596a}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="outras_info" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5305,7 +5337,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Companhia" filter=" &quot;escalao&quot;  = 4" key="{8a785144-401a-4179-8674-9e07da060d1c}">
+=======
         <rule description="Companhia" filter=" &quot;escalao&quot;  = 4" key="{81eee16e-d336-4a15-87fa-40e57d028279}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5321,7 +5357,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Batalhão" filter=" &quot;escalao&quot;  = 5" key="{a6deeccc-ae66-4e60-8cb0-09aebc17a0fc}">
+=======
         <rule description="Batalhão" filter=" &quot;escalao&quot;  = 5" key="{1593fa70-985d-416e-8f05-c17d5c0e958b}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'l l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5337,7 +5377,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Regimento " filter=" &quot;escalao&quot;  = 6" key="{315a2e40-048a-4038-91ee-87f399708a66}">
+=======
         <rule description="Regimento " filter=" &quot;escalao&quot;  = 6" key="{9fb748ce-d539-4e72-802f-96d41a396ed8}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'l l l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5353,7 +5397,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-Tarefa de valor Subunidade (EB)" filter=" &quot;escalao&quot;  = 7" key="{05038bac-7123-4176-8cba-3f85202ca76d}">
+=======
         <rule description="Força-Tarefa de valor Subunidade (EB)" filter=" &quot;escalao&quot;  = 7" key="{172aa234-8666-4a73-ab8c-94b5cd401c7f}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'l  l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5367,7 +5415,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-Tarefa de valor Unidade (Btl - EB)" filter=" &quot;escalao&quot;  = 8" key="{cb264ecf-2eb2-4a85-9f7e-e6c27b71db75}">
+=======
         <rule description="Força-Tarefa de valor Unidade (Btl - EB)" filter=" &quot;escalao&quot;  = 8" key="{b5fb46c8-fe1e-4922-b447-806225b24595}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'l   l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5381,7 +5433,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-TArefa de valor Regimento " filter=" &quot;escalao&quot;  =9" key="{9320b645-44ab-4e4e-a0c9-a05abcd0372b}">
+=======
         <rule description="Força-TArefa de valor Regimento " filter=" &quot;escalao&quot;  =9" key="{d9b84d55-a82e-41ec-b860-fd3e74b77c93}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'l      l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5395,7 +5451,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Brigada" filter=" &quot;escalao&quot;  in (10,13)" key="{6520734a-4b45-4996-9c33-c6f204fc057c}">
+=======
         <rule description="Brigada" filter=" &quot;escalao&quot;  in (10,13)" key="{7d2a0a61-9000-4348-8e2a-84df593aabe3}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150.5" fieldName="'X'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5411,7 +5471,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Divisão de exército" filter=" &quot;escalao&quot; in (11,14)" key="{f2ed0cb2-c65a-4dff-8c4e-5466f980f7f0}">
+=======
         <rule description="Divisão de exército" filter=" &quot;escalao&quot; in (11,14)" key="{b91e19c2-d537-4ee1-814a-a0db1518b840}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150.5" fieldName="'XX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5425,7 +5489,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-tarefa combinada comandada por oficial-general do último posto" filter=" &quot;escalao&quot;  = 15" key="{b2fb6192-e310-4328-8fc0-5a2c9ff57cff}">
+=======
         <rule description="Força-tarefa combinada comandada por oficial-general do último posto" filter=" &quot;escalao&quot;  = 15" key="{f02d57da-bbcd-46f3-8862-0ba432b0261d}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'XXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5439,7 +5507,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força componentes de comando combinado, quando comandadas por oficial-general do último posto" filter=" &quot;escalao&quot;  = 16" key="{a6e3bf1d-afb4-4252-ac66-8aec0900477a}">
+=======
         <rule description="Força componentes de comando combinado, quando comandadas por oficial-general do último posto" filter=" &quot;escalao&quot;  = 16" key="{bfc14c47-09bd-4f88-b345-0e7b4a920899}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="150" fieldName="'XXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5453,7 +5525,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Comando Combinado" filter=" &quot;escalao&quot;  = 17" key="{86ee87c1-34e1-4310-b36e-0ef136957d52}">
+=======
         <rule description="Comando Combinado" filter=" &quot;escalao&quot;  = 17" key="{c213acb5-1b9c-48d7-8ff2-e9bde578eaa4}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XXXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5467,7 +5543,11 @@
             <data-defined/>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Teatro de Operações" filter=" &quot;escalao&quot;  = 18" key="{63c47b1f-c63f-496a-a8ec-4857d625c5ca}">
+=======
         <rule description="Teatro de Operações" filter=" &quot;escalao&quot;  = 18" key="{182788c5-fe4f-43df-a3ab-6c8aebb6e247}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XXXXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5482,7 +5562,11 @@
           </settings>
         </rule>
       </rule>
+<<<<<<< HEAD
+      <rule scalemaxdenom="50001" description="1:1.000 &lt;> 1:50.000" key="{a70d9644-1121-4bb4-9c7b-5a8c82e4f11d}" scalemindenom="1000">
+=======
       <rule scalemaxdenom="50001" description="1:1.000 &lt;> 1:50.000" key="{5a6dc176-c3cb-4dc2-adfe-46b2c0989cae}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="MS Shell Dlg 2" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8.25" fieldName="" namedStyle="Normal" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -5495,7 +5579,11 @@
           <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="0" limitNumLabels="0" obstacle="1" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="0" minFeatureSize="0"/>
           <data-defined/>
         </settings>
+<<<<<<< HEAD
+        <rule description="Designação" key="{e936c19d-4f8e-4661-8bb9-ab73f592e6cd}">
+=======
         <rule description="Designação" key="{c87c6f04-399a-425b-b541-b148bc036948}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="designacao" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5515,7 +5603,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule scalemaxdenom="100000" description="Subordinação" key="{0eb8105a-7bcf-48e4-a446-943680676011}" scalemindenom="1000">
+=======
         <rule scalemaxdenom="100000" description="Subordinação" key="{ac6f0743-dac2-4e29-8f9c-27579ce66312}" scalemindenom="1000">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="subordinacao" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5534,7 +5626,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Outras Informações" key="{0668a139-7e3f-4c98-997e-2f5a95574dc5}">
+=======
         <rule description="Outras Informações" key="{790797f9-23c9-4950-88d5-fd3360795e81}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="75" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="outras_info" namedStyle="Bold" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5553,7 +5649,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Companhia" filter=" &quot;escalao&quot;  = 4" key="{d79a5552-6cfa-45c9-b93a-851ae1224a85}">
+=======
         <rule description="Companhia" filter=" &quot;escalao&quot;  = 4" key="{3fd6f4c1-5a3a-44e8-aa38-2e1209f9a9fb}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5570,7 +5670,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Batalhão" filter=" &quot;escalao&quot;  = 5" key="{8e8124d7-5a87-4ca6-83b1-60bd60e3cef6}">
+=======
         <rule description="Batalhão" filter=" &quot;escalao&quot;  = 5" key="{27797419-b490-43cf-beb9-02b06003b9a0}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'l l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5587,7 +5691,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Regimento " filter=" &quot;escalao&quot;  = 6" key="{0475dd11-507a-4024-9369-79973acf111e}">
+=======
         <rule description="Regimento " filter=" &quot;escalao&quot;  = 6" key="{70988b23-e969-4994-a5db-ae5d53fef0d7}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'l l l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5604,7 +5712,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-Tarefa de valor Subunidade (EB)" filter=" &quot;escalao&quot;  = 7" key="{3c1f643f-f791-435e-a3c5-e880483a53af}">
+=======
         <rule description="Força-Tarefa de valor Subunidade (EB)" filter=" &quot;escalao&quot;  = 7" key="{f25f0171-54fc-4b3a-b015-fa5c79afb038}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'l  l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5621,7 +5733,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-Tarefa de valor Unidade (Btl - EB)" filter=" &quot;escalao&quot;  = 8" key="{7cf8865f-214d-437c-b4b5-d8f456592be4}">
+=======
         <rule description="Força-Tarefa de valor Unidade (Btl - EB)" filter=" &quot;escalao&quot;  = 8" key="{0ddaec41-d999-4222-bf76-8a5c80cd9289}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'l   l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5637,7 +5753,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-Tarefa de valor Regimento " filter=" &quot;escalao&quot;  =9" key="{863b6b83-729f-4cec-a782-345688956644}">
+=======
         <rule description="Força-Tarefa de valor Regimento " filter=" &quot;escalao&quot;  =9" key="{4c02bd57-276f-4aaa-9782-7478012d7525}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'l      l'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5653,7 +5773,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Brigada" filter=" &quot;escalao&quot;  in (10,13)" key="{5b48a1cb-2ce2-44ee-9e24-068c8e31e5e7}">
+=======
         <rule description="Brigada" filter=" &quot;escalao&quot;  in (10,13)" key="{9bd649d5-6488-4193-b55d-e0639421eb4e}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100.5" fieldName="'X'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5671,7 +5795,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Divisão de exército" filter=" &quot;escalao&quot; in (11,14)" key="{adf7a1cc-ffb8-475f-a0ac-e6ddb8d21d62}">
+=======
         <rule description="Divisão de exército" filter=" &quot;escalao&quot; in (11,14)" key="{d5311eb0-a7f1-442a-b29a-faa545ff36a0}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100.5" fieldName="'XX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5687,7 +5815,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força-tarefa combinada comandada por oficial-general do último posto" filter=" &quot;escalao&quot;  = 15" key="{5bb79c2a-5ca0-42c1-bd4d-6dccbbb7046a}">
+=======
         <rule description="Força-tarefa combinada comandada por oficial-general do último posto" filter=" &quot;escalao&quot;  = 15" key="{085c3428-522a-4297-bc04-a49d44af2a6f}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'XXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5703,7 +5835,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Força componentes de comando combinado, quando comandadas por oficial-general do último posto" filter=" &quot;escalao&quot;  = 16" key="{bb9df389-d573-40b8-a880-e6919497e3b3}">
+=======
         <rule description="Força componentes de comando combinado, quando comandadas por oficial-general do último posto" filter=" &quot;escalao&quot;  = 16" key="{a9dacf20-e1f9-4e1b-836e-620b2aefdd58}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'XXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5719,7 +5855,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Comando Combinado" filter=" &quot;escalao&quot;  = 17" key="{6f0cd0af-ae88-46c7-888c-41adc96bc69e}">
+=======
         <rule description="Comando Combinado" filter=" &quot;escalao&quot;  = 17" key="{bc452e6d-b8ec-4e65-89f8-2aa2e0e145c5}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'XXXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5735,7 +5875,11 @@
             </data-defined>
           </settings>
         </rule>
+<<<<<<< HEAD
+        <rule description="Teatro de Operações" filter=" &quot;escalao&quot;  = 18" key="{96013718-212c-4df3-a353-80b289546020}">
+=======
         <rule description="Teatro de Operações" filter=" &quot;escalao&quot;  = 18" key="{1ecffe8b-19f6-490f-b795-642b9b11d809}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <settings>
             <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="100" fieldName="'XXXXXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
               <substitutions/>
@@ -5950,7 +6094,11 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>../OSGEO4~1</annotationform>
+=======
   <annotationform>../../../OSGEO4~1</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="nome" index="1" name="Nome"/>
@@ -5979,10 +6127,17 @@
       <column width="-1" hidden="0" type="field" name="Outras Informações"/>
     </columns>
   </attributetableconfig>
+<<<<<<< HEAD
+  <editform>../OSGEO4~1</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>../OSGEO4~1</editforminitfilepath>
+=======
   <editform>../../../OSGEO4~1</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../OSGEO4~1</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- codificação: utf-8 -*-"""Os formulários do QGIS podem ter uma função Python que é chamada quandoo formulário é aberto.QGIS forms can have a Python function that is called when the form isopened.Use esta função para adicionar lógica extra aos seus formulários.Entre com o nome da função no campo "Python Init function".Un exemplo a seguir:"""a partir de PyQt4.QtGui importe QWidgetdef my_form_open(diálogo, camada, feição):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>

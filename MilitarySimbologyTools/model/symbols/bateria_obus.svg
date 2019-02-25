@@ -7,7 +7,10 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+<<<<<<< HEAD
+=======
    xmlns:xlink="http://www.w3.org/1999/xlink"
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
@@ -16,7 +19,11 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
+<<<<<<< HEAD
+   sodipodi:docname="obus_teste.svg">
+=======
    sodipodi:docname="bateria_obus.svg">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,9 +33,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
+<<<<<<< HEAD
+     inkscape:zoom="0.53516414"
+     inkscape:cx="1083.6456"
+     inkscape:cy="491.7466"
+=======
      inkscape:zoom="0.35"
      inkscape:cx="400"
      inkscape:cy="560"
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -53,6 +66,70 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1">
+<<<<<<< HEAD
+    <g
+       id="g85">
+      <circle
+         style="stroke-width:0.26458332"
+         r="12.095239"
+         cy="118.59524"
+         cx="46.113098"
+         id="path12" />
+      <circle
+         style="stroke-width:0.26458332"
+         r="12.095239"
+         cy="118.59524"
+         cx="77.863091"
+         id="path12-7" />
+      <circle
+         style="stroke-width:0.26458332"
+         r="12.095239"
+         cy="117.83929"
+         cx="111.125"
+         id="path12-0" />
+      <circle
+         style="stroke-width:0.26458332"
+         r="12.095239"
+         cy="117.8393"
+         cx="141.3631"
+         id="path12-9" />
+      <rect
+         style="stroke-width:0.26458332"
+         y="114.05952"
+         x="27.214285"
+         height="7.5595236"
+         width="135.31548"
+         id="rect43" />
+      <rect
+         style="stroke-width:0.26458332"
+         y="95.916664"
+         x="42.333332"
+         height="15.875"
+         width="7.5595236"
+         id="rect47" />
+      <rect
+         style="stroke-width:0.26458332"
+         y="95.538681"
+         x="74.083344"
+         height="15.875"
+         width="7.5595236"
+         id="rect47-1" />
+      <rect
+         style="stroke-width:0.26458332"
+         y="94.782738"
+         x="106.58929"
+         height="15.875"
+         width="7.5595236"
+         id="rect47-4" />
+      <rect
+         style="stroke-width:0.26458332"
+         y="94.026779"
+         x="137.58333"
+         height="15.875"
+         width="7.5595236"
+         id="rect47-9" />
+    </g>
+=======
     <image
        y="102.17217"
        x="6.8413687"
@@ -236,5 +313,6 @@ YII=
        preserveAspectRatio="none"
        height="81.227081"
        width="199.49583" />
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </g>
 </svg>

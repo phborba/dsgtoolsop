@@ -1,5 +1,9 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<<<<<<< HEAD
+<qgis version="2.18.16" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+=======
 <qgis version="2.18.12" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <edittypes>
     <edittype widgetv2type="Hidden" name="pkuid">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -73,6 +77,12 @@
         <value key="Sem Borda" value="0"/>
       </widgetv2config>
     </edittype>
+<<<<<<< HEAD
+    <edittype widgetv2type="Color" name="Cor">
+      <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
     <edittype widgetv2type="TextEdit" name="rot_simb_esq">
       <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
     </edittype>
@@ -139,6 +149,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -185,6 +202,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -231,6 +255,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -277,6 +308,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -323,6 +361,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -977,6 +1022,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1023,6 +1075,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1069,6 +1128,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1115,6 +1181,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1161,6 +1234,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1207,6 +1287,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1253,6 +1340,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1299,6 +1393,13 @@
             </layer>
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
+<<<<<<< HEAD
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v=""/>
+              <prop k="color_dd_field" v="Cor"/>
+              <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -1320,8 +1421,13 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
+<<<<<<< HEAD
+    <rules key="{84264ecc-774a-411e-9b05-21ef320e0293}">
+      <rule filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot; " key="{6509f59a-7434-4e63-88a3-d6689d041563}">
+=======
     <rules key="{41400049-e447-4ea9-b06f-5a85fee5e7b1}">
       <rule filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot; " key="{1cde7437-6295-402e-89a0-d44b1f9a051c}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="170" fieldName="nome_esq" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1334,15 +1440,24 @@
           <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="2" limitNumLabels="0" obstacle="0" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="1" minFeatureSize="0"/>
           <data-defined>
             <BufferSize expr="0.45* &quot;Borda&quot;" field="" active="true" useExpr="true"/>
+<<<<<<< HEAD
+            <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;- 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_centro_esq" active="true" useExpr="true"/>
+            <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2150)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_centro_esq" active="true" useExpr="true"/>
+=======
             <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;- 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_centro_esq" active="true" useExpr="false"/>
             <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2150)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_centro_esq" active="true" useExpr="false"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
             <Hali expr="'Center'" field="" active="true" useExpr="true"/>
             <Vali expr="'half'" field="" active="true" useExpr="true"/>
             <Rotation expr="0" field="rot_esq" active="true" useExpr="false"/>
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot; " key="{6cba7ac3-9e0f-4ba2-9442-1f68e4968cb4}">
+=======
       <rule filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot; " key="{27cf3289-d393-4b49-afa3-01f67967daff}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="170" fieldName="nome_dir" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1355,8 +1470,13 @@
           <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="2" limitNumLabels="0" obstacle="0" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="1" zIndex="0" maxNumLabels="2000" displayAll="1" minFeatureSize="0"/>
           <data-defined>
             <BufferSize expr="0.45* &quot;Borda&quot;" field="" active="true" useExpr="true"/>
+<<<<<<< HEAD
+            <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;+ 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_centro_dir" active="true" useExpr="true"/>
+            <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_centro_dir" active="true" useExpr="true"/>
+=======
             <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;+ 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_centro_dir" active="true" useExpr="false"/>
             <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_centro_dir" active="true" useExpr="false"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
             <Hali expr="'Center'" field="" active="true" useExpr="true"/>
             <Vali expr="'Half'" field="" active="true" useExpr="true"/>
             <Rotation expr="0" field="rot_dir" active="true" useExpr="false"/>
@@ -1364,7 +1484,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Exercito de Campanha" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 1" key="{e6f21183-af44-4bf4-9368-bd560b2ac276}">
+=======
       <rule description="Exercito de Campanha" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 1" key="{997cd537-2e70-4fba-a616-f5997683e59d}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1387,7 +1511,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Divisão de Exército" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 2" key="{d1a3970b-1f4b-4559-8568-0166be1aae96}">
+=======
       <rule description="Divisão de Exército" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 2" key="{9b88796f-f458-43c9-a5a2-a11fa3e61cee}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1410,7 +1538,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Brigada" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 3" key="{3b782c94-36c7-47e9-997d-97a7e8ea0bbc}">
+=======
       <rule description="Brigada" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 3" key="{f6a2cf34-1bac-490d-97c0-4a70ba5ed93c}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'X'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1432,7 +1564,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Regimento " filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 7" key="{970c3f2a-a989-49eb-9b70-1235cccb89ab}">
+=======
       <rule description="Regimento " filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 7" key="{ee5f0ef3-e47b-45af-936f-9d0c3448155a}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'III'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1454,7 +1590,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Batalhão" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 4" key="{8a3b2be5-a493-4aab-97eb-b95b53c1ab12}">
+=======
       <rule description="Batalhão" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 4" key="{b7561552-0059-4fce-9d67-70fbb4b9df7a}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'II'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1476,7 +1616,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Companhia" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 5" key="{a5587f30-6c66-43d1-8abc-89304dcd893a}">
+=======
       <rule description="Companhia" filter=" &quot;tropa_esq&quot;  =  &quot;tropa_dir&quot;  and &quot;tropa_esq&quot; = 5" key="{4929a1e6-4754-455f-8ffa-e5fbb78dad20}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'I'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1498,7 +1642,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;  " key="{4cf9c877-5e4a-4106-80fa-7b2f827833ea}">
+=======
       <rule filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;  " key="{c5c840e5-5bb6-483f-9f8b-04b20dde9ccd}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="170" fieldName="nome_dir" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1511,15 +1659,24 @@
           <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="1" limitNumLabels="0" obstacle="0" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="0" zIndex="0" maxNumLabels="2000" displayAll="1" minFeatureSize="0"/>
           <data-defined>
             <BufferSize expr="0.45* &quot;Borda&quot;" field="" active="true" useExpr="true"/>
+<<<<<<< HEAD
+            <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2+500))&#xd;&#xa;&#xd;&#xa;+ 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_dir" active="true" useExpr="true"/>
+            <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2+500))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+700)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2+200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+700)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2+200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_dir" active="true" useExpr="true"/>
+=======
             <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2+500))&#xd;&#xa;&#xd;&#xa;+ 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_dir" active="true" useExpr="false"/>
             <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2+500))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+700)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2+200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+700)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2+200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_dir" active="true" useExpr="false"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
             <Hali expr="'Center'" field="" active="true" useExpr="true"/>
             <Vali expr="'Half'" field="" active="true" useExpr="true"/>
             <Rotation expr="0" field="rot_dir" active="true" useExpr="false"/>
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;  " key="{1b841b5e-6a92-4592-8749-14a4abed2848}">
+=======
       <rule filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;  " key="{a2b25f54-06a0-4714-9216-b11b0aebad58}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="170" fieldName="nome_esq" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1532,15 +1689,24 @@
           <rendering fontMinPixelSize="3" scaleMax="10000000" fontMaxPixelSize="10000" scaleMin="1" upsidedownLabels="2" limitNumLabels="0" obstacle="0" obstacleFactor="1" scaleVisibility="0" fontLimitPixelSize="0" mergeLines="0" obstacleType="0" labelPerPart="1" zIndex="0" maxNumLabels="2000" displayAll="1" minFeatureSize="0"/>
           <data-defined>
             <BufferSize expr="0.45* &quot;Borda&quot;" field="" active="true" useExpr="true"/>
+<<<<<<< HEAD
+            <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2-500))&#xd;&#xa;&#xd;&#xa;- 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_esq" active="true" useExpr="true"/>
+            <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2-500))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2-800)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-300)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2-800)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-300)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_esq" active="true" useExpr="true"/>
+=======
             <PositionX expr="x(line_interpolate_point($geometry,  length ($geometry)/2-500))&#xd;&#xa;&#xd;&#xa;- 300*sin(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-200)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+200)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-200)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="x_esq" active="true" useExpr="false"/>
             <PositionY expr="y(line_interpolate_point($geometry,  length ($geometry)/2-500))&#xd;&#xa;&#xd;&#xa;- 300*cos(&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;atan2(  &#xd;&#xa;y( line_interpolate_point($geometry, length ($geometry)/2-800)) &#xd;&#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-300)),&#xd;&#xa;x( line_interpolate_point($geometry, length ($geometry)/2-800)) &#xd;&#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-300)))&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;)" field="y_esq" active="true" useExpr="false"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
             <Hali expr="'Center'" field="" active="true" useExpr="true"/>
             <Vali expr="'Half'" field="" active="true" useExpr="true"/>
             <Rotation expr="0" field="rot_esq" active="true" useExpr="false"/>
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Exercito de Campanha" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 1" key="{9a71fe09-56df-434f-86e8-338b4767c32b}">
+=======
       <rule description="Exercito de Campanha" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 1" key="{1693f6ac-c037-4167-84f9-cecae9301c29}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1562,7 +1728,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Divisão de Exército" filter="  &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 2" key="{3e2374e9-f993-4a2a-9a0f-2d4e5aeb3918}">
+=======
       <rule description="Divisão de Exército" filter="  &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 2" key="{7edbdbee-faeb-407f-8ac7-80e59fb8661f}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1584,7 +1754,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Brigada" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 3" key="{3dc44126-a989-457d-a40a-f136bb5c9dc9}">
+=======
       <rule description="Brigada" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 3" key="{abec0c8c-899b-40a9-8f80-25b4e1448ff5}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'X'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1606,7 +1780,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Regimento " filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 7" key="{2ee4d7cf-567b-4189-9d86-1088cd5a7c21}">
+=======
       <rule description="Regimento " filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 7" key="{59a779be-91b4-4db0-ae1d-8502a12c98a4}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'III'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1628,7 +1806,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Batalhão" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 4" key="{a3db4472-e847-4d49-bc8e-db4f1d9d47f2}">
+=======
       <rule description="Batalhão" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 4" key="{aea58cb7-4eec-48d2-821d-a79bf99b4212}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'II'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1650,7 +1832,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Companhia" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 5" key="{17bae313-605e-4078-9d1a-7a9ace4c44da}">
+=======
       <rule description="Companhia" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_esq&quot; = 5" key="{323964a3-e913-4694-8cb1-a3ca525a23ce}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'I'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1672,7 +1858,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Exercito de Campanha" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 1" key="{90133988-62d7-49b3-8f2e-912cefa91d62}">
+=======
       <rule description="Exercito de Campanha" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 1" key="{dba5204e-7103-4579-8654-39c6d62c46f6}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XXX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1694,7 +1884,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Divisão de Exército" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 2" key="{9f1f388f-7ca7-489f-a3cb-801aac067a2f}">
+=======
       <rule description="Divisão de Exército" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 2" key="{282280c9-faef-4c18-8ab3-eb21645c578e}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'XX'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1716,7 +1910,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Brigada" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 3" key="{c9fdcb95-c70a-4fff-9c98-bbb25e1378be}">
+=======
       <rule description="Brigada" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 3" key="{f15b083f-4a30-4434-94fd-b7d94ef93659}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="200" fieldName="'X'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1738,7 +1936,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Regimento " filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 7" key="{d982c6c3-fbe1-4fe3-b3b1-c07ac3430057}">
+=======
       <rule description="Regimento " filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 7" key="{19a64d19-ca23-40ee-9796-79c38d89259d}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'III'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1760,7 +1962,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Batalhão" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 4" key="{1f2605da-932c-45e1-baab-d59a6c14d010}">
+=======
       <rule description="Batalhão" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 4" key="{181f4cbd-0bb2-4548-a512-503e731079a4}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'II'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -1782,7 +1988,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Companhia" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 5" key="{f6c18948-bce1-49a2-b3c4-06c4fb313e29}">
+=======
       <rule description="Companhia" filter=" &quot;tropa_esq&quot; &lt;>  &quot;tropa_dir&quot;    and &quot;tropa_dir&quot; = 5" key="{b0d27116-1f2e-4e7d-9f28-f27509269bab}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="220" fieldName="'I'" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -2002,7 +2212,11 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="2" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>../OSGEO4~1/bin</annotationform>
+=======
   <annotationform>../../../OSGEO4~1/bin</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="tropa_esq" index="1" name="Tropa da esquerda"/>
@@ -2022,9 +2236,16 @@
     <alias field="y_centro_dir" index="15" name=""/>
     <alias field="rot_centro_dir" index="16" name=""/>
     <alias field="Borda" index="17" name=""/>
+<<<<<<< HEAD
+    <alias field="Cor" index="18" name=""/>
+    <alias field="rot_simb_esq" index="19" name=""/>
+    <alias field="rot_simb_dir" index="20" name=""/>
+    <alias field="rot_simb_centro" index="21" name=""/>
+=======
     <alias field="rot_simb_esq" index="18" name=""/>
     <alias field="rot_simb_dir" index="19" name=""/>
     <alias field="rot_simb_centro" index="20" name=""/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -2053,12 +2274,22 @@
       <column width="-1" hidden="0" type="field" name="rot_simb_dir"/>
       <column width="-1" hidden="0" type="field" name="rot_simb_centro"/>
       <column width="-1" hidden="0" type="field" name="Borda"/>
+<<<<<<< HEAD
+      <column width="-1" hidden="0" type="field" name="Cor"/>
+    </columns>
+  </attributetableconfig>
+  <editform>../OSGEO4~1/bin</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>../OSGEO4~1/bin</editforminitfilepath>
+=======
     </columns>
   </attributetableconfig>
   <editform>../../../OSGEO4~1/bin</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../OSGEO4~1/bin</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- codificação: utf-8 -*-"""Os formulários do QGIS podem ter uma função Python que é chamada quandoo formulário é aberto.QGIS forms can have a Python function that is called when the form isopened.Use esta função para adicionar lógica extra aos seus formulários.Entre com o nome da função no campo "Python Init function".Un exemplo a seguir:"""a partir de PyQt4.QtGui importe QWidgetdef my_form_open(diálogo, camada, feição):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
@@ -2086,6 +2317,10 @@
     <default field="y_centro_dir" expression="y(line_interpolate_point($geometry,  length ($geometry)/2))&#xa;&#xa;- 300*cos(&#xa;&#xa;&#xa;atan2(  &#xa;y( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xa;-y(line_interpolate_point($geometry, length ($geometry)/2-150)),&#xa;x( line_interpolate_point($geometry, length ($geometry)/2+150)) &#xa;-x(line_interpolate_point($geometry, length ($geometry)/2-150)))&#xa;&#xa;&#xa;)"/>
     <default field="rot_centro_dir" expression=""/>
     <default field="Borda" expression="0"/>
+<<<<<<< HEAD
+    <default field="Cor" expression="'#000000'"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
     <default field="rot_simb_esq" expression=""/>
     <default field="rot_simb_dir" expression=""/>
     <default field="rot_simb_centro" expression=""/>

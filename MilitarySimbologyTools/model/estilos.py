@@ -31,6 +31,18 @@ class Estilos(QObject):
                             'localizacao_comando_a': u'localizacao_comando',
                             'localizacao_comando_i': u'localizacao_comando',
 							'concentracao_explosao' : u'concentracao',
+<<<<<<< HEAD
+							'fortificacoes': u'fortificacoes2', 
+							'fortificacoes_ot': u'trabalhoOT',
+							'fortificacoes_pf': u'ponto_forte2',
+							'obstaculos': u'obstaculos',
+							'redes': u'redes',
+							'fumaca': u'fumaca',
+							'minas': u'minas',
+							'campos_minados': u'campo_minas',
+							'barreiras': u'barreiras',
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
 						    }
      
     def setStylePath(self, t):

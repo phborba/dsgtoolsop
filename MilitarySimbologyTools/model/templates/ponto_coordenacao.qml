@@ -1,5 +1,9 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<<<<<<< HEAD
+<qgis version="2.18.16" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+=======
 <qgis version="2.18.12" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <edittypes>
     <edittype widgetv2type="Hidden" name="pkuid">
       <widgetv2config fieldEditable="0" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -23,6 +27,12 @@
         <value key="Sem Borda" value="0"/>
       </widgetv2config>
     </edittype>
+<<<<<<< HEAD
+    <edittype widgetv2type="Color" name="Cor">
+      <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+    </edittype>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </edittypes>
   <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
     <rules key="{350d85af-17ff-4772-9d44-2522a19379f1}">
@@ -57,7 +67,11 @@
           <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="outline_width_unit" v="MapUnit"/>
           <prop k="scale_method" v="diameter"/>
+<<<<<<< HEAD
+          <prop k="size" v="315"/>
+=======
           <prop k="size" v="415"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="size_dd_active" v="0"/>
           <prop k="size_dd_expression" v=""/>
           <prop k="size_dd_field" v=""/>
@@ -85,7 +99,11 @@
           <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="outline_width_unit" v="MapUnit"/>
           <prop k="scale_method" v="diameter"/>
+<<<<<<< HEAD
+          <prop k="size" v="180"/>
+=======
           <prop k="size" v="280"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="size_unit" v="MapUnit"/>
           <prop k="vertical_anchor_point" v="1"/>
@@ -93,6 +111,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="95,141,91,0"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="Cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="circle"/>
@@ -109,7 +134,11 @@
           <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="outline_width_unit" v="MapUnit"/>
           <prop k="scale_method" v="diameter"/>
+<<<<<<< HEAD
+          <prop k="size" v="315"/>
+=======
           <prop k="size" v="415"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="size_dd_active" v="0"/>
           <prop k="size_dd_expression" v=""/>
           <prop k="size_dd_field" v=""/>
@@ -121,6 +150,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="255,0,0,255"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="Cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="cross2"/>
@@ -133,7 +169,11 @@
           <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="outline_width_unit" v="MapUnit"/>
           <prop k="scale_method" v="diameter"/>
+<<<<<<< HEAD
+          <prop k="size" v="200"/>
+=======
           <prop k="size" v="280"/>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
           <prop k="size_unit" v="MapUnit"/>
           <prop k="vertical_anchor_point" v="1"/>
@@ -175,6 +215,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="95,141,91,0"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="Cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="circle"/>
@@ -237,6 +284,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="95,141,91,0"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="Cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="square"/>
@@ -291,6 +345,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="0,0,0,0"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="Cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="circle"/>
@@ -311,6 +372,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="0,0,0,255"/>
+<<<<<<< HEAD
+          <prop k="color_dd_active" v="1"/>
+          <prop k="color_dd_expression" v=""/>
+          <prop k="color_dd_field" v="Cor"/>
+          <prop k="color_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="circle"/>
@@ -369,6 +437,13 @@
         <layer pass="0" class="SimpleMarker" locked="0">
           <prop k="angle" v="0"/>
           <prop k="color" v="95,141,91,0"/>
+<<<<<<< HEAD
+          <prop k="color_border_dd_active" v="1"/>
+          <prop k="color_border_dd_expression" v=""/>
+          <prop k="color_border_dd_field" v="Cor"/>
+          <prop k="color_border_dd_useexpr" v="0"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
           <prop k="horizontal_anchor_point" v="1"/>
           <prop k="joinstyle" v="bevel"/>
           <prop k="name" v="circle"/>
@@ -398,8 +473,13 @@
     </symbols>
   </renderer-v2>
   <labeling type="rule-based">
+<<<<<<< HEAD
+    <rules key="{cd462c9e-6578-43b7-ba8d-fdd26f2dde96}">
+      <rule description="Ponto de Controle" filter=" &quot;tipo&quot; =2" key="{e6b288a8-42e2-44eb-94a8-7a8fca726fb6}">
+=======
     <rules key="{a0173f52-39ba-41b7-bc96-a4e620b885b3}">
       <rule description="Ponto de Controle" filter=" &quot;tipo&quot; =2" key="{2963d00f-dea5-42ba-9208-0d44a63b49b9}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="120" fieldName="indicativo" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -415,7 +495,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Ponto de Ligação" filter=" &quot;tipo&quot; =3" key="{38c80d53-9daa-4ac9-96c9-f2438bb4bde0}">
+=======
       <rule description="Ponto de Ligação" filter=" &quot;tipo&quot; =3" key="{09525065-aead-4791-83de-9bce4f8457bd}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="120" fieldName="indicativo" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -431,7 +515,11 @@
           </data-defined>
         </settings>
       </rule>
+<<<<<<< HEAD
+      <rule description="Outros Pontos" filter=" &quot;tipo&quot; =5" key="{eadc1122-db0a-4586-aaa3-c1d150b4d558}">
+=======
       <rule description="Outros Pontos" filter=" &quot;tipo&quot; =5" key="{308119a9-cac3-43b5-a8c9-041ca6c89f20}">
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
         <settings>
           <text-style fontItalic="0" fontFamily="Arial Black" fontLetterSpacing="0" fontUnderline="0" fontWeight="87" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,0,0,255" fontSizeInMapUnits="1" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="120" fieldName="indicativo" namedStyle="Black" fontWordSpacing="0" useSubstitutions="0">
             <substitutions/>
@@ -645,12 +733,20 @@
     </symbol>
   </SingleCategoryDiagramRenderer>
   <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+<<<<<<< HEAD
+  <annotationform>../OSGEO4~1</annotationform>
+=======
   <annotationform>../../../OSGEO4~1</annotationform>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <aliases>
     <alias field="pkuid" index="0" name=""/>
     <alias field="tipo" index="1" name="Tipo"/>
     <alias field="indicativo" index="2" name="Indicativo"/>
     <alias field="Borda" index="3" name=""/>
+<<<<<<< HEAD
+    <alias field="Cor" index="4" name=""/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -662,12 +758,22 @@
       <column width="-1" hidden="0" type="field" name="tipo"/>
       <column width="-1" hidden="0" type="field" name="indicativo"/>
       <column width="-1" hidden="0" type="field" name="Borda"/>
+<<<<<<< HEAD
+      <column width="-1" hidden="0" type="field" name="Cor"/>
+    </columns>
+  </attributetableconfig>
+  <editform>../OSGEO4~1</editform>
+  <editforminit/>
+  <editforminitcodesource>0</editforminitcodesource>
+  <editforminitfilepath>../OSGEO4~1</editforminitfilepath>
+=======
     </columns>
   </attributetableconfig>
   <editform>../../../OSGEO4~1</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
   <editforminitfilepath>../../../OSGEO4~1</editforminitfilepath>
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   <editforminitcode><![CDATA[# -*- codificação: utf-8 -*-"""Os formulários do QGIS podem ter uma função Python que é chamada quandoo formulário é aberto.QGIS forms can have a Python function that is called when the form isopened.Use esta função para adicionar lógica extra aos seus formulários.Entre com o nome da função no campo "Python Init function".Un exemplo a seguir:"""a partir de PyQt4.QtGui importe QWidgetdef my_form_open(diálogo, camada, feição):	geom = feature.geometry()	control = dialog.findChild(QWidget, "MyLineEdit")]]></editforminitcode>
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
@@ -681,6 +787,10 @@
     <default field="tipo" expression=""/>
     <default field="indicativo" expression=""/>
     <default field="Borda" expression="0"/>
+<<<<<<< HEAD
+    <default field="Cor" expression="'#000000'"/>
+=======
+>>>>>>> 9e4337c8c38bdf81930312c1adcdb163f54cc4f6
   </defaults>
   <previewExpression>COALESCE("pkuid", '&lt;NULL>')</previewExpression>
   <layerGeometryType>0</layerGeometryType>
