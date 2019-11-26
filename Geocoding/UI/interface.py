@@ -158,7 +158,7 @@ class Interface(QtGui.QDockWidget, GUI):
             self.csvFile = open(self.filePath, 'r')
             self.listaPontos = []
     
-            self.geocodeLayer = QgsVectorLayer('point?crs=epsg:4326', 'Geocoder_output', 'memory')
+            self.geocodeLayer = QgsVectorLayer('point?crs=epsg:4326', 'Geocodificado', 'memory')
             pr = self.geocodeLayer.dataProvider()
             attrs = []
             
@@ -214,7 +214,7 @@ class Interface(QtGui.QDockWidget, GUI):
                         return
                         
                     if ponto != '':
-                        print ponto
+                        print str(ponto.latitude) + ';' + str(ponto.longitude)
                         lat = ponto.latitude
                         lon = ponto.longitude
                         feat = QgsFeature()
@@ -228,13 +228,18 @@ class Interface(QtGui.QDockWidget, GUI):
                             i += 1
                         
                         end = ponto.address
-                        feat.setAttribute(i,end.decode('utf-8'))
+                        end = end.encode('latin-1')
+                        print end
+                        #feat.setAttribute(i,end.decode('utf-8'))
+                        feat.setAttribute(i,end)
                         
                         pr.addFeatures([feat])                    
                                             
                         self.listaPontos.append(ponto)
                     else:
-                        self.notfound.append(l.decode('utf-8'))
+                        print l
+                        #self.notfound.append(l.decode('utf-8'))
+                        self.notfound.append(l)
                     ln = ln + 1
                     self.progressBar.setValue(ln)
                         
@@ -259,7 +264,7 @@ class Interface(QtGui.QDockWidget, GUI):
                         return
                     
                     if ponto != '':
-                        print ponto
+                        print str(ponto.latitude) + ';' + str(ponto.longitude)
                         lat = ponto.latitude
                         lon = ponto.longitude
                         feat = QgsFeature()
@@ -273,12 +278,17 @@ class Interface(QtGui.QDockWidget, GUI):
                             i += 1
                             
                         end = ponto.address
-                        feat.setAttribute(i,end.decode('utf-8'))
+                        end = end.encode('latin-1')
+                        print end
+                        
+                        #feat.setAttribute(i,end.decode('utf-8'))
+                        feat.setAttribute(i,end)
                       
                         pr.addFeatures([feat])                 
                         self.listaPontos.append(ponto)
                     else:
-                        self.notfound.append(l.decode('utf-8'))
+                        #self.notfound.append(l.decode('utf-8'))
+                        self.notfound.append(l)
                     ln = ln + 1
                     self.progressBar.setValue(ln)
                     
@@ -332,7 +342,7 @@ class Interface(QtGui.QDockWidget, GUI):
                 csvFile.close()
                 
             for nf in self.notfound:
-                print nf.decode('utf-8') 
+                print nf.encode('utf-8') 
     
     def doGeocode(self, r, b = '', c = '', e = ''):
         if b != '':
