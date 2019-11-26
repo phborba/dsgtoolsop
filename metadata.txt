@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=2.14
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=1.2.2
+version=1.2.3
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -52,7 +52,8 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
-	1.2.2 - Atualização da Simbologia Militar
+	1.2.3 - Correção da geocodificação não funcionando
+	1.2.2 - Correção de valor da convergência sempre negativo, e mover pontos não movendo corretamente
 	1.2.1 - Alteração da API de geocodificação - Google para Bing
 	1.2   - Correção de bugs
 	1.1   - Correção de bugs
@@ -70,7 +71,8 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
-	1.2.2 - Military Simbology update
+	1.2.3 - Fixing in geocoding not working
+	1.2.2 - Fixing in convergence value always negative, and move vertex tool not moving correctly
 	1.2.1 - Geocoding API changing - Google to Bing
 	1.2   - Bug fixes
 	1.1   - Bug fixes
