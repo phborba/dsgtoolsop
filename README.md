@@ -1,8 +1,7 @@
-# DSGTools Op
+# DSGTools Op - QGIS 2.18
 ### Ferramentas para planejamento militar do Exército Brasileiro.
 #### DSG - Diretoria de Serviço Geográfico
 
-![](https://img.shields.io/badge/stable--version-1.2.3-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2019--11--26-orange.svg) ![](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)
 ---
 O 1º CGEO vem ministrando, desde 2015, os Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, nas atividades de preparo e emprego da tropa. O software utilizado é o QGIS, por ser livre e ser o software padrão de produção cartográfica da DSG.
 
@@ -24,9 +23,3 @@ A materialização desse conjunto de ferramentas foi denominada DSGToolsOp, idea
 9. **Perfil do terreno** - Traça um gráfico representativo da variação de elevação do terreno (raster), a partir de uma linha desenhada pelo usuário ou selecionada em uma camada vetorial.
 10. **Geocodificação** - A partir de um arquivo CSV contendo endereços (e opcionalmente outros dados), determina a localização geográfica dos mesmos, criando uma camada de pontos atributados com os valores constantes do arquivo. Realiza também o processo inverso: dada uma camada de pontos, determina o endereço de cada um, adicionando um novo atributo com estes valores à camada. Utiliza a Bing Maps API.
 11. **Medição durante aquisição vetorial** - Apresenta ao usuário as medidas da feição sendo desenhada (distância parcial/acumulada para linhas, área para polígonos) como uma tooltip junto ao cursor.
-
----
-### Contato
-Para sugestões, opiniões ou contatos diversos, entre em contato com o mantenedor do repositório:
-- GitHub: http://github.com/diegobenincasa
-- E-mail: benincasa.diego@eb.mil.br
