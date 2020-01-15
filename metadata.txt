@@ -1,103 +1,47 @@
-# This file contains metadata for your plugin. Since
-# version 2.0 of QGIS this is the proper way to supply
-# information about a plugin. The old method of
-# embedding metadata in __init__.py will
-# is no longer supported since version 2.0.
+# This file contains metadata for your plugin.
 
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=DSGTools Op
-qgisMinimumVersion=2.14
-description=Ferramentas para planejamento militar do Exército Brasileiro
-version=1.2.3
-author=Exército Brasileiro - Diretoria de Serviço Geográfico
-email=benincasa.diego@eb.mil.br
-about=
-	PORTUGUÊS
-	Ferramentas para planejamento de atividades militares.
-	Atualmente conta com as seguintes funcionalidades:
-	- Simbologia Militar (de acordo com Manual MD33-M-02)
-	- Calculador de coordenadas e dimensões
-	- Conversão de unidades angulares
-	- Criação de pontos por coordenadas
-	- Relocação de pontos por coordenadas 
-	- Gerador de azimutes e distâncias
-	- Declinação magnética e convergência meridiana
-	- Determinação de MI (índice de nomenclatura) de carta
-	- Perfil do terreno
-	- Geocodificação (direta e reversa)
-	- Medição na aquisição vetorial
-	
-	ENGLISH
-	GIS tools for military planning, specially for the Brazilian Army.
-	Tools currently in the package:
-	- Military Simbology (Brazilian Army simbology manual MD33-M-02)
-	- Coordinate calculator
-	- Angle unit converter
-	- Coordinate-based point creator
-	- Coordinate-based point relocation
-	- Azimuths and distances generator
-	- Magnetic declination and meridian convergence calculator
-	- Chart MI (map naming index) determination
-	- Profile tool
-	- Geocoding (direct and reverse)
-	- In-digitize measure tool
+name=DSG Tools Op
+qgisMinimumVersion=3.0
+description=Set of tools for operational planning
+version=0.4
+author=eu
+email=eu
 
+about=Military Tools for the Brazilian Army
 
+tracker=http://bugs
+repository=http://repo
 # End of mandatory metadata
 
-# Optional items:
+# Recommended items:
 
+hasProcessingProvider=no
 # Uncomment the following line and add your changelog:
-changelog=
-	PORTUGUÊS
-	1.2.3 - Correção da geocodificação não funcionando
-	1.2.2 - Correção de valor da convergência sempre negativo, e mover pontos não movendo corretamente
-	1.2.1 - Alteração da API de geocodificação - Google para Bing
-	1.2   - Correção de bugs
-	1.1   - Correção de bugs
-	1.0   - Versão inicial pronta como plugin independente do DSGTools
-	0.5   - Inserção de novas ferramentas
-	0.4.5 - Divisão dos símbolos militares em calcos
-	0.4.4 - Correção de bugs
-	0.4.3 - Atualização da Simbologia Militar
-	0.4.2 - Atualização da Simbologia Militar
-	0.4.1 - Correção de bugs
-	0.4   - Adição de funcionalidades
-	0.3   - Adição de funcionalidades
-	0.2   - Atualização da Simbologia Militar e adição de funcionalidades
-	0.1.1 - Atualização da Simbologia Militar
-	0.1   - Versão inicial com Simbologia Militar
-
-	ENGLISH
-	1.2.3 - Fixing in geocoding not working
-	1.2.2 - Fixing in convergence value always negative, and move vertex tool not moving correctly
-	1.2.1 - Geocoding API changing - Google to Bing
-	1.2   - Bug fixes
-	1.1   - Bug fixes
-	1.0   - Initial version as an independent plugin
-	0.5   - Addition of new tools
-	0.4.5 - Categorization of military symbols
-	0.4.4 - Bug fixes
-	0.4.3 - Military Simbology update
-	0.4.2 - Military Simbology update
-	0.4.1 - Bug fixes
-	0.4   - Addition of new tools
-	0.3   - Addition ofnew tools
-	0.2   - Military Simbology update and addition of new tools
-	0.1.1 - Military Simbology update
-	0.1   - Initial DSGTools-dependent version, with Military Simbology
+# changelog=
 
 # Tags are comma separated with spaces allowed
-tags=Exército,Brasileiro,DSG,Diretoria,Serviço,Geográfico,BDGEx,Militar
+tags=python
 
-homepage=http://bit.ly/dsgtoolsop
-tracker=https://github.com/dsgoficial/DSGToolsOp/issues
-repository=https://github.com/dsgoficial/DSGToolsOp
-icon=icons/dsg.png
+homepage=http://homepage
+category=Plugins
+icon=icon.png
 # experimental flag
 experimental=False
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+Category of the plugin: Raster, Vector, Database or Web
+# category=
+
+# If the plugin can run on QGIS Server.
+server=False
+

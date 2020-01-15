@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/plugins/DSGToolsOp" >
-        <file>icons/dsg.png</file>
-        <file>icons/eb.png</file>
-        <file>icons/militarySimbology.png</file> 
-    </qresource>
-</RCC>
