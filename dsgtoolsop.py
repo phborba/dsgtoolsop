@@ -20,15 +20,15 @@
  ***************************************************************************/
 '''
 
-from PyQt4.QtCore import Qt
-from PyQt4 import QtGui, QtCore
+from qgis.PyQt.QtCore import Qt
+from qgis.PyQt import QtGui, QtCore
 import os
 from qgis.utils import iface
-from qgis.core import QgsMapLayer, QgsMapLayerRegistry
-from PyQt4.Qt import QToolBar, QAction, QIcon
-from PyQt4.QtGui import QMessageBox, QMenu
+from qgis.core import QgsMapLayer
+from qgis.PyQt.Qt import QToolBar, QAction, QIcon
+from qgis.PyQt.QtWidgets import QMessageBox, QMenu
 
-class DSGToolsOp:
+class DsgToolsOp:
 	def __init__(self, iface):
 		self.iface = iface
 		self.actions = []
@@ -96,17 +96,26 @@ class DSGToolsOp:
 		return action
 
 	def loadTools(self):
-		action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
+#		self.auc_action = self.add_action(
+#			os.path.join(os.path.dirname(__file__), 'icons', 'azimuth.png'),
+#			text=u'Calculadora de Azimutes',
+#			callback=self.loadAzimuth,
+#			parent=self.dsgToolsOp,
+#			add_to_menu=False,
+#			add_to_toolbar=False)
+#		self.dsgToolsOp.addAction(self.auc_action)
+	
+		self.auc_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'dimensionsvf.png'),
 			text=u'Calculadora de Coordenadas e Dimensões',
-			callback=self.loadVirtualFieldGenerator,
+			callback=self.loadDimensionsVF,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(action)
-        
+		self.dsgToolsOp.addAction(self.auc_action)
+
 		self.auc_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
+			os.path.join(os.path.dirname(__file__), 'icons', 'convang.png'),
 			text=u'Conversor de unidades angulares',
 			callback=self.loadAngleUnitConverter,
 			parent=self.dsgToolsOp,
@@ -114,232 +123,62 @@ class DSGToolsOp:
 			add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.auc_action)
 
-		self.nd_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Criação de pontos por coordenadas',
-			callback=self.loadNumericalDigitize,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.nd_action)
-
 		self.dec_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
+			os.path.join(os.path.dirname(__file__), 'icons', 'declconv.png'),
 			text=u'Declinação magnética e convergência meridiana',
-			callback=self.loadDeclinacaoConvergencia,
+			callback=self.loadDeclConv,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.dec_action)
-		from .DeclinacaoConvergencia.main import Main as Main_DecConv
-		self.mainDecConv = Main_DecConv(iface)
-        
-		self.geo_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Geocodificação',
-			callback=self.loadGeocoding,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.geo_action)
-		from .Geocoding.main import Main as Main_Geocoding
-		self.mainGeocoding = Main_Geocoding(iface)
-        
-		self.az_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Gerador de Azimutes e Distâncias',
-			callback=self.loadGeradorAzimutesDistancias,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.az_action.setCheckable(True)
-		self.dsgToolsOp.addAction(self.az_action)
-		from .GeradorAzimuteDistancia.main import Main as Main_Azimutes
-		self.mainAzimutes = Main_Azimutes(iface)
-        
+
 		self.mi_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
+			os.path.join(os.path.dirname(__file__), 'icons', 'findmi.png'),
 			text=u'Localizar carta topográfca (MI) por ponto',
-			callback=self.loadDeterminarMI,
+			callback=self.loadFindMI,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.mi_action)
-		from .DeterminarMI.main import Main as Main_MI
-		self.mainMI = Main_MI(iface)
-        
+		
 		self.miA_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u"Localizar carta topográfca (MI) por região",
-			callback=self.loadDeterminarMIArea,
+			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
+			text=u'Localizar carta topográfca (MI) por região',
+			callback=self.loadFindMIArea,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.miA_action)
-		from .DeterminarMIArea.main import Main as Main_MIArea
-		self.mainMIArea = Main_MIArea(iface)
-        
-		self.mt_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Medição durante aquisição vetorial',
-			callback=self.loadMeasureTool,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.mt_action.setCheckable(True)
-		self.dsgToolsOp.addAction(self.mt_action)
-		from .measureTool.measureTool import MeasureTool as Main_MeasureTool
-		self.mainMeasureTool = Main_MeasureTool(iface)
-        
-		self.mv_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Mover pontos por coordenadas',
-			callback=self.loadMoveVertex,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.mv_action)
-        
-		self.ms_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Simbologia Militar',
-			callback=self.loadMilitarySimbologyDock,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.ms_action)
 
-		self.pt_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Traçar perfil do terreno',
-			callback=self.loadProfileTool,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.pt_action)
-		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
-		self.mainProfileTool = Main_ProfileTool(iface)
-        
-	def loadDeterminarMI(self):
-		"""
-		Finds topographic chart MI that contains a user-clicked point
-		"""
-		if self.mainMI.isOpen == False:
-			self.mainMI.initGui()
-
-	def loadDeterminarMIArea(self):
-		"""
-        Finds topographic chart MI that contains a user-defined box
-        """
-		if self.mainMIArea.isOpen == False:
-			self.mainMIArea.initGui()
-    
-	def loadMoveVertex(self):
-		"""
-        Moves points to a new user-input location
-        """
-		from .numericalVertexEdit.numericalvertexedit import NumericalVertexEdit as Main_MoveVertex
-		self.mainMoveVertex = Main_MoveVertex(iface)
-		self.mainMoveVertex.initGui()
-		self.mainMoveVertex.run()
-        
-	def loadNumericalDigitize(self):
-		"""
-        Creates points by user input of coordinates
-        """
-		from .numericalDigitize.numericalDigitize import NumericalDigitize as Main_NumericalDigitize
-		self.mainNumericalDigitize = Main_NumericalDigitize(iface)
-		self.mainNumericalDigitize.initGui()
-		self.mainNumericalDigitize.run()
-    
-	def loadDeclinacaoConvergencia(self):
-		"""
-        Show magnetic heading and geographic convergence dockable window
-        """
-		if self.mainDecConv.isOpen == False:
-			self.mainDecConv.initGui()
-    
 	def loadAngleUnitConverter(self):
-		"""
-        Show angle unit converter dialog
-        """
-		from .AngleUnitConverter.main import Main
-		main = Main(iface)
-		main.executePlugin()
+		from .ConvAng.convAng_dialog import ConvAngDialog
+		dialogBoxAng = ConvAngDialog(iface)
+		dialogBoxAng.exec_()
 
-	def loadGeocoding(self):
-		"""
-        Show geocoding dock widget
-        """
-		if self.mainGeocoding.isOpen == False:
-			self.mainGeocoding.initGui()
+	def loadFindMI(self):
+		from .DetMI.detMI_dockwidget_base import DetMIDockWidget
+		self.DockWidgetMIP = DetMIDockWidget(iface)
+		if self.DockWidgetMIP.isOpen == False:
+			self.DockWidgetMIP.initGui()
+	
+	def loadFindMIArea(self):
+		from .DetMIArea.detMIArea_dockwidget_base import DetMIAreaDockWidget
+		self.DockWidgetMIA = DetMIAreaDockWidget(iface)
+		if self.DockWidgetMIA.isOpen == False:
+			self.DockWidgetMIA.initGui()
 
-	def loadGeradorAzimutesDistancias(self):
-		"""
-        Add icons to toolbar for generating azimuths and distances
-        """
-        
-		if self.az_action.isChecked():
-			self.mainAzimutes.initGui()
-		else:
-			self.mainAzimutes.unload()
-            
-	def loadMeasureTool(self):
-		"""
-        Add icons to toolbar for measuring features during their acquisition
-        """
-        
-		if self.mt_action.isChecked():
-			self.mainMeasureTool.initGui()
-		else:
-			self.mainMeasureTool.unload()
-        
-	def loadProfileTool(self):
-		"""
-        Generates a terrain profile
-        """
-		hasRaster = False
-		for l in QgsMapLayerRegistry.instance().mapLayers().values():
-			if l.type() == QgsMapLayer.RasterLayer:
-				hasRaster = True
-				break
-        
-		if hasRaster == False:
-			msgBox = QMessageBox(QMessageBox.Information, u"Informação", u"Não há camadas raster para traçar o perfil.", QMessageBox.Ok)
-			msgBox.exec_()
-			return
-        
-		if self.mainProfileTool.dockOpened == False:
-			self.mainProfileTool.run()
-        
-	def loadVirtualFieldGenerator(self):
-		"""
-        Show virtual field generator dialog
-        """
-		from .VirtualFieldGenerator.main import Main
-		main = Main()
-		dlg = main.getDialog()
-		if dlg:
-			dlg.show()
-    
-	def loadMilitarySimbologyDock(self):
-		"""
-        Shows the Military Simbology Dock
-        """
-		from .MilitarySimbologyTools.main import Main
-		main = Main()
-		dlg = main.getFrame()
-		dlg.setGeometry(700, 500, 100, 50)
-		if dlg:
-			dlg.show()
+	def loadDeclConv(self):
+		from .DeclConv.declConv_dockwidget_base import DeclConvDockWidget
+		self.DockWidgetDeclConv = DeclConvDockWidget(iface)
+		if self.DockWidgetDeclConv.isOpen == False:
+			self.DockWidgetDeclConv.initGui()
 
-	def showFiringRangeTool(self):
-		"""
-        Show sthe convert database dialog
-        """
-		from .FiringRangeTools.firingRangeDialog import FiringRangeDialog
-		dlg = FiringRangeDialog(self.iface)
-		dlg.show()
-		result = dlg.exec_()
-		if result:
-			pass
+	def loadDimensionsVF(self):
+		from .DimensionsVF.dimensionsVF_dialog import DimensionsVFDialog
+		dialogBoxDimensions = DimensionsVFDialog(iface)
+		dialogBoxDimensions.exec_()
+
+#	def loadAzimuth(self):
+#		from .Azimuth.azimuth_dialog import AzimuthDialog
+#		dialogBoxAzimuth = AzimuthDialog(iface)
+#		dialogBoxAzimuth.exec_()
