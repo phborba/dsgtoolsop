@@ -32,5 +32,5 @@ def classFactory(iface):  # pylint: disable=invalid-name
     :type iface: QgsInterface
     """
     #
-    from .dsgToolsOp import DsgToolsOp
+    from .dsgtoolsop import DsgToolsOp
     return DsgToolsOp(iface)
