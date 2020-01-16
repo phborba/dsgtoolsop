@@ -10,13 +10,7 @@ version=0.4
 author=eu
 email=eu
 
-about=Military Tools for the Brazilian Army
-Magnetic declination obtained using geomag.py
-by Christopher Weiss cmweiss@gmail.com
-WMM model by NOAA NCEI Geomagnetic Modeling Team and 
-British Geological Survey. 2019. World Magnetic Model 2020. 
-NOAA National Centers for Environmental Information. 
-doi: 10.25921/11v3-da71, 2020, 01/14/2020.
+about=Military Tools for the Brazilian Army. Magnetic declination obtained using geomag.py by Christopher Weiss cmweiss@gmail.com. WMM model by NOAA NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
 
 
 
