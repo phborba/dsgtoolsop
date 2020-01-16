@@ -11,6 +11,6 @@ Conjunto de ferramentas interesse militar para QGIS 3, implementadas de forma a 
 5. **Localizar carta topográfica (MI) por região**- Ao se definir uma região da tela que esteja dentro do Brasil aparecerá quais cartas englobam aquela região, nas diversas escalas.
 
 ## Créditos
-1. **Declinação magnética** - valor obtido por meio do geomag.py by Christopher Weiss cmweiss@gmail.com.  Utilizando modelo de coeficientes WMM 2020.0 do NOAA.
+1. **Declinação magnética** - valor obtido por meio do geomag.py by Christopher Weiss cmweiss@gmail.com, https://github.com/cmweiss/geomag.  Utilizando modelo de coeficientes WMM 2020.0 do NOAA.
 NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
 
