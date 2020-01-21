@@ -2,7 +2,7 @@
 ### Ferramentas para planejamento militar do Exército Brasileiro.
 #### DSG - Diretoria de Serviço Geográfico
 
-![](https://img.shields.io/badge/stable--version-2.0.0-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_01_20-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
+![](https://img.shields.io/badge/stable--version-2.0.1-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_01_20-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
 ---
 O 1º CGEO vem ministrando, desde 2015, os Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, nas atividades de preparo e emprego da tropa. O software utilizado é o QGIS, por ser livre e ser o software padrão de produção cartográfica da DSG.
 
