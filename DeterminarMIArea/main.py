@@ -40,6 +40,7 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                 l.removeSelection()
         self.closingDock.emit()
         event.accept()
+        self.isOpen = False
 
     def initVariables(self):
         self.canvas = self.iface.mapCanvas()

@@ -148,29 +148,6 @@ class DSGToolsOp:
 		from .QuickGeocoder.geocoder import QuickGeocoder as Main_Geocoding
 		self.mainGeocoding = Main_Geocoding(iface)
         
-		# self.az_action = self.add_action(
-		# 	os.path.join(os.path.dirname(__file__), 'icons', 'azimuth.png'),
-		# 	text=u'Gerador de Azimutes e Distâncias',
-		# 	callback=self.loadGeradorAzimutesDistancias,
-		# 	parent=self.dsgToolsOp,
-		# 	add_to_menu=False,
-		# 	add_to_toolbar=False)
-		# self.az_action.setCheckable(True)
-		# self.dsgToolsOp.addAction(self.az_action)
-		# from .GeradorAzimuteDistancia.main import Main as Main_Azimutes
-		# self.mainAzimutes = Main_Azimutes(iface)
-        
-		# self.mi_action = self.add_action(
-		# 	os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-		# 	text=u'Localizar carta topográfca (MI) por ponto',
-		# 	callback=self.loadDeterminarMI,
-		# 	parent=self.dsgToolsOp,
-		# 	add_to_menu=False,
-		# 	add_to_toolbar=False)
-		# self.dsgToolsOp.addAction(self.mi_action)
-		# from .DeterminarMI.main import Main as Main_MI
-		# self.mainMI = Main_MI(iface)
-        
 		self.miA_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
 			text=u"Localizar carta topográfca (MI) por região",
@@ -203,15 +180,6 @@ class DSGToolsOp:
 			add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.mv_action)
         
-		self.ms_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
-			text=u'Simbologia Militar',
-			callback=self.loadMilitarySimbologyDock,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.ms_action)
-
 		self.pt_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'profileIcon.png'),
 			text=u'Traçar perfil do terreno',
@@ -323,17 +291,6 @@ class DSGToolsOp:
 		dialogVFG = VirtualFieldGenerator(iface)
 		dialogVFG.exec_()
     
-	def loadMilitarySimbologyDock(self):
-		"""
-        Shows the Military Simbology Dock
-        """
-		from .MilitarySimbologyTools.main import Main
-		main = Main()
-		dlg = main.getFrame()
-		dlg.setGeometry(700, 500, 100, 50)
-		if dlg:
-			dlg.show()
-
 	def showFiringRangeTool(self):
 		"""
         Show sthe convert database dialog
