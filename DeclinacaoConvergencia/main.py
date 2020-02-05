@@ -1,3 +1,11 @@
+#Magnetic declination obtained using geomag.py
+#by Christopher Weiss cmweiss@gmail.com
+#WMM model by NOAA NCEI Geomagnetic Modeling Team and 
+#British Geological Survey. 2019. World Magnetic Model 2020. 
+#NOAA National Centers for Environmental Information. 
+#doi: 10.25921/11v3-da71, 2020, 01/14/2020.
+
+
 # -*- coding: utf-8 -*-
 from qgis.PyQt.QtWidgets import QAction, QToolButton, QMenu, QMessageBox
 from qgis.PyQt.QtGui import QIcon
@@ -5,7 +13,7 @@ from qgis.core import *
 from qgis.gui import *
 from .icons import resources_rc
 from .UI.interface import Interface
-from ..aux.auxDeclConv import AuxiliarDeclConv
+from ..auxiliar.auxDeclConv import AuxiliarDeclConv
 
 import math
 

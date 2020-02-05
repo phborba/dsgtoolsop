@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=3.0
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=2.0
+version=2.0.1
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -44,6 +44,9 @@ about=
 	- Geocoding (direct and reverse)
 	- In-digitize measure tool
 
+	Magnetic declination obtained using geomag.py by Christopher Weiss cmweiss@gmail.com. 
+	WMM model by NOAA NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. 
+	World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
 
 # End of mandatory metadata
 
@@ -52,6 +55,7 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+    2.0.1 - Correção de bugs
 	2.0	  - Nova versão para QGIS 3.x
 	1.2.3 - Correção da geocodificação não funcionando
 	1.2.2 - Correção de valor da convergência sempre negativo, e mover pontos não movendo corretamente
@@ -72,6 +76,7 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+    2.0.1 - Bug fixes
 	2.0   - Version update for QGIS 3.x
 	1.2.3 - Fixing in geocoding not working
 	1.2.2 - Fixing in convergence value always negative, and move vertex tool not moving correctly

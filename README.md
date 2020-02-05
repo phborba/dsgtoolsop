@@ -2,13 +2,13 @@
 ### Ferramentas para planejamento militar do Exército Brasileiro.
 #### DSG - Diretoria de Serviço Geográfico
 
-![](https://img.shields.io/badge/stable--version-2.0.1-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_01_20-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
+![](https://img.shields.io/badge/stable--version-3.0.0-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_02_05-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
 ---
-O 1º CGEO vem ministrando, desde 2015, os Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, nas atividades de preparo e emprego da tropa. O software utilizado é o QGIS, por ser livre e ser o software padrão de produção cartográfica da DSG.
+O DSGTools Op é um conjunto de ferramentas produto dos Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, ministrados desde 2015, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, que visa auxiliar nas atividades de preparo e emprego da tropa.
 
 Durante os cursos de 2016 e 2017, os instrutores receberam uma série de comentários sobre possíveis aplicações do QGIS nas atividades das OM e foi identificada a necessidade de um plugin que reunisse as diversas ferramentas de interesse militar, implementadas de forma a facilitar sua utilização por OM de Corpo de Tropa. Para isso, deveriam ser utilizadas terminologias de uso militar e omitidas configurações específicas (fora do conhecimento básico da geoinformação para Corpo de Tropa).
 
-A materialização desse conjunto de ferramentas foi denominada DSGTools Op, idealizado como uma extensão do plugin DSGTools (implementado em conjunto pelos 1º e 2º CGEO) mas hoje totalmente independente.
+A materialização desse conjunto de ferramentas foi denominada DSGTools Op, idealizado como uma extensão do plugin DSGTools, mas hoje totalmente independente.
 
 ---
 ### Ferramentas atuais
@@ -34,3 +34,9 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 5. **Sombreamento do terreno** - Através de algoritmos de sombreamento espacial, e valendo-se de serviços online para o cálculo do azimute e da declinação do astro iluminador (Sol ou Lua) com base em data e hora informados, a ferramenta gera uma representação visual do aspecto das sombras do terreno devidas ao relevo.
 6. **Criação de pontos por azimute/distância** - Permite criar novas feições pontuais em camadas vetoriais de pontos a partir de um ponto predefinido e um azimute e distância a partir do mesmo.
 7. **Modelo 3D do terreno** - Tendo-se disponível um Modelo Digital de Elevações, gera uma visualização tridimensional da área de planejamento com todos os elementos representados na interface do QGIS, numa espécie de maquete virtual do popularmente conhecido no jargão militar como "caixão de areia".
+
+---
+## Créditos
+1. **Declinação magnética** - valor obtido por meio do geomag.py by Christopher Weiss cmweiss@gmail.com, https://github.com/cmweiss/geomag.  Utilizando modelo de coeficientes WMM 2020.0 do NOAA.
+NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
+

@@ -4,7 +4,7 @@ from qgis.gui import QgsMapToolEmitPoint, QgsVertexMarker, QgsMapToolIdentifyFea
 from qgis.PyQt import uic, QtWidgets, QtCore
 from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView
 from qgis.PyQt.QtCore import pyqtSignal, Qt
-from ..aux.auxMI2 import Auxiliar
+from ..auxiliar.auxMI2 import Auxiliar
 import os
 
 
@@ -155,7 +155,10 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         
         if filePath != "":
             csvFile = open(filePath, 'w')
-        
+
+        if filePath == "":
+            return
+
         csvFile.write(u'*********************************************\n')
         head = u'* Lista de cartas topograficas de interesse *\n'
         csvFile.write(head)
@@ -191,7 +194,10 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         
         if filePath != "":
             csvFile = open(filePath, 'w')
-        
+
+        if filePath == "":
+            return
+
         csvFile.write(u'Escala;Nomenclatura;MI\n')
         
         itemCount = self.mapList.invisibleRootItem().childCount()
