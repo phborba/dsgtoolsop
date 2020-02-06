@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/plugins/DsgTools/DsgToolsOp/MilitaryTools/DeclinacaoConvergencia/icons" >
-        <file>main.png</file>
-    </qresource>
-</RCC>
