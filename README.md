@@ -1,91 +1,42 @@
-# DSGTools
+# DSGTools Op
+### Ferramentas para planejamento militar do Exército Brasileiro.
+#### DSG - Diretoria de Serviço Geográfico
 
-[![Join the chat at https://gitter.im/DsgTools/Lobby](https://badges.gitter.im/DsgTools/Lobby.svg)](https://gitter.im/DsgTools/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![](https://img.shields.io/badge/stable--version-3.0.0-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_02_05-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
+---
+O DSGTools Op é um conjunto de ferramentas produto dos Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, ministrados desde 2015, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, que visa auxiliar nas atividades de preparo e emprego da tropa.
 
-|branch|status|
-|-------|--------|
-|master|[![Build Status](https://travis-ci.com/dsgoficial/DsgTools.svg?branch=master)](https://travis-ci.com/dsgoficial/DsgTools)|
-|dev|[![Build Status](https://travis-ci.com/dsgoficial/DsgTools.svg?branch=dev)](https://travis-ci.com/dsgoficial/DsgTools)|
+Durante os cursos de 2016 e 2017, os instrutores receberam uma série de comentários sobre possíveis aplicações do QGIS nas atividades das OM e foi identificada a necessidade de um plugin que reunisse as diversas ferramentas de interesse militar, implementadas de forma a facilitar sua utilização por OM de Corpo de Tropa. Para isso, deveriam ser utilizadas terminologias de uso militar e omitidas configurações específicas (fora do conhecimento básico da geoinformação para Corpo de Tropa).
 
+A materialização desse conjunto de ferramentas foi denominada DSGTools Op, idealizado como uma extensão do plugin DSGTools, mas hoje totalmente independente.
 
-------------------------------------
-# DSGTools Plugin (English Version)
+---
+### Ferramentas atuais
 
-DSGTools is a QGIS plugin that allow users to create and manipulate Geospatial Data according to Brazilian Law (ET-EDGV 2.1.3 and ET-EDGV 3.0). DSGTools aims to provide tools not only to Brazilian Army, but to GIS comunity in general.
+1. **Cálculo de coordenadas e dimensões** - Calcula automaticamente as coordenadas geográficas e planas de uma camada de pontos. Importante na interação da tropa terrestre com apoio aéreo.
+2. **Conversão de unidades angulares** - Dado um campo da tabela de atributos com ângulos em graus, gera um campo com os ângulos em milésimos.
+3. **Criação de pontos por coordenadas** - Cria um ponto num arquivo existente, a partir de suas coordenadas. (14 NOV 17)
+4. **Relocação de pontos por coordenadas** - Ao selecionar um ponto existente, movê-lo para outra posição a partir das coordenadas da nova posição.
+5. **Declinação magnética e convergência meridiana** - Selecionando-se um ponto, linha ou polígono são apresentadas a Declinação Magnética e Convergência Meridiana do dado selecionado.
+6. **Determinação do MI (Índice de Nomenclatura) da carta** - Ao clicar em uma região da tela que esteja dentro do Brasil aparecerá qual carta engloba aquela região, nas diversas escalas.
+7. **Perfil do terreno** - Traça um gráfico representativo da variação de elevação do terreno (raster), a partir de uma linha desenhada pelo usuário ou selecionada em uma camada vetorial.
+8. **Geocodificação** - A partir de um arquivo CSV contendo endereços (e opcionalmente outros dados), determina a localização geográfica dos mesmos, criando uma camada de pontos atributados com os valores constantes do arquivo. Realiza também o processo inverso: dada uma camada de pontos, determina o endereço de cada um, adicionando um novo atributo com estes valores à camada. Utiliza a Bing Maps API.
+9. **Medição durante aquisição vetorial** - Apresenta ao usuário as medidas da feição sendo desenhada (distância parcial/acumulada para linhas, área para polígonos) como uma tooltip junto ao cursor.
 
-Current changelog can be viewed on https://github.com/dsgoficial/DsgTools/wiki (portuguese only, for now).
+---
+### Ferramentas em desenvolvimento
 
-DSGTools 4.1 has the following features:
+1. **Simbologia Militar** - Visa substituir o calco impresso pelos planos de informação do QGIS, empregando a simbologia prevista no manual MD33-M-02.
+2. **Geração de azimutes e distâncias** - Seleciona-se vários pontos, ou uma linha ou um polígono e é gerado um “csv” com as coordenadas do primeiro ponto e o azimute e distância para os demais pontos. Importante para confecção de pistas de orientação e Quadros Auxiliares de Navegação (QAN).
+3. **Alcance do armamento** - Gera buffers de alcance de armamento com base nos valores de alcance de peças de artilharia definidos em manuais de campanha do Exército, valendo-se também de um azimute de tiro e uma angulação de visada/atuação da peça.
+4. **Plano de chamada** - Espacializa os endereços de elementos de interesse (por exemplo, moradias de militares) e agrupa os pontos gerados através de algoritmos de proximidade espacial, visando subdividir o espaço em regiões de atuação e definir centros de atuação (para endereços de militares, pontos de reunião) mais justos que distribuam uniformemente as distâncias entre o mesmo e cada elemento espacializado.
+5. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
+6. **Sombreamento do terreno** - Através de algoritmos de sombreamento espacial, e valendo-se de serviços online para o cálculo do azimute e da declinação do astro iluminador (Sol ou Lua) com base em data e hora informados, a ferramenta gera uma representação visual do aspecto das sombras do terreno devidas ao relevo.
+7. **Criação de pontos por azimute/distância** - Permite criar novas feições pontuais em camadas vetoriais de pontos a partir de um ponto predefinido e um azimute e distância a partir do mesmo.
+8. **Modelo 3D do terreno** - Tendo-se disponível um Modelo Digital de Elevações, gera uma visualização tridimensional da área de planejamento com todos os elementos representados na interface do QGIS, numa espécie de maquete virtual do popularmente conhecido no jargão militar como "caixão de areia".
 
-- Creation, Storage and Deletion of PostGIS servers configurations;
-- Database creation using Spatialite and PostGIS according to EDGV version 2.1.3 and EDGV version 3.0
-- Layer loading by category and class as defined by EDGV version 2.1.3 and EDGV version 3.0;
-- Layer loading grouping by geometric primitive and schema for any PostGIS database;
-- Manipulation of complex features (Creation, Editing, Deletion, Zoom, Association, Disassociation) and;
-- Access to some WM(T)S services provided by BDGEx (Brazilian Army SDI);
-- Inventory Tool for all geospatial data supported by GDAL/OGR;
-- Tool to install Models and Script (geoalgorithms) in the Processing Toolbox (HSV fusion script available);
-- Database role management. Access profile (i.e. Read/Write permissions by table in database );
-- Database user profile management (e.g. Grant/Revoke predifined roles to/from user );
-- Create/Remove PostgreSQL users;
-- Alter PostgreSQL user Password;
-- Conversion tools between postgis and spatialite EDGV databases;
-- Tool to assign elevation values to contour lines in a simple way;
-- EDGV code list viewer to aid attributes queries using our EDGV databases;
-- Drop EDGV databases;
-- Tool to reclassify features (move them to another layer) with predefined attributes;
-- Quality Assurance Tools: fix geometry problems prior to creating a topology structure;
+---
+## Créditos
+1. **Declinação magnética** - valor obtido por meio do geomag.py by Christopher Weiss cmweiss@gmail.com, https://github.com/cmweiss/geomag.  Utilizando modelo de coeficientes WMM 2020.0 do NOAA.
+NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
 
-
-Requirements for LINUX (Ubuntu/Debian):
-
-Install the following packages as follows:
-```
-sudo apt-get install libqt5sql5-psql
-sudo apt-get install libqt5sql5-sqlite
-```
-
-For further information, go to https://github.com/dsgoficial/DsgTools/wiki or http://www.geoportal.eb.mil.br/index.php/qgis-menu/dsgtools/dsgtools-generalidades
-
-------------------------------------
-# Complemento DSGTools (Versão em Português)
-
-O DSGTools é um complemento para o QGIS (http://qgis.org/pt_BR/site/) que permite aos usuários a criação e utilização de produtos cartográficos de acordo com as especificações da ET-EDGV 2.1.3 e da ET-EDGV Defesa F Ter 2ª Edição. O DSGTools visa atender não apenas o Exército Brasileiro, mas também produtores e usuários de geoinformação da sociedade.
-Este projeto visa cumprir a missão estabelecida no Plano Estratégico do Exército 2016-2019 (PEEx 2016-2019), relativo ao seguinte Objetivo Estratégico do Exército (OEE):
-* OEE 7 - Aprimorar a Governança de Tecnologia da Informação;
-* Estratégia 7.2 - Reorganização do Sistema de Informação do Exército (SINFOEx);
-* Ação Estratégica 7.2.1 - Aperfeiçoar a produção e disponibilização da geoinformação;
-* Atividade imposta 7.2.1.5 - Implantar o SIG para ambiente desktop no âmbito do Exército.
-
-O plugin foi todo desenvolvido em python e está disponível para download pelo próprio QGIS ou pelo endereço http://plugins.qgis.org/plugins/DsgTools/.
-
-Estão disponíveis as seguintes funcionalidades no plugin em sua versão 3.1 (changelog completo disponível em https://github.com/dsgoficial/DsgTools/wiki ):
-
-- Criação, armazenamento e remoção de configuração de servidores PostGIS;
-- Criação de banco de dados em Spatialite e em PostGIS de acordo a ET-EDGV 2.1.3, ET-EDGV 3.0 e ET-EDGV Defesa F Ter 2ª Edição;
-- Criação de banco de dados em Spatialite e em PostGIS de acordo com ET-EDGV 2.1.3, ET-EDGV 3.0 e ET-EDGV Defesa F Ter 2ª Edição;
-- Carregamento de camadas por classe e por categoria conforme definido na ET-EDGV 2.1.3, ET-EDGV 3.0 e ET-EDGV Defesa F Ter 2ª Edição;
-- Manipulação de feições complexas (criação, edição, remoção, zoom, associação e desassociação);
-- Acesso a alguns serviços WM(T)S do BDGEx e;
-- Acesso ao mapa índice de produtos vetoriais e matriciais do BDGEx.
-- Ferramenta de Inventário de Dados Geoespaciais suportados pela GDAL/OGR;
-- Ferramentas para instalar modelos e scripts (geoalgoritmos) na Caixa de Ferramenta do QGIS;
-- Gerenciamento de permissoes de usuários (ex. Permissões de leitura/escrita em partes espcíficas do banco);
-- Criação/Remoção de usuários no PostgreSQL;
-- Alteração de senha de usuários no PostgreSQL;
-- Conversão entre formatos de bancos de dados (PostGIS para Spatialite e vice e versa);
-- Ferramenta para atribuição de cotas de maneira automática para isolinhas;
-- Visualizador de valores de códigos da EDGV para auxiliar em consultas por atributos;
-- Deleção de bancos EDGV feitos em PostgreSQL;
-- Ferramenta de (re)classificação de feições;
-- Ferramentas de validação geométrica;
-
-Para maiores informações, acesse https://github.com/dsgoficial/DsgTools/wiki ou http://www.geoportal.eb.mil.br/index.php/qgis-menu/dsgtools/dsgtools-generalidades
-
-Dependências a serem instaladas (Ubuntu/Debian):
-
-Instalar os seguintes pacotes de acordo com o código abaixo:
-```
-sudo apt-get install libqt5sql5-psql
-sudo apt-get install libqt5sql5-sqlite
-```
