@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- DsgTools
+ DSGTools Op
                                  A QGIS plugin
- Brazilian Army Cartographic Production Tools
+ Ferramentas para planejamento militar do Exército Brasileiro
                              -------------------
-        begin                : 2014-10-09
-        copyright            : (C) 2014 by Luiz Andrade - Cartographic Engineer @ Brazilian Army
-        email                : luiz.claudio@dsg.eb.mil.br
-        git sha              : $Format:%H$
+        begin                : 2017-01-01
+        copyright            : (C) 2017 by Diego Benincasa
+        email                : benincasa.diego@eb.mil.br
  ***************************************************************************/
 
 /***************************************************************************
@@ -22,14 +21,7 @@
  This script initializes the plugin, making it known to QGIS.
 """
 
-
-# noinspection PyPep8Naming
-def classFactory(iface):  # pylint: disable=invalid-name
-    """Load DsgTools class from file DsgTools.
-
-    :param iface: A QGIS interface instance.
-    :type iface: QgsInterface
-    """
-    #
-    from .dsg_tools import DsgTools
-    return DsgTools(iface)
+def classFactory(iface):
+    # load AzimuthDistanceCalculator class from file AzimuthDistanceCalculator
+    from .dsgtoolsop import DSGToolsOp
+    return DSGToolsOp(iface)
