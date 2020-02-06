@@ -226,7 +226,7 @@ class ProfileToolCore(QWidget):
                         geom =  qgis.core.QgsGeometry.fromPolyline([QgsPoint(point[0], point[1]) for point in self.pointstoDraw])
                         pointprojected = geom.interpolate(xtoplot)
                         self.rubberbandpoint.show() 
-                        self.rubberbandpoint.setCenter(pointprojected.asPoint())
+                        #self.rubberbandpoint.setCenter(pointprojected.asPoint())
             
     def prepar_points(self,points1):
         self.tabmouseevent=[]

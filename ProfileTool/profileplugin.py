@@ -4,6 +4,8 @@ from qgis.PyQt.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 from qgis.utils import *
+from qgis.PyQt import QtWidgets
+from qgis.PyQt.QtWidgets import QMessageBox
 import qgis
 
 
@@ -50,20 +52,21 @@ class ProfilePlugin:
         if not self.dockOpened:
             if l == None:
                 return
-            
-            ### RESOLVER AQUI!!!
             self.profiletool = ProfileToolCore(self.iface,self)
             self.profiletool.dockwidget.activateButton.clicked.connect(self.enableTool)
+            self.profiletool.dockwidget.creditsButton.clicked.connect(self.about)
             self.iface.addDockWidget(self.profiletool.dockwidget.location, self.profiletool.dockwidget)
             self.profiletool.dockwidget.closed.connect(self.cleaning)
             self.dockOpened = True
-            #self.profiletool.dockwidget.addLayer(layer)
             self.profiletool.activateProfileMapTool()
         else:
             self.profiletool.activateProfileMapTool()
         
     def enableTool(self):
         self.run()
+		
+    def about(self):
+        QMessageBox.information(self.profiletool.dockwidget, u"Sobre","Profile Tool Plugin\n\nThe Profile Plugin plots terrain profiles along interactive pointed or selected polylines.\n\nData could come from raster layer or point vector layer with elevation field.\nGraph could be exported to SVG or PNG format. The polyline used  can be exported to 3D polyline in dxf format.\n\nPlease send your reflections, opinions, suggestions and wishes (especially related to this plugin;) on https://github.com/etiennesky/profiletool/issues\n\nProfile Tool Plugin - License GNU GPL 2\nWritten in 2008 by Borys Jurgiel\nWritten in 2012 by Borys Jurgiel, Patrice Verchere\n\nREQUIREMENTS:\n- Qwt5 (python-qwt5-qt4) and/or python-matplotlib\n- QT ver 4.1 for saving to PDF and 4.3 for saving to SVG\n");
         
     def cleaning(self):  
         self.dockOpened = False
@@ -78,6 +81,3 @@ class ProfilePlugin:
     def mapToolChanged(self,newtool,oldtool = None):
         pass
             
-    def about(self):
-        from ui.dlgabout import DlgAbout
-        DlgAbout(self.iface.mainWindow()).exec_()
