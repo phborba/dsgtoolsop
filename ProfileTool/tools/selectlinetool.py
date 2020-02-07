@@ -38,38 +38,22 @@ class SelectLineTool:
         featureId = nearest[0] if len(nearest) > 0 else None
         closestFeature = QgsFeature()
         
-        try:    #qgis2
-            if featureId == None or layer.getFeatures(QgsFeatureRequest(featureId)).next() == False:
-                closestFeature = None
-        except:    #qgis3
-            f = QgsFeature()
-            if featureId == None or layer.getFeatures(QgsFeatureRequest(featureId)).nextFeature(f) == False:
-                closestFeature = None
+        f = QgsFeature()
+        if featureId == None or layer.getFeatures(QgsFeatureRequest(featureId)).nextFeature(f) == False:
+            closestFeature = None
         
-        try:    #qgis2
-            if layer.geometryType() != QGis.Line and closestFeature != None:
-                QMessageBox.warning( iface.mainWindow(), u"Buscador de Geometria Mais Próxima", u"Nenhuma camada vetorial selecionada." )
-        except: #qgis3
-            if layer.geometryType() != qgis.core.QgsWkbTypes.LineGeometry  and closestFeature != None:
-                QMessageBox.warning( iface.mainWindow(), u"Buscador de Geometria Mais Próxima", u"Nenhuma camada vetorial selecionada." )
+        if layer.geometryType() != qgis.core.QgsWkbTypes.LineGeometry  and closestFeature != None:
+            QMessageBox.warning( iface.mainWindow(), u"Buscador de Geometria Mais Próxima", u"Nenhuma camada vetorial selecionada." )
 
         booltemp = False
-        try:    #qgis2
-            if layer.geometryType() != QGis.Point:
-                booltemp = True
-        except: #qgis
-            if layer.geometryType() != qgis.core.QgsWkbTypes.PointGeometry :
-                booltemp = True
+        if layer.geometryType() != qgis.core.QgsWkbTypes.PointGeometry :
+            booltemp = True
         
         if booltemp and closestFeature != None:
             # find the furthest bounding box borders
-            try:    #qgis2
-                closestFeature = layer.getFeatures(QgsFeatureRequest(featureId)).next()
-                rect = closestFeature.geometry().boundingBox()
-            except: #qgis3 
-                f = QgsFeature()
-                closestFeature = layer.getFeatures(QgsFeatureRequest(featureId)).nextFeature(f)
-                rect = f.geometry().boundingBox()
+            f = QgsFeature()
+            closestFeature = layer.getFeatures(QgsFeatureRequest(featureId)).nextFeature(f)
+            rect = f.geometry().boundingBox()
             
             dist_pX_rXmax = abs( point.x() - rect.xMaximum() )
             dist_pX_rXmin = abs( point.x() - rect.xMinimum() )
