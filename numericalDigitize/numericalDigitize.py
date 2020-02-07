@@ -3,7 +3,7 @@
 # 
 # Trace Digitize Action - Sets up a Qgis action with/for the vertex tracer tool
 #
-# Copyright (C) 2010  C�dric M�ri, with stuff from Stefan Ziegler
+# Copyright (C) 2010  Cédric Möri, with stuff from Stefan Ziegler
 #
 # EMAIL: cmoe (at) geoing (dot) ch
 # WEB  : www.geoing.ch
@@ -73,24 +73,10 @@ class NumericalDigitize:
     mc = self.canvas
     layer = mc.currentLayer()
     
-    # Create action that will start plugin configuration
-    #self.action = QAction(QIcon(":/plugins/DsgTools/DsgToolsOp/MilitaryTools/numericalDigitize/vector-create-keyboard.png"), u"Criar pontos por coordenadas", self.iface.mainWindow())
-    #self.action.setEnabled(False)
-
-    
-    #Connect to signals for button behaviour
-    #QObject.connect(self.action, SIGNAL("triggered()"), self.run)
-    #QObject.connect(self.iface, SIGNAL("currentLayerChanged(QgsMapLayer*)"), self.toggle)
-    #QObject.connect(mc, SIGNAL("mapToolSet(QgsMapTool*)"), self.deactivate)
-    
-    # Add toolbar button 
-    #self.iface.digitizeToolBar().addAction(self.action)
-
     self.doTransformMapToLayer = False
     self.doTransformCrsIdToLayer = False
     
   def unload(self):
-    #self.iface.digitizeToolBar().removeAction(self.action)
     pass
     
   def toggle(self):
@@ -100,41 +86,29 @@ class NumericalDigitize:
     #Decide whether the plugin button/menu is enabled or disabled
     if layer is not None:
       if layer.isEditable() and (layer.geometryType() == 0 or layer.geometryType() == 1 or layer.geometryType() == 2):
-        #self.action.setEnabled(True)
         QObject.connect(layer,SIGNAL("editingStopped()"),self.toggle)
         QObject.disconnect(layer,SIGNAL("editingStarted()"),self.toggle)
     
       else:
-        #self.action.setEnabled(False)
         QObject.connect(layer,SIGNAL("editingStarted()"),self.toggle)
         QObject.disconnect(layer,SIGNAL("editingStopped()"),self.toggle)        
                 
                 
                 
   def deactivate(self):
-    #uncheck the button/menu and get rid off the VTTool signal
-    #self.action.setChecked(False)
     pass
     
     
   def run(self):
-    #Here we go...
     mc = self.canvas
     layer = mc.currentLayer()
     
-    #if layer.isEditable() :
-    
     layer.startEditing()
     d = NdAddFeatureGui(self.iface.mainWindow(), layer.geometryType())
-    # QObject.connect(d, SIGNAL("numericalFeature(PyQt_PyObject)"),self.createGeom)
-    # QObject.connect(d, SIGNAL("transformOTF_CRS(PyQt_PyObject)"), self.doTransfromOfCoords)
-    # QObject.connect(d, SIGNAL("transformFromCrs(long)"), self.doTransformFromCrs)
     d.numericalFeature.connect( self.createGeom )
     d.transformOTF_CRS.connect( self.doTransfromOfCoords )
     d.transformFromCrs.connect( self.doTransformFromCrs )
     d.show()
-  #except:
-    #    QMessageBox.critical(self.iface.mainWindow(), u"Camada não selecionada", u"Selecione uma camada vetorial para utilizar a ferramenta.")
     
   def doTransfromOfCoords(self, doTransformMapToLayer):
     #True: use Project CRS, False: use Layer CRS
@@ -150,9 +124,6 @@ class NumericalDigitize:
     mc = self.canvas
     layer = mc.currentLayer()
 
-    #the code that was formerly here is obsolet. mapToLayerCoordinates is clever
-    #enough to shortcut/decide itself if a transformation is necessary.
-    
     if self.doTransformMapToLayer:
         coords_tmp = coords[:]
         coords = []
@@ -172,7 +143,7 @@ class NumericalDigitize:
                 
     if(layer.geometryType() == 1):
       if(len(coords)>=2):
-        g = QgsGeometry().fromPolyline(coords)
+        g = QgsGeometry().fromPolylineXY(coords)
         self.createFeature(g)
       else:
         QMessageBox.critical(self.iface.mainWindow(),u"Erro na criação da feição", u"Geometria inválida para o tipo linha")
@@ -180,7 +151,7 @@ class NumericalDigitize:
       if(len(coords)>=3):
         if not(coords[-1] == coords[0]):
           coords.append(coords[0])
-        g = QgsGeometry().fromPolygon([coords])
+        g = QgsGeometry().fromPolygonXY([coords])
         self.createFeature(g)
       else:
         QMessageBox.critical(self.iface.mainWindow(),u"Erro na criação da feição", u"Geometria inválida para o tipo polígono")
@@ -219,7 +190,6 @@ class NumericalDigitize:
            
     layer.beginEditCommand(u"Feição adicionada")
     
-    #layer.addFeature(f)
     attrDialog = QgsAttributeDialog(layer, f, False)
     attrDialog.setMode(QgsAttributeEditorContext.AddFeatureMode)
     result = attrDialog.exec_()

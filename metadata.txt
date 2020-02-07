@@ -51,6 +51,11 @@ about=
 	Profile Tool Plugin - License GNU GPL 2
 	Written in 2008 by Borys Jurgiel
 	Written in 2012 by Borys Jurgiel, Patrice Verchere
+	
+	Trace Digitize Action - Sets up a Qgis action with/for the vertex tracer tool
+    Copyright (C) 2010  Cédric Möri, with stuff from Stefan Ziegler
+    EMAIL: cmoe (at) geoing (dot) ch
+    WEB  : www.geoing.ch
 
 
 # End of mandatory metadata
