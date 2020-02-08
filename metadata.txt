@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=3.0
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=2.0.1
+version=3.0.0
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -65,6 +65,7 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+	2.0.2 - Correção de bugs
     2.0.1 - Correção de bugs
 	2.0	  - Nova versão para QGIS 3.x
 	1.2.3 - Correção da geocodificação não funcionando
@@ -86,6 +87,7 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+    2.0.2 - Bug fixes	
     2.0.1 - Bug fixes
 	2.0   - Version update for QGIS 3.x
 	1.2.3 - Fixing in geocoding not working
