@@ -97,8 +97,8 @@ class EventFilter(QObject):
                     # Configura a cor referente a distância Parcial
                     color = 'darkred'
                     color2 = 'yellow'
-                    txt = "<p style='background-color:{color};color:{color2}'><b>Parcial: {distance}</b><br/>".format(color=color, color2=color2, distance="%.3f" % dist)    
-                    txt += "<b>Total: {distance}</b></p>".format(distance="%.3f" % distAcum)
+                    txt = "<p style='background-color:{color};color:{color2}'><b>Parcial: {distance} m</b><br/>".format(color=color, color2=color2, distance="%.3f" % dist)    
+                    txt += "<b>Total: {distance} m</b></p>".format(distance="%.3f" % distAcum)
                     # Configura a apresentação tooltip no mouse                 
                     QToolTip.showText(self.mapCanvas.mapToGlobal(self.mapCanvas.mouseLastXY()), txt, self.mapCanvas)
             else:
