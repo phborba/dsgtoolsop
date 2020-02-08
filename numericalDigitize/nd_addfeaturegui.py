@@ -130,7 +130,27 @@ class NdAddFeatureGui(QDialog, GUI):
           return True
       except ValueError:
           return False
-    
+
+    def conv_gms_dec(self, base_coord):
+        self.basecoord = base_coord
+        if self.basecoord.rfind(".") == -1:
+            self.basecoord += "."
+        if self.basecoord.rfind("'") == -1 and len(self.basecoord[0:self.basecoord.rfind(".")]) < 4:
+            conv_exp_str = self.basecoord
+        elif self.basecoord.rfind("'") == -1 and len(self.basecoord[0:self.basecoord.rfind(".")]) > 4 and (len(self.basecoord[0:self.basecoord.rfind(".")]) < 8 and self.basecoord.rfind("-") != -1):
+            xdeg = float(self.basecoord[0:self.basecoord.rfind(".")-4])
+            xmin = float(self.basecoord[self.basecoord.rfind(".")-4:self.basecoord.rfind(".")-2])
+            xseg = float(self.basecoord[self.basecoord.rfind(".")-2:])
+            conv_exp_str = str(xdeg + xmin/60 + xseg/3600)
+        elif self.basecoord.rfind("'") != -1:
+            xdeg = float(self.basecoord[0:self.basecoord.rfind("ยบ")])
+            xmin = float(self.basecoord[self.basecoord.rfind("ยบ")+1:self.basecoord.rfind("'")])
+            xseg = float(self.basecoord[self.basecoord.rfind("'")+1:self.basecoord.rfind("\"")])
+            conv_exp_str = str(xdeg + xmin/60 + xseg/3600)
+        else:
+            conv_exp_str = self.basecoord
+        return conv_exp_str
+
     def onOK(self):
       settings = QSettings()
       if self.rb_ProjectCrs.isChecked():
@@ -145,10 +165,8 @@ class NdAddFeatureGui(QDialog, GUI):
         
       coords = []
       for i in range(self.twPoints.rowCount()-1):
-        pt = QgsPointXY(float(self.twPoints.item(i, 0).text()), float(self.twPoints.item(i, 1).text()))
+        x = self.conv_gms_dec(self.twPoints.item(i, 0).text())
+        y = self.conv_gms_dec(self.twPoints.item(i, 1).text())
+        pt = QgsPointXY(float(x), float(y))
         coords.append(pt)
       self.numericalFeature.emit(coords)
-      
-        
-
-

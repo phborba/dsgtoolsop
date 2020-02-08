@@ -46,6 +46,8 @@ class Interface(QtWidgets.QDialog, GUI):
 
     def conv_gms_dec(self, base_coord):
         self.basecoord = base_coord
+        if self.basecoord.rfind(".") == -1:
+            self.basecoord += "."
         if self.basecoord.rfind("'") == -1 and len(self.basecoord[0:self.basecoord.rfind(".")]) < 4:
             conv_exp_str = self.basecoord
         elif self.basecoord.rfind("'") == -1 and len(self.basecoord[0:self.basecoord.rfind(".")]) > 4:

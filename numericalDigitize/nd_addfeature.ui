@@ -18,25 +18,13 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
-    <widget class="QTableWidget" name="twPoints">
-     <row>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </row>
-     <column>
-      <property name="text">
-       <string>X</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Y</string>
-      </property>
-     </column>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Formatos aceitos para unidades geográficas:</string>
+     </property>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item row="6" column="0">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>Sistema de referência das coordenadas informadas</string>
@@ -111,31 +99,26 @@
      </layout>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="lblNumericalFeature">
-     <property name="text">
-      <string>Lista de coordenadas</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QPushButton" name="addFromFileButton">
-     <property name="text">
-      <string>Ler do arquivo...</string>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="0">
+    <widget class="QTableWidget" name="twPoints">
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Y</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="5" column="0">
     <widget class="QLabel" name="label">
      <property name="frameShape">
       <enum>QFrame::Box</enum>
@@ -148,6 +131,37 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblNumericalFeature">
+     <property name="text">
+      <string>Lista de coordenadas</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QPushButton" name="addFromFileButton">
+     <property name="text">
+      <string>Ler do arquivo...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>GMMSS.S / GGMMSS.S / Grau decimal / Grauº Minuto' Segundo&quot;</string>
      </property>
     </widget>
    </item>
