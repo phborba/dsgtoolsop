@@ -118,7 +118,7 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.auc_action)
 
 		self.nd_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'numericalvertexedit.png'),
+			os.path.join(os.path.dirname(__file__), 'icons', 'numericaldigitize.png'),
 			text=u'Criação de pontos por coordenadas',
 			callback=self.loadNumericalDigitize,
 			parent=self.dsgToolsOp,
