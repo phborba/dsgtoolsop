@@ -3,7 +3,6 @@ from qgis.PyQt import QtCore
 from qgis.core import QgsField, QgsMapLayerProxyModel, QgsVectorLayer, QgsGeometry, QgsCoordinateTransform, QgsCoordinateReferenceSystem, QgsProject, QgsRectangle, QgsPointXY, QgsWkbTypes
 from qgis.PyQt import uic, QtWidgets
 from qgis.PyQt.QtWidgets import QMessageBox
-#from ..auxiliarFiles.auxiliar import Auxiliar
 import os
 
 
@@ -32,7 +31,11 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
 
     def setDialog(self):
         self.workLayer = self.mapLayerSelection.currentLayer()
-        workCrs = self.workLayer.crs()
+        if self.workLayer == None:
+            QMessageBox.information(self, u"Aviso", u"Nenhuma camada selecionada.\nSelecione uma camada vetorial para realizar os cálculos.")
+            return
+        else:
+            workCrs = self.workLayer.crs()
 
         #Unchecking boxes
         self.checkList1 = []
