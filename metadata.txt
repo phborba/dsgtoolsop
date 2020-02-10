@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=3.0
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=3.0.0
+version=2.0.3
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -22,7 +22,6 @@ about=
 	- Conversão de unidades angulares
 	- Criação de pontos por coordenadas
 	- Relocação de pontos por coordenadas 
-	- Gerador de azimutes e distâncias
 	- Declinação magnética e convergência meridiana
 	- Determinação de MI (índice de nomenclatura) de carta
 	- Perfil do terreno
@@ -37,7 +36,6 @@ about=
 	- Angle unit converter
 	- Coordinate-based point creator
 	- Coordinate-based point relocation
-	- Azimuths and distances generator
 	- Magnetic declination and meridian convergence calculator
 	- Chart MI (map naming index) determination
 	- Profile tool
@@ -65,6 +63,7 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+	2.0.3 - Adicionada Simbologia Militar para QGIS 3
 	2.0.2 - Correção de bugs
     2.0.1 - Correção de bugs
 	2.0	  - Nova versão para QGIS 3.x
@@ -87,6 +86,7 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+	2.0.3 - Added Military Symbology for QGIS 3
     2.0.2 - Bug fixes	
     2.0.1 - Bug fixes
 	2.0   - Version update for QGIS 3.x
