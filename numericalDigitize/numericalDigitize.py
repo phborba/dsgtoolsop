@@ -102,7 +102,9 @@ class NumericalDigitize:
   def run(self):
     mc = self.canvas
     layer = mc.currentLayer()
-    
+    if layer == None:
+        QMessageBox.critical(self.iface.mainWindow(),u"Erro", u"Nenhuma camada vetorial selecioanda")
+        return
     layer.startEditing()
     d = NdAddFeatureGui(self.iface.mainWindow(), layer.geometryType())
     d.numericalFeature.connect( self.createGeom )
