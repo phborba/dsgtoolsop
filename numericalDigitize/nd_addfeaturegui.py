@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from math import copysign
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *
 from qgis.PyQt.QtWidgets import QDialog, QHeaderView, QMessageBox, QDialogButtonBox, QFileDialog, QTableWidgetItem
@@ -94,34 +94,30 @@ class NdAddFeatureGui(QDialog, GUI):
     def cellChanged (self, currentRow, currentColumn):
         theValue = self.twPoints.item(currentRow, currentColumn)
 
-        if(self.is_number(theValue.text())):
-           if((self.twPoints.rowCount() == currentRow+1)) :
-             try:
-               self.twPoints.item(currentRow, 0).text() != ""
-               xok = True
-             except AttributeError:
-               xok = False
-             try:
-               self.twPoints.item(currentRow, 1).text() != ""
-               yok = True
-             except AttributeError:
-               yok = False
-               
-             if(xok and yok):
-               self.twPoints.setRowCount(self.twPoints.rowCount())
-               self.twPoints.insertRow(self.twPoints.rowCount())
-               if(self.layertype == 0):
-                  if(self.twPoints.rowCount()-1)>=1:
-                    self.buttonBox.button(QDialogButtonBox.Ok ).setEnabled(True)
-               elif(self.layertype == 1):
-                  if(self.twPoints.rowCount()-1)>=2:
-                    self.buttonBox.button(QDialogButtonBox.Ok ).setEnabled(True)
-               elif(self.layertype == 2):
-                  if(self.twPoints.rowCount()-1)>=3:
-                    self.buttonBox.button(QDialogButtonBox.Ok ).setEnabled(True)
+        if((self.twPoints.rowCount() == currentRow+1)) :
+          try:
+            self.twPoints.item(currentRow, 0).text() != ""
+            xok = True
+          except AttributeError:
+            xok = False
+          try:
+            self.twPoints.item(currentRow, 1).text() != ""
+            yok = True
+          except AttributeError:
+            yok = False
 
-        else:
-          theValue.setText("")
+          if(xok and yok):
+            self.twPoints.setRowCount(self.twPoints.rowCount())
+            self.twPoints.insertRow(self.twPoints.rowCount())
+            if(self.layertype == 0):
+               if(self.twPoints.rowCount()-1)>=1:
+                 self.buttonBox.button(QDialogButtonBox.Ok ).setEnabled(True)
+            elif(self.layertype == 1):
+               if(self.twPoints.rowCount()-1)>=2:
+                 self.buttonBox.button(QDialogButtonBox.Ok ).setEnabled(True)
+            elif(self.layertype == 2):
+               if(self.twPoints.rowCount()-1)>=3:
+                 self.buttonBox.button(QDialogButtonBox.Ok ).setEnabled(True)
         
       
     def is_number(self, s):
@@ -141,12 +137,12 @@ class NdAddFeatureGui(QDialog, GUI):
             xdeg = float(self.basecoord[0:self.basecoord.rfind(".")-4])
             xmin = float(self.basecoord[self.basecoord.rfind(".")-4:self.basecoord.rfind(".")-2])
             xseg = float(self.basecoord[self.basecoord.rfind(".")-2:])
-            conv_exp_str = str(xdeg + xmin/60 + xseg/3600)
+            conv_exp_str = str(copysign((abs(xdeg) + xmin/60 + xseg/3600),xdeg))
         elif self.basecoord.rfind("'") != -1:
-            xdeg = float(self.basecoord[0:self.basecoord.rfind("ยบ")])
-            xmin = float(self.basecoord[self.basecoord.rfind("ยบ")+1:self.basecoord.rfind("'")])
+            xdeg = float(self.basecoord[0:self.basecoord.rfind("º")])
+            xmin = float(self.basecoord[self.basecoord.rfind("º")+1:self.basecoord.rfind("'")])
             xseg = float(self.basecoord[self.basecoord.rfind("'")+1:self.basecoord.rfind("\"")])
-            conv_exp_str = str(xdeg + xmin/60 + xseg/3600)
+            conv_exp_str = str(copysign((abs(xdeg) + xmin/60 + xseg/3600),xdeg))
         else:
             conv_exp_str = self.basecoord
         return conv_exp_str
