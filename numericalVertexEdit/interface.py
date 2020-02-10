@@ -54,12 +54,12 @@ class Interface(QtWidgets.QDialog, GUI):
             xdeg = float(self.basecoord[0:self.basecoord.rfind(".")-4])
             xmin = float(self.basecoord[self.basecoord.rfind(".")-4:self.basecoord.rfind(".")-2])
             xseg = float(self.basecoord[self.basecoord.rfind(".")-2:])
-            conv_exp_str = str(xdeg + xmin/60 + xseg/3600)
+            conv_exp_str = str(copysign((abs(xdeg) + xmin/60 + xseg/3600),xdeg))
         else:
             xdeg = float(self.basecoord[0:self.basecoord.rfind("º")])
             xmin = float(self.basecoord[self.basecoord.rfind("º")+1:self.basecoord.rfind("'")])
             xseg = float(self.basecoord[self.basecoord.rfind("'")+1:self.basecoord.rfind("\"")])
-            conv_exp_str = str(xdeg + xmin/60 + xseg/3600)
+            conv_exp_str = str(copysign((abs(xdeg) + xmin/60 + xseg/3600),xdeg))
         return conv_exp_str
 
     def sendCoords(self):
