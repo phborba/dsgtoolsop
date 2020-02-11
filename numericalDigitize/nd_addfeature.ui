@@ -124,7 +124,7 @@
       <enum>QFrame::Box</enum>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Formato&lt;/span&gt;: CSV&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Separador&lt;/span&gt;: ponto-e-vírgula&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Separador decimal&lt;/span&gt;: ponto&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Linha de cabeçalho&lt;/span&gt;: não&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Formato&lt;/span&gt;: CSV&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Separador de campo&lt;/span&gt;: ponto-e-vírgula&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Delimitador de Texto&lt;/span&gt;: nenhum&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Separador decimal&lt;/span&gt;: ponto&lt;br/&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Linha de cabeçalho&lt;/span&gt;: não&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>

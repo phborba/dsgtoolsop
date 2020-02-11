@@ -60,13 +60,13 @@ class NdAddFeatureGui(QDialog, GUI):
             csvFile = open(filePath, "r")
             for l in csvFile:
                 line = l.rstrip().split(";")
-                xok = True if self.is_number(line[0]) else False
-                yok = True if self.is_number(line[1]) else False
+                #xok = True if self.is_number(line[0]) else False
+                #yok = True if self.is_number(line[1]) else False
                 
-                if xok and yok:
-                    self.twPoints.setItem(lineIdx, 0, QTableWidgetItem(line[0]))
-                    self.twPoints.setItem(lineIdx, 1, QTableWidgetItem(line[1]))
-                    lineIdx = self.twPoints.rowCount() - 1
+                #if xok and yok:
+            self.twPoints.setItem(lineIdx, 0, QTableWidgetItem(line[0]))
+            self.twPoints.setItem(lineIdx, 1, QTableWidgetItem(line[1]))
+            lineIdx = self.twPoints.rowCount() - 1
             csvFile.close()
     
     def selectOtherCrs(self, checked):
