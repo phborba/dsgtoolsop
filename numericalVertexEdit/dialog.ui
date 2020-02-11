@@ -37,6 +37,23 @@
      <property name="text">
       <string>Digite as novas coordenadas do ponto</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Formatos aceitos para unidades geográficas:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>GMMSS.S / GGMMSS.S / Grau decimal / Grauº Minuto' Segundo&quot;</string>
+     </property>
     </widget>
    </item>
    <item>
@@ -71,7 +88,7 @@
        <item>
         <widget class="QLineEdit" name="latitudeEdit">
          <property name="inputMask">
-          <string>########.######; </string>
+          <string/>
          </property>
          <property name="placeholderText">
           <string/>
@@ -81,7 +98,7 @@
        <item>
         <widget class="QLineEdit" name="longitudeEdit">
          <property name="inputMask">
-          <string>########.######; </string>
+          <string/>
          </property>
         </widget>
        </item>

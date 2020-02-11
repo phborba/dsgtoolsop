@@ -41,6 +41,9 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.closingDock.emit()
         event.accept()
         self.isOpen = False
+        self.boxButton.setChecked(False)
+        self.geometryButton.setChecked(False)
+        self.mapList.clear()
 
     def initVariables(self):
         self.canvas = self.iface.mapCanvas()

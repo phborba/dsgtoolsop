@@ -118,7 +118,7 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.auc_action)
 
 		self.nd_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'numericalvertexedit.png'),
+			os.path.join(os.path.dirname(__file__), 'icons', 'numericaldigitize.png'),
 			text=u'Criação de pontos por coordenadas',
 			callback=self.loadNumericalDigitize,
 			parent=self.dsgToolsOp,
@@ -148,6 +148,15 @@ class DSGToolsOp:
 		from .QuickGeocoder.geocoder import QuickGeocoder as Main_Geocoding
 		self.mainGeocoding = Main_Geocoding(iface)
         
+		self.ms_action = self.add_action(
+		 	os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
+		 	text=u'Simbologia Militar',
+		 	callback=self.loadMilitarySimbology,
+		 	parent=self.dsgToolsOp,
+		 	add_to_menu=False,
+		 	add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.ms_action)
+
 		self.miA_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
 			text=u"Localizar carta topográfca (MI) por região",
@@ -235,8 +244,8 @@ class DSGToolsOp:
         Show angle unit converter dialog
         """
 		from .AngleUnitConverter.main import Main
-		main = Main(iface)
-		main.executePlugin()
+		dialogBoxAng = Main(iface)
+		dialogBoxAng.exec_()
 
 	def loadGeocoding(self):
 		"""
@@ -244,6 +253,17 @@ class DSGToolsOp:
         """
 		if self.mainGeocoding.pluginIsActive == False:
 			self.mainGeocoding.run()
+
+	def loadMilitarySimbology(self):
+		"""
+        Shows the Military Simbology Dock
+        """
+		from .MilitarySimbologyTools.main import Main
+		main = Main()
+		dlg = main.getFrame()
+		dlg.setGeometry(700, 500, 100, 50)
+		if dlg:
+			dlg.show()
 
 	def loadGeradorAzimutesDistancias(self):
 		"""

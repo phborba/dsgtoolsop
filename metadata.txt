@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=3.0
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=2.0.1
+version=2.0.3
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=benincasa.diego@eb.mil.br
 about=
@@ -22,7 +22,6 @@ about=
 	- Conversão de unidades angulares
 	- Criação de pontos por coordenadas
 	- Relocação de pontos por coordenadas 
-	- Gerador de azimutes e distâncias
 	- Declinação magnética e convergência meridiana
 	- Determinação de MI (índice de nomenclatura) de carta
 	- Perfil do terreno
@@ -37,7 +36,6 @@ about=
 	- Angle unit converter
 	- Coordinate-based point creator
 	- Coordinate-based point relocation
-	- Azimuths and distances generator
 	- Magnetic declination and meridian convergence calculator
 	- Chart MI (map naming index) determination
 	- Profile tool
@@ -47,6 +45,16 @@ about=
 	Magnetic declination obtained using geomag.py by Christopher Weiss cmweiss@gmail.com. 
 	WMM model by NOAA NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. 
 	World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
+	
+	Profile Tool Plugin - License GNU GPL 2
+	Written in 2008 by Borys Jurgiel
+	Written in 2012 by Borys Jurgiel, Patrice Verchere
+	
+	Trace Digitize Action - Sets up a Qgis action with/for the vertex tracer tool
+    Copyright (C) 2010  Cédric Möri, with stuff from Stefan Ziegler
+    EMAIL: cmoe (at) geoing (dot) ch
+    WEB  : www.geoing.ch
+
 
 # End of mandatory metadata
 
@@ -55,6 +63,8 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+	2.0.3 - Adicionada Simbologia Militar para QGIS 3
+	2.0.2 - Correção de bugs
     2.0.1 - Correção de bugs
 	2.0	  - Nova versão para QGIS 3.x
 	1.2.3 - Correção da geocodificação não funcionando
@@ -76,6 +86,8 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+	2.0.3 - Added Military Symbology for QGIS 3
+    2.0.2 - Bug fixes	
     2.0.1 - Bug fixes
 	2.0   - Version update for QGIS 3.x
 	1.2.3 - Fixing in geocoding not working

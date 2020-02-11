@@ -32,14 +32,7 @@ class ProfiletoolMapToolRenderer():
                 #Get mouse coords
                 mapPos = self.canvas.getCoordinateTransform().toMapCoordinates(position["x"],position["y"])
                 #Draw on temp layer
-                try:    #qgis2
-                    if QGis.QGIS_VERSION_INT >= 10900:
-                        self.profiletool.rubberband.reset(QGis.Line)
-                    else:
-                        self.profiletool.rubberband.reset(self.profiletool.polygon)
-                except: #qgis3
-                    self.profiletool.rubberband.reset(qgis.core.QgsWkbTypes.LineGeometry)
-                        
+                self.profiletool.rubberband.reset(qgis.core.QgsWkbTypes.LineGeometry)
                 for i in range(0,len(self.pointstoDraw)):
                      self.profiletool.rubberband.addPoint(QgsPointXY(self.pointstoDraw[i][0],self.pointstoDraw[i][1]))
                 self.profiletool.rubberband.addPoint(QgsPointXY(mapPos.x(),mapPos.y()))

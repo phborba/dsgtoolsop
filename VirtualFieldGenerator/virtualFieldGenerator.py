@@ -3,7 +3,6 @@ from qgis.PyQt import QtCore
 from qgis.core import QgsField, QgsMapLayerProxyModel, QgsVectorLayer, QgsGeometry, QgsCoordinateTransform, QgsCoordinateReferenceSystem, QgsProject, QgsRectangle, QgsPointXY, QgsWkbTypes
 from qgis.PyQt import uic, QtWidgets
 from qgis.PyQt.QtWidgets import QMessageBox
-#from ..auxiliarFiles.auxiliar import Auxiliar
 import os
 
 
@@ -32,7 +31,11 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
 
     def setDialog(self):
         self.workLayer = self.mapLayerSelection.currentLayer()
-        workCrs = self.workLayer.crs()
+        if self.workLayer == None:
+            QMessageBox.information(self, u"Aviso", u"Nenhuma camada selecionada.\nSelecione uma camada vetorial para realizar os cálculos.")
+            return
+        else:
+            workCrs = self.workLayer.crs()
 
         #Unchecking boxes
         self.checkList1 = []
@@ -100,7 +103,7 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
     def UTMcheck(self, workFeatures, workCrs):
         #Opening UTM Zones layer and finding intersections
         filePathZones = self.pathGpkg()
-        zonesLayer = filePathZones
+        zonesLayer = filePathZones + "|layername=UTMZones"
         zonesMap = QgsVectorLayer(zonesLayer, "zones", "ogr")
 
         zonesList = zonesMap.getFeatures()
@@ -123,19 +126,22 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
             extentMin = QgsPointXY(round(float(bboxStr[1]),5), round(float(bboxStr[2]),5))
             roundedBbox = QgsGeometry.fromRect(QgsRectangle(extentMin, extentMax))
         
-        newLine = False
         lineLen = len(found)
+        lineLen0 = len(found)
         for i in zonesList:
             if roundedBbox.intersects(i.geometry()) and not roundedBbox.touches(i.geometry()):
-                found = found + i[3] + ', '
-                lineLen = lineLen + 6
-                zones.append(i[3])
+                found = found + i[1] + ', '
+                lineLen = lineLen + 5
+                zones.append(i[1])
             if lineLen > 70:
                 found += '\n'
                 lineLen = 0
 
-        found = found[:-2]
-        found = found + '.'
+        if len(found) == lineLen0:
+            found = 'Seus dados não estão projetados.'
+        else:
+            found = found[:-2]
+            found = found + '.'
         return zones, found
 
     def setCoordEdit(self):
@@ -206,19 +212,18 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
         self.count += 2
 
     def createCentroidLatLong(self, layer):
-        geomX = u"to_real(replace(format_number(x(transform(centroid($geometry), layer_property('Brasil_Fusos','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
-        geomY = u"to_real(replace(format_number(y(transform(centroid($geometry), layer_property('Brasil_Fusos','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
+        geomX = u"to_real(replace(format_number(x(transform(centroid($geometry), layer_property('{}','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
+        geomY = u"to_real(replace(format_number(y(transform(centroid($geometry), layer_property('{}','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
         expressionX_neg = u"concat(ceil({0}),'º ', floor((abs({0})-floor(abs({0})))*60),''' ',".format(geomX)
         expressionX_neg += u"format_number((((abs({0})-floor(abs({0})))*60)-floor((abs({0})-floor(abs({0})))*60))*60,2),'\"')".format(geomX)
-        expressionY_neg = expressionX_neg.replace('x(transform','y(transform')
+        expressionY_neg = u"concat(ceil({0}),'º ', floor((abs({0})-floor(abs({0})))*60),''' ',".format(geomY)
+        expressionY_neg += u"format_number((((abs({0})-floor(abs({0})))*60)-floor((abs({0})-floor(abs({0})))*60))*60,2),'\"')".format(geomY)
         
         expressionX_pos = expressionX_neg.replace('concat(ceil', 'concat(floor')
         expressionY_pos = expressionY_neg.replace('concat(ceil', 'concat(floor')
 
-        exprX_ok = 'case when {0} < 0 then {1} else {2} end'.format(geomX, expressionX_neg, expressionX_pos)
-        exprY_ok = 'case when {0} < 0 then {1} else {2} end'.format(geomY, expressionY_neg, expressionY_pos)
-        
-        print(exprX_ok)
+        exprX_ok = 'case when {} < 0 then {} else {} end'.format(geomX, expressionX_neg, expressionX_pos)
+        exprY_ok = 'case when {} < 0 then {} else {} end'.format(geomY, expressionY_neg, expressionY_pos)
 
         layer.addExpressionField(exprY_ok, QgsField(u'Centroide_Lat', QtCore.QVariant.String))
         layer.addExpressionField(exprX_ok, QgsField(u'Centroide_Long', QtCore.QVariant.String))
@@ -230,17 +235,18 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
         self.count += 1
 
     def createLatLong(self, layer):
-        geomX = u"to_real(replace(format_number(x(transform($geometry, layer_property('{0}','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
-        geomY = u"to_real(replace(format_number(y(transform($geometry, layer_property('{0}','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
+        geomX = u"to_real(replace(format_number(x(transform($geometry, layer_property('{}','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
+        geomY = u"to_real(replace(format_number(y(transform($geometry, layer_property('{}','crs'), 'EPSG:4674')),5),',','.'))".format(layer.name())
         expressionX_neg = u"concat(ceil({0}),'º ', floor((abs({0})-floor(abs({0})))*60),''' ',".format(geomX)
         expressionX_neg += u"format_number((((abs({0})-floor(abs({0})))*60)-floor((abs({0})-floor(abs({0})))*60))*60,2),'\"')".format(geomX)
-        expressionY_neg = expressionX_neg.replace('x(transform','y(transform')
+        expressionY_neg = u"concat(ceil({0}),'º ', floor((abs({0})-floor(abs({0})))*60),''' ',".format(geomY)
+        expressionY_neg += u"format_number((((abs({0})-floor(abs({0})))*60)-floor((abs({0})-floor(abs({0})))*60))*60,2),'\"')".format(geomY)
         
         expressionX_pos = expressionX_neg.replace('concat(ceil', 'concat(floor')
         expressionY_pos = expressionY_neg.replace('concat(ceil', 'concat(floor')
 
-        exprX_ok = 'case when {0} < 0 then {1} else {2} end'.format(geomX, expressionX_neg, expressionX_pos)
-        exprY_ok = 'case when {0} < 0 then {1} else {2} end'.format(geomY, expressionY_neg, expressionY_pos)
+        exprX_ok = 'case when {} < 0 then {} else {} end'.format(geomX, expressionX_neg, expressionX_pos)
+        exprY_ok = 'case when {} < 0 then {} else {} end'.format(geomY, expressionY_neg, expressionY_pos)
 
         print(exprY_ok)
 
@@ -283,5 +289,6 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
 
     def pathGpkg(self):
         filePath = os.path.dirname(os.path.dirname(__file__))
-        filePathGpkg = os.path.join(filePath, "aux", "data", "Brasil_Fusos.gpkg")
+        filePath = filePath[:-21]
+        filePathGpkg = os.path.join(filePath, "auxiliar", "shp", "Brasil_Fusos.gpkg")
         return filePathGpkg
