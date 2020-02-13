@@ -15,9 +15,7 @@ class Estilos(QObject):
                             'tropa_i' : 'tropa',
                             'localizacao_comando_i': u'localizacao_comando',
                             'armamento_i': u'armamento',
-                            
                             'concentracao_explosao' : u'concentracao',
-
                             'eixo_de_direcao': u'eixo_de_direcao',
                             'posto_observacao_a': u'posto_observacao',
                             'seta_situacao': u'seta_situacao',
@@ -29,23 +27,11 @@ class Estilos(QObject):
                             'armamento_a': u'armamento',
                             'nucleo_defesa': u'nucleo_defesa',
                             'area_coordenacao': u'area_coordenacao',
-                            
-                            'fortificacoes': u'fortificacoes2', 
-                            #'obstaculos': u'obstaculos',
-                            #'minas': u'minas',
-                            
+                            'fortificacoes': u'fortificacoes2',  
                             'instalacao_orgao_a': u'instalacao_orgao',
                             'localizacao_comando_a': u'localizacao_comando',
-                            
-                            #'medida_restritiva': u'medida_restritiva',
-                            #'fortificacoes_ot': u'trabalhoOT',
-                            #'fortificacoes_pf': u'ponto_forte2',
-                            #'redes': u'redes',
-                            #'fumaca': u'fumaca',
-                            #'campos_minados': u'campo_minas',
-                            #'barreiras': u'barreiras',
                             }
-     
+
     def setStylePath(self, t):
         if t in self.nameStyles:
             self.stylePath = os.path.join(os.path.dirname(__file__), 'templates', self.nameStyles[t]+'.qml')
@@ -59,9 +45,6 @@ class Estilos(QObject):
                 camada.addExpressionField('$perimeter', QgsField(u'rot_simb_esq', QVariant.Double))  
                 camada.addExpressionField('$perimeter', QgsField(u'rot_simb_dir', QVariant.Double))  
                 camada.addExpressionField('$perimeter', QgsField(u'rot_simb_centro', QVariant.Double))  
-
-    def getStylePath(self):
-        return self.stylePath
     
     def configSvgStyle(self, style):
         currentPath = os.path.join(os.path.dirname(__file__), 'symbols')+os.sep
@@ -69,22 +52,10 @@ class Estilos(QObject):
         return styleReady
      
     def loadStyle(self):
-        with open( self.getStylePath(), 'r') as template_style:
+        with open( self.stylePath, 'r') as template_style:
             s = template_style.read().replace('\n', '')
         style = self.configSvgStyle(s)  
         self.setStyle(style)
-    
-    def setStyle(self, s):
-        self.style = s
-    
-    def getStyle(self):
-        return self.style
-    
-    def setConfigToFields(self, l):
-        self.configFields = l
-        
-    def getConfigToFields(self): 
-        return self.configFields
             
     def getConfigOfField(self, tableId):
         conf = dict()
@@ -96,11 +67,9 @@ class Estilos(QObject):
         conf[u'Value'] = u'code_name'
         conf[u'Key'] = u'code'
         return conf   
-    
+
     def setStyleLayer(self, layer):
-        # self.loadStyle()
-        # layer.loadNamedStyle(self.getStyle())
-        layer.loadNamedStyle(self.getStylePath())
+        layer.loadNamedStyle(self.stylePath)
         self.adicionarCampoVirtual(layer)
         self.addDefaultValueExpression(layer)
     
@@ -108,6 +77,3 @@ class Estilos(QObject):
         if layer.name() in [u'Tropa inimiga', u'Localização de comando inimiga', u'Posto de observação inimigo', u'Instalação ou órgão inimigo', 'Armamento inimigo']:
             idx = layer.fields().indexFromName('cor')
             layer.setDefaultValueDefinition(idx, QgsDefaultValue("'#ff0000'"))
-
-
-

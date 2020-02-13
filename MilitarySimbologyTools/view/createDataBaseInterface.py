@@ -2,10 +2,10 @@
 from qgis.PyQt import uic, QtCore, QtGui, QtWidgets
 from qgis.core import QgsCoordinateReferenceSystem
 from qgis.PyQt.QtWidgets import QMessageBox, QFileDialog
-import sqlite3, os
-#import qgis #duvida porque importar tudo?
 from qgis.gui import QgsProjectionSelectionDialog
 from qgis.PyQt.QtCore import pyqtSlot, pyqtSignal, Qt, QObject
+from ..model.baseDeDados import BaseDeDados
+import sqlite3, os
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(os.path.dirname(__file__), 'createDataBaseInterface.ui'))
 
@@ -15,22 +15,14 @@ class CreateDataBaseInterface(QtWidgets.QDialog, FORM_CLASS):
         self.setupUi(self)
         self.fileNameLineEdit.textEdited.connect(self.setNameFile)
         self.initVariables()
-        self.setMilitarySimbologyInterface(militarySimbologyInterface)
+        self.militarySimbologyInterface = militarySimbologyInterface
 
     def initVariables(self):
         self.name = None
         self.folder = None
         self.epsg = None
         self.militarySimbologyInterface = None
-
-    def getController(self):
-        return self.getMilitarySimbologyInterface().getController()
-
-    def setMilitarySimbologyInterface(self, i):
-        self.militarySimbologyInterface = i
-
-    def getMilitarySimbologyInterface(self):
-        return self.militarySimbologyInterface
+        self.baseDeDados = BaseDeDados()
 
     def showDialog(self):
         self.show()
@@ -38,19 +30,13 @@ class CreateDataBaseInterface(QtWidgets.QDialog, FORM_CLASS):
     def setNameFile(self, n):
         self.name = n
 
-    def getNameFile(self):
-        return self.name
-
-    def getFolder(self):
-        return self.folder
-
     def setFolder(self):
-        path = QFileDialog.getExistingDirectory(self, 'Selecione Pasta :', '')
+        path = QFileDialog.getExistingDirectory(self, 'Selecione Pasta:', '')
         if path:
             self.folder = path
             self.folderDestinyLineEdit.setText(self.folder)
         else:
-            self.getMilitarySimbologyInterface().msg(u"Selecione Pasta para criar banco")
+            QMessageBox.warning(self, u"Aviso:", u"Selecione Pasta para criar banco")
 
     def closeEvent(self, e):
         self.name = None
@@ -58,20 +44,33 @@ class CreateDataBaseInterface(QtWidgets.QDialog, FORM_CLASS):
         self.folderDestinyLineEdit.clear()
         self.fileNameLineEdit.clear()
 
+    def doCreateDataBase(self):
+        epsg = 3857 #pseudo mercator, sempre será este
+        if self.folder and self.name:
+            path = os.path.join(self.folder, self.name)+'.sqlite'
+            src = str(epsg)
+            self.baseDeDados.createDataBase(path+';'+src)
+            if os.path.isfile(path):
+                QMessageBox.warning(self, u"Aviso:", u'Arquivo de simbologia militar criado com sucesso!\nAguarde o carregamento automático')
+                self.baseDeDados.setCurrentSqlite(path)
+                if self.baseDeDados.loadLayer():
+                    QMessageBox.warning(self, u"Aviso:", u'Arquivo de simbologia militar carregado com sucesso!')
+                    return 1
+                else:
+                    QMessageBox.warning(self, u"Aviso:", u'Erro ao carregar o arquivo de simbologia militar.')
+                    return 0
+            else:
+                QMessageBox.warning(self, u"Aviso:", u'Erro na criação do arquivo de simbologia militar!')
+                return 1
+        else:
+            QMessageBox.warning(self, u"Aviso:", u"Preencha todos os campos !")
+            return 0
+
     @pyqtSlot(bool)
     def on_selectFolderButton_clicked(self):
-        self.setFolder() #CreateDataBaseInterface.setfolder
+        self.setFolder()
 
     @pyqtSlot(bool)
     def on_createDataBaseButton_clicked(self):
-        epsg = 3857 #pseudo mercator, sempre será este
-        if self.getFolder() and self.getNameFile():
-            path = os.path.join(self.getFolder(), self.getNameFile())+'.sqlite'
-            src = str(epsg)
-            self.getController().runCommand('create database', path+';'+src)
-            self.getController().runCommand('set current database', path) #cria e já carrega
-            self.getController().runCommand('load')
+        if self.doCreateDataBase():
             self.close()
-            self.getMilitarySimbologyInterface().close()
-        else:
-            self.getMilitarySimbologyInterface().msg(u"Preencha todos os campos !")

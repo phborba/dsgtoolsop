@@ -5,6 +5,7 @@ from qgis.utils import iface
 from qgis.PyQt.QtCore import pyqtSlot, pyqtSignal
 from qgis.PyQt.QtWidgets import QMessageBox, QFileDialog
 from .createDataBaseInterface import CreateDataBaseInterface
+from ..model.baseDeDados import BaseDeDados
 
 GUI, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'militarySimbologyInterface.ui'))
@@ -21,25 +22,13 @@ class MilitarySimbologyInterface(QtWidgets.QFrame, GUI):
         self.sqlitePath = None
         self.createDataBaseInterface = None
         self.currentScale = None
-
-    def showEvent(self, e):
-        pass
-        #self.configScaleCombo()
-
-    def setController(self, c):
-        self.controller = c
-
-    def getController(self):
-        return self.controller
+        self.baseDeDados = BaseDeDados()
 
     def setCreateDataBaseInterface(self, i):
         self.createDataBaseInterface = i
 
     def getCreateDataBaseInterface(self):
         return self.createDataBaseInterface
-
-    def getDataBase(self):
-        return self.sqlitePath
 
     def msg(self, msg):
         QMessageBox.warning(self, u"Aviso:", msg, QMessageBox.Close)
@@ -48,10 +37,21 @@ class MilitarySimbologyInterface(QtWidgets.QFrame, GUI):
         sqlitePath = QFileDialog.getOpenFileName(self, 'Selecionar Sqlite', '', "Selecione banco de dados (*.sqlite)")[0]
         if sqlitePath:
             self.sqlitePath = sqlitePath
-            self.getController().runCommand('set current database', self.getDataBase())
-            if self.getController().runCommand('load'):
-                self.msg( u'Arquivo de simbologia militar carregado com sucesso !')
-                return 1
+            self.baseDeDados.setCurrentSqlite(self.sqlitePath)
+            if self.baseDeDados.validateSqlite() == 1:
+                if self.baseDeDados.loadLayer():
+                    self.msg( u'Arquivo de simbologia militar carregado com sucesso!')
+                    return 1
+                else:
+                    self.msg( u'Erro ao carregar o arquivo de simbologia militar.')
+                    return 0
+            elif self.baseDeDados.validateSqlite() == 2:
+                self.msg( u'Este arquivo não é de Simbologia Militar.\nSelecione o arquivo correto.')
+                return 0
+            elif self.baseDeDados.validateSqlite() == 3:
+                self.msg( u'Este arquivo foi criado numa versão anterior do DsgToolsOp, não sendo compatível com a versão instalada')
+                return 0
+        else:
             return 0
 
     @pyqtSlot(bool)
@@ -62,6 +62,3 @@ class MilitarySimbologyInterface(QtWidgets.QFrame, GUI):
     def on_loadSqliteButton_clicked(self): #seleciona o banco e já carrega
         if self.setDataBase():
             self.close()
-
-
-
