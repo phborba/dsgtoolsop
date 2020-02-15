@@ -4,13 +4,11 @@ from qgis.PyQt.QtSql import QSqlDatabase
 from qgis.core import QgsDataSourceUri, QgsVectorLayer, QgsProject, QgsLayerTreeLayer
 from qgis.PyQt import uic, QtGui, QtCore, QtWidgets
 from qgis.utils import iface
-from .estilos import Estilos
 import sqlite3, os
 
 class BaseDeDados(QObject):
     def __init__(self):
         super(BaseDeDados, self).__init__()
-        self.styles = Estilos()
         self.initVariables()
 
     def initVariables(self):
@@ -31,9 +29,9 @@ class BaseDeDados(QObject):
                     'posto_observacao_i': u'Posto de observação inimigo',
                     'seta_situacao': u'Seta de situação',
                     'area_coordenacao': u'Área de coordenação',
-                    'fortificacoes': u'Fortificações - Abrigos', 
+                    #'fortificacoes': u'Fortificações', 
                     #'fortificacoes_ot': u'Fortificações - Trabahos de OT',
-                    #'fortificacoes_pf': u'Fortificações - Pontos Fortes2',
+                    #'fortificacoes_pf': u'Fortificações - Pontos Fortes',
                     #'obstaculos': u'Obstáculos',
                     #'redes': u'Redes',
                     #'fumaca': u'Fumaça',
@@ -155,7 +153,5 @@ class BaseDeDados(QObject):
                     for key, value in self.grupos.items() :
                         if name in value['classes']:
                             subSimbol[key].addLayer(layer)
-                self.styles.setStylePath(name)
-                self.styles.setStyleLayer(layer)
         iface.mapCanvas().refresh()
         return 1

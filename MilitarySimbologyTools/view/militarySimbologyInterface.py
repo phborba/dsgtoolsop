@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 import os
-from PyQt5 import QtGui, uic, QtCore, QtWidgets
-from qgis.utils import iface
+from PyQt5 import uic, QtCore, QtWidgets
 from qgis.PyQt.QtCore import pyqtSlot, pyqtSignal
 from qgis.PyQt.QtWidgets import QMessageBox, QFileDialog
 from .createDataBaseInterface import CreateDataBaseInterface
