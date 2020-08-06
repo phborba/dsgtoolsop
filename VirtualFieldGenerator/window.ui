@@ -60,7 +60,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QgsMapLayerComboBox" name="mapLayerSelection"/>
+         <widget class="QComboBox" name="mapLayerSelection">
+          <property name="sizeAdjustPolicy">
+           <enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -519,13 +523,6 @@ da Camada</string>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QgsMapLayerComboBox</class>
-   <extends>QComboBox</extends>
-   <header>qgsmaplayercombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from qgis.PyQt import QtCore
+from qgis.PyQt.QtCore import pyqtSlot
 from qgis.core import QgsField, QgsMapLayerProxyModel, QgsVectorLayer, QgsGeometry, QgsCoordinateTransform, QgsCoordinateReferenceSystem, QgsProject, QgsRectangle, QgsPointXY, QgsWkbTypes
 from qgis.PyQt import uic, QtWidgets
 from qgis.PyQt.QtWidgets import QMessageBox
@@ -18,24 +19,47 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
         self.setupUi(self)
         self.iface = iface
         self.checkBoxSelected.hide()
-        self.mapLayerSelection.setFilters(QgsMapLayerProxyModel.VectorLayer)
-        self.mapLayerSelection.layerChanged.connect(self.setDialog)
+        self.populateLayers()
+        QgsProject.instance().layersAdded.connect(self.populateLayers)
+        QgsProject.instance().layersRemoved.connect(self.populateLayers)
         self.okButton.pressed.connect(self.doWork)
         self.cancelButton.pressed.connect(self.cancel)
         self.checkBoxCoord.stateChanged.connect(self.setCoordEdit)
         self.checkBoxSelected.stateChanged.connect(self.setDialog)
-        self.setDialog()
 
     def cancel(self):
         self.close()
 
-    def setDialog(self):
-        self.workLayer = self.mapLayerSelection.currentLayer()
-        if self.workLayer == None:
-            QMessageBox.information(self, u"Aviso", u"Nenhuma camada selecionada.\nSelecione uma camada vetorial para realizar os cálculos.")
+    def populateLayers(self):
+        self.mapLayerSelection.clear()
+        self.mapLayerSelection.addItem('Selecione uma camada')
+        layers = self.iface.mapCanvas().layers()
+        for layer in layers:
+            if isinstance(layer, QgsVectorLayer) and layer.featureCount() > 0:
+                myfilepath= layer.dataProvider().dataSourceUri()
+                (Directory, nameFile) = os.path.split(myfilepath)
+                self.mapLayerSelection.addItem(nameFile + '\\' + layer.name())
+
+    def getLayer(self):
+        currentLayerName = self.mapLayerSelection.currentText().split('\\')[-1]
+        layers = self.iface.mapCanvas().layers()
+        for layer in layers:
+            if layer.name() == currentLayerName:
+                return layer
+        return None
+
+    @pyqtSlot(int)
+    def on_mapLayerSelection_currentIndexChanged(self):
+        if self.mapLayerSelection.currentIndex() == 0:
             return
-        else:
-            workCrs = self.workLayer.crs()
+        currentLayer = self.getLayer()
+        if not currentLayer:
+            return
+        self.setDialog()
+
+    def setDialog(self):
+        self.workLayer = self.getLayer()
+        workCrs = self.workLayer.crs()
 
         #Unchecking boxes
         self.checkList1 = []
@@ -67,9 +91,6 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
         else:
             itrFeature = self.workLayer.getFeatures()
             workFeatures = list(itrFeature)
-            if not workFeatures:
-                QMessageBox.critical(self, u"Erro", u"Nenhuma feição encontrada. A camada deve ter ao menos uma feição.")
-                return
 
         #Defining layer type
         if self.workLayer.geometryType() == 0:
@@ -103,7 +124,7 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
     def UTMcheck(self, workFeatures, workCrs):
         #Opening UTM Zones layer and finding intersections
         filePathZones = self.pathGpkg()
-        zonesLayer = filePathZones + "|layername=UTMZones"
+        zonesLayer = filePathZones + "|layername=Brasil_Fusos"
         zonesMap = QgsVectorLayer(zonesLayer, "zones", "ogr")
 
         zonesList = zonesMap.getFeatures()
@@ -130,7 +151,7 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
         lineLen0 = len(found)
         for i in zonesList:
             if roundedBbox.intersects(i.geometry()) and not roundedBbox.touches(i.geometry()):
-                found = found + i[1] + ', '
+                found = found + str(i[3]) + ', '
                 lineLen = lineLen + 5
                 zones.append(i[1])
             if lineLen > 70:
@@ -159,7 +180,7 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
     def doWork(self):
         self.count = 0
 
-        if not self.mapLayerSelection:
+        if not self.mapLayerSelection or self.mapLayerSelection.currentText() == 'Selecione uma camada':
             QMessageBox.critical(self, u"Erro", u"Sem camada vetorial definida. Selecione uma camada.")
             return
 
@@ -187,8 +208,7 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
                 self.createLatLong(self.workLayer)
             else:
                 self.createCentroidLatLong(self.workLayer)
-        
-        if self.workLayer.geometryType == QgsWkbTypes.PointGeometry:
+        if self.zonesChecked:
             self.createUTM(self.workLayer)
 
         if self.count > 0:
@@ -248,8 +268,6 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
         exprX_ok = 'case when {} < 0 then {} else {} end'.format(geomX, expressionX_neg, expressionX_pos)
         exprY_ok = 'case when {} < 0 then {} else {} end'.format(geomY, expressionY_neg, expressionY_pos)
 
-        print(exprY_ok)
-
         layer.addExpressionField(exprY_ok, QgsField(u'Lat', QtCore.QVariant.String))
         layer.addExpressionField(exprX_ok, QgsField(u'Long', QtCore.QVariant.String))
         self.count += 2
@@ -289,6 +307,5 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
 
     def pathGpkg(self):
         filePath = os.path.dirname(os.path.dirname(__file__))
-        filePath = filePath[:-21]
         filePathGpkg = os.path.join(filePath, "auxiliar", "shp", "Brasil_Fusos.gpkg")
         return filePathGpkg
