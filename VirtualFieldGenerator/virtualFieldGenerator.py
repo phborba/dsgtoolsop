@@ -153,7 +153,7 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
             if roundedBbox.intersects(i.geometry()) and not roundedBbox.touches(i.geometry()):
                 found = found + str(i[3]) + ', '
                 lineLen = lineLen + 5
-                zones.append(i[1])
+                zones.append(i[3])
             if lineLen > 70:
                 found += '\n'
                 lineLen = 0
