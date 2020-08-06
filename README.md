@@ -41,3 +41,6 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
 2. **Perfil do terreno** - adaptação do plugin feito em 2008 por Borys Jurgiel e em 2012 por Borys Jurgiel e Patrice Verchere, https://github.com/etiennesky/profiletool/ .
 3. **Criação de pontos por coordenadas** - adaptação do Trace Digitize Action Copyright (C) 2010  Cédric Möri, with stuff from Stefan Ziegler EMAIL: cmoe@geoing.ch. WEB: www.geoing.ch
+
+---
+Última versão estável no QGIS: 3.14.1

@@ -27,6 +27,7 @@ from qgis.utils import iface
 from qgis.core import QgsMapLayer, QgsProject
 from qgis.PyQt.QtWidgets import QToolBar, QAction, QMessageBox, QMenu
 from qgis.PyQt.QtGui import QIcon
+from .BDGEx.bdgexGuiManager import BDGExGuiManager
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'auxiliar'))
 
@@ -36,15 +37,12 @@ class DSGToolsOp:
 		self.actions = []
     	
 	def initGui(self):
-        #CRIAR ACTIONS
-        
-        #INICIAR VARIÁVEIS E SINAIS
 		self.initVariables()
 		self.loadTools()
-        
+
 	def initPlugin(self):
 		pass
-        
+
 	def initVariables(self):
 		self.menuBar = self.iface.mainWindow().menuBar()
 		self.dsgToolsOp = QMenu(self.iface.mainWindow())
@@ -52,16 +50,26 @@ class DSGToolsOp:
 		self.dsgToolsOp.setTitle('Ferramentas Militares')
 		self.fieldToolbox = None
 		self.menuBar.insertMenu(self.iface.firstRightStandardMenu().menuAction(), self.dsgToolsOp)
-        
+
 	def unload(self):
 		for action in self.actions:
-			self.iface.removePluginMenu(
-				u'DSGTools Op',
-				action)
-
+			self.iface.removePluginMenu(u'DSGTools Op',	action)
 		if self.dsgToolsOp is not None:
 			self.menuBar.removeAction(self.dsgToolsOp.menuAction())
 		del self.dsgToolsOp
+
+	def addMenu(self, name, title, icon_file, parentMenu = None):
+		self.menuList = []
+		child = QMenu(self.dsgToolsOp)
+		child.setObjectName(name)
+		child.setTitle(title)
+		child.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons', icon_file)))
+		if parentMenu:
+			parentMenu.addMenu(child)
+		else:
+			self.dsgToolsOp.addMenu(child)
+		self.menuList.append(child)
+		return child
 
 	def add_action(self,
 				icon_path,
@@ -99,6 +107,10 @@ class DSGToolsOp:
 
 	def loadTools(self):
 		pass
+
+		self.bdgexGuiManager = BDGExGuiManager(self, self.iface, self.dsgToolsOp, toolbar = None)
+		self.bdgexGuiManager.initGui()
+
 		action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'dimensionsvf.png'),
 			text=u'Calculadora de Coordenadas e Dimensões',
@@ -159,7 +171,7 @@ class DSGToolsOp:
 
 		self.miA_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
-			text=u"Localizar carta topográfca (MI) por região",
+			text=u'Localizar carta topográfca (MI) por região',
 			callback=self.loadDeterminarMIArea,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
@@ -199,7 +211,7 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.pt_action)
 		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
 		self.mainProfileTool = Main_ProfileTool(iface)
-        
+		
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
