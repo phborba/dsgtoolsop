@@ -211,6 +211,18 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.pt_action)
 		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
 		self.mainProfileTool = Main_ProfileTool(iface)
+
+		self.pt_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'shaderIcon.png'),
+			text=u'Sombrear terreno',
+			callback=self.loadShaderTool,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.pt_action)
+		from .Shader.main import Main as Main_Shader
+		self.mainShaderTool = Main_Shader(iface)
+
 		
 	def loadDeterminarMI(self):
 		"""
@@ -277,16 +289,6 @@ class DSGToolsOp:
 		if dlg:
 			dlg.show()
 
-	def loadGeradorAzimutesDistancias(self):
-		"""
-        Add icons to toolbar for generating azimuths and distances
-        """
-        
-		if self.az_action.isChecked():
-			self.mainAzimutes.initGui()
-		else:
-			self.mainAzimutes.unload()
-            
 	def loadMeasureTool(self):
 		"""
         Add icons to toolbar for measuring features during their acquisition
@@ -322,14 +324,10 @@ class DSGToolsOp:
 		from .VirtualFieldGenerator.virtualFieldGenerator import VirtualFieldGenerator
 		dialogVFG = VirtualFieldGenerator(iface)
 		dialogVFG.exec_()
-    
-	def showFiringRangeTool(self):
+
+	def loadShaderTool(self):
 		"""
-        Show sthe convert database dialog
-        """
-		from .FiringRangeTools.firingRangeDialog import FiringRangeDialog
-		dlg = FiringRangeDialog(self.iface)
-		dlg.show()
-		result = dlg.exec_()
-		if result:
-			pass
+		Show magnetic heading and geographic convergence dockable window
+		"""
+		if self.mainShaderTool.isOpen == False:
+			self.mainShaderTool.initGui()

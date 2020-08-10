@@ -11,7 +11,6 @@ from qgis.PyQt.QtWidgets import QAction, QToolButton, QMenu, QMessageBox
 from qgis.PyQt.QtGui import QIcon
 from qgis.core import *
 from qgis.gui import *
-from .icons import resources_rc
 from .UI.interface import Interface
 from ..auxiliar.auxDeclConv import AuxiliarDeclConv
 
