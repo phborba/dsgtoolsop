@@ -212,18 +212,29 @@ class DSGToolsOp:
 		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
 		self.mainProfileTool = Main_ProfileTool(iface)
 
-		self.pt_action = self.add_action(
+		self.sd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'shaderIcon.png'),
 			text=u'Sombrear terreno',
 			callback=self.loadShaderTool,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.pt_action)
+		self.dsgToolsOp.addAction(self.sd_action)
 		from .Shader.main import Main as Main_Shader
 		self.mainShaderTool = Main_Shader(iface)
 
-		
+		self.az_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'azimuth.png'),
+			text=u'Criação de pontos por azimute e distância',
+			callback=self.loadAzimuthTool,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.az_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.az_action)
+		from .AzimuthDistance.azimuthTool import AzimuthTool as Main_AzimuthTool
+		self.mainAzimuthTool = Main_AzimuthTool(iface)
+
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
@@ -331,3 +342,13 @@ class DSGToolsOp:
 		"""
 		if self.mainShaderTool.isOpen == False:
 			self.mainShaderTool.initGui()
+
+	def loadAzimuthTool(self):
+		"""
+        Add icons to toolbar for measuring features during their acquisition
+        """
+        
+		if self.az_action.isChecked():
+			self.mainAzimuthTool.initGui()
+		else:
+			self.mainAzimuthTool.unload()

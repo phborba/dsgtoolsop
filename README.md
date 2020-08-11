@@ -2,7 +2,7 @@
 ### Ferramentas para planejamento militar do Exército Brasileiro.
 #### DSG - Diretoria de Serviço Geográfico
 
-![](https://img.shields.io/badge/stable--version-2.0.4-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_08_10-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
+![](https://img.shields.io/badge/stable--version-2.0.5-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_08_11-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
 ---
 O DSGTools Op é um conjunto de ferramentas produto dos Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, ministrados desde 2015, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, que visa auxiliar nas atividades de preparo e emprego da tropa.
 
@@ -24,6 +24,7 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 9. **Medição durante aquisição vetorial** - Apresenta ao usuário as medidas da feição sendo desenhada (distância parcial/acumulada para linhas, área para polígonos) como uma tooltip junto ao cursor.
 10. **Simbologia Militar** - Visa substituir o calco impresso pelos planos de informação do QGIS, empregando a simbologia prevista no manual MD33-M-02.
 11. **Sombreamento do terreno** - A partir da posição, data e hora indicados, a ferramento calcula a posição do Sol e então gera uma representação visual das sombras no terreno devidas ao relevo.
+12. **Criação de pontos por azimute/distância** - Permite criar novas feições pontuais em camadas vetoriais de pontos a partir de um ponto predefinido e um azimute e distância a partir do mesmo.
 
 ---
 ### Ferramentas em desenvolvimento
@@ -32,7 +33,6 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 2. **Alcance do armamento** - Gera buffers de alcance de armamento com base nos valores de alcance de peças de artilharia definidos em manuais de campanha do Exército, valendo-se também de um azimute de tiro e uma angulação de visada/atuação da peça.
 3. **Plano de chamada** - Espacializa os endereços de elementos de interesse (por exemplo, moradias de militares) e agrupa os pontos gerados através de algoritmos de proximidade espacial, visando subdividir o espaço em regiões de atuação e definir centros de atuação (para endereços de militares, pontos de reunião) mais justos que distribuam uniformemente as distâncias entre o mesmo e cada elemento espacializado.
 4. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
-5. **Criação de pontos por azimute/distância** - Permite criar novas feições pontuais em camadas vetoriais de pontos a partir de um ponto predefinido e um azimute e distância a partir do mesmo.
 
 ---
 ## Créditos
