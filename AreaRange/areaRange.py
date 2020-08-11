@@ -5,10 +5,12 @@ from qgis.PyQt.QtGui import *
 from qgis.PyQt.QtWidgets import *
 from qgis.core import *
 from qgis.gui import *
-import os
 from math import *
+import os
+import processing
 
-class AzimuthTool(QObject):
+
+class AreaRange(QObject):
 
     def __init__(self, iface):
         QObject.__init__(self)
@@ -18,10 +20,10 @@ class AzimuthTool(QObject):
         self.initSignals()
 
     def initGui(self):
-        iconPath = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'icons', 'azimuth.png')
-        self.enableAction = QAction( QIcon(iconPath), u"Ativar criação por azimute e distância", self.iface.mainWindow())
+        iconPath = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'icons', 'arearange.png')
+        self.enableAction = QAction( QIcon(iconPath), u"Ativar geração de área de alcance de armamento", self.iface.mainWindow())
         self.enableAction.setCheckable(True)
-        self.toolbar = self.iface.addToolBar(u'Criação de ponto por azimute e distância')
+        self.toolbar = self.iface.addToolBar(u'Geração de área de alcance de armamento')
         self.toolbar.addAction(self.enableAction)
         self.enableAction.changed.connect(self.maptoolChanged)
 
@@ -47,8 +49,9 @@ class AzimuthTool(QObject):
             qid = QInputDialog()
             dist_check = True
             ang_check = True
+            ang_op_check = True
             while dist_check:
-                inp_dist = QInputDialog.getText(qid, "Digite a distância", "Distância (unidades do mapa): ", QLineEdit.Normal)[0]
+                inp_dist = QInputDialog.getText(qid, "Digite o alcance", "Alcance (em unidades do mapa): ", QLineEdit.Normal)[0]
                 if not inp_dist:
                     return
                 try:
@@ -57,7 +60,7 @@ class AzimuthTool(QObject):
                 except:
                     QMessageBox.critical(None , u"Erro", u"Entre um valor numérico para a distância.")
             while ang_check:
-                inp_ang = QInputDialog.getText(qid, "Digite o azimute", "Azimute (GG.MM.SS,SSS, GG.MM.SS ou Decimal): ", QLineEdit.Normal)[0]
+                inp_ang = QInputDialog.getText(qid, "Digite o azimute de disparo", "Azimute (GG.MM.SS,SSS, GG.MM.SS ou Decimal): ", QLineEdit.Normal)[0]
                 if not inp_ang:
                     return
                 if len(inp_ang.split(".")) == 3:
@@ -72,7 +75,23 @@ class AzimuthTool(QObject):
                         ang_check = False
                     except:
                         QMessageBox.critical(None , u"Erro", u"Entre um formato válido para o azimute.")
-            return dist, ang
+            while ang_op_check:
+                inp_op_ang = QInputDialog.getText(qid, "Digite o ângulo de abertura", "Ângulo de abertura (GG.MM.SS,SSS, GG.MM.SS ou Decimal): ", QLineEdit.Normal)[0]
+                if not inp_op_ang:
+                    return
+                if len(inp_op_ang.split(".")) == 3:
+                    try:
+                        ang_op = float(inp_op_ang.split(".")[0]) + float(inp_op_ang.split(".")[1])/60 + float(inp_op_ang.split(".")[2].replace(",", "."))/3600
+                        ang_op_check = False
+                    except:
+                        QMessageBox.critical(None , u"Erro", u"Entre um formato válido para o ângulo de abertura.")
+                else:
+                    try:
+                        ang_op = float(inp_op_ang.replace(",", "."))
+                        ang_op_check = False
+                    except:
+                        QMessageBox.critical(None , u"Erro", u"Entre um formato válido para o ângulo de abertura.")
+            return dist, ang, ang_op
 
     def getLayerFeature(self, point):
         if self.canvas.mapSettings().destinationCrs().isGeographic():
@@ -94,6 +113,15 @@ class AzimuthTool(QObject):
             except:
                 return
 
+    def generateArea(self, point, dist, azimuth, op_angle):
+        edge_pt_1 = QgsPointXY(point.x() + dist * (1 / cos(radians(op_angle / 2))) * sin(radians(azimuth + op_angle / 2)), point.y() + dist * (1 / cos(radians(op_angle / 2))) * cos(radians(azimuth + op_angle / 2)))
+        edge_pt_2 = QgsPointXY(point.x() + dist * (1 / cos(radians(op_angle / 2))) * sin(radians(azimuth - op_angle / 2)), point.y() + dist * (1 / cos(radians(op_angle / 2))) * cos(radians(azimuth - op_angle / 2)))
+        cut_polygon = QgsGeometry.fromWkt( 'Polygon(({} {}, {} {}, {} {}, {} {}))'.format(point.x(), point.y(), edge_pt_1.x(), edge_pt_1.y(),edge_pt_2.x(), edge_pt_2.y(), point.x(), point.y()))
+        point = QgsGeometry.fromPointXY(point)
+        buffered = point.buffer(dist, 20)
+        range_area = buffered.intersection(cut_polygon)
+        return range_area
+
     def doWork(self, point, button):
         if button == QtCore.Qt.LeftButton:
             layerFeat = self.getLayerFeature(point)
@@ -105,11 +133,21 @@ class AzimuthTool(QObject):
             if not inputs:
                 return
             else:
-                d, ang = inputs
-            pt_new = QgsPointXY(workgeom.x() + d * sin(radians(ang)), workgeom.y() + d * cos(radians(ang)))
-            feat_new = QgsFeature()
-            feat_new.setGeometry(QgsGeometry.fromPointXY(pt_new))
-            worklayer.startEditing()
-            worklayer.dataProvider().addFeatures([feat_new])
-            worklayer.triggerRepaint()
+                d, ang, op = inputs
+            area_geom = self.generateArea(workgeom, d, ang, op)
+
+            output_layer = QgsVectorLayer("Polygon?crs={}".format(worklayer.crs().authid()), "Alcance do armamento", "memory")
+            dtprovider = output_layer.dataProvider()
+            QgsProject.instance().addMapLayer(output_layer)
+            dtprovider.addAttributes([QgsField("Alcance", QVariant.Double),
+            QgsField("Azimute", QVariant.Double),
+            QgsField("Abertura", QVariant.Double)])
+            output_layer.updateFields()
+
+            output_feature = QgsFeature()
+            output_feature.setGeometry(area_geom)
+            output_feature.setAttributes([d, ang, op])
+
+            dtprovider.addFeatures([output_feature])
+            output_layer.updateExtents()
             QMessageBox.information(None , u"Aviso", u"Ponto criado com\n\nAzimute: {} º\n\nDistância: {}".format(ang, d))

@@ -235,6 +235,18 @@ class DSGToolsOp:
 		from .AzimuthDistance.azimuthTool import AzimuthTool as Main_AzimuthTool
 		self.mainAzimuthTool = Main_AzimuthTool(iface)
 
+		self.ar_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
+			text=u'Geração de área de alcance de armamento',
+			callback=self.loadAreaRange,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.ar_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.ar_action)
+		from .AreaRange.areaRange import AreaRange as Main_AreaRange
+		self.mainAreaRange = Main_AreaRange(iface)
+
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
@@ -352,3 +364,13 @@ class DSGToolsOp:
 			self.mainAzimuthTool.initGui()
 		else:
 			self.mainAzimuthTool.unload()
+			
+	def loadAreaRange(self):
+		"""
+        Add icons to toolbar for measuring features during their acquisition
+        """
+        
+		if self.ar_action.isChecked():
+			self.mainAreaRange.initGui()
+		else:
+			self.mainAreaRange.unload()
