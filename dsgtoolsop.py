@@ -247,6 +247,17 @@ class DSGToolsOp:
 		from .AreaRange.areaRange import AreaRange as Main_AreaRange
 		self.mainAreaRange = Main_AreaRange(iface)
 
+		self.azgen_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'azimuthgen.png'),
+			text=u'Gerador de azimute e distância',
+			callback=self.loadAzimuthGenerator,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.azgen_action)
+		from .AzimuthGenerator.main import Main as Main_AzimuthGen
+		self.mainAzimuthGen = Main_AzimuthGen(iface)
+
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
@@ -357,9 +368,8 @@ class DSGToolsOp:
 
 	def loadAzimuthTool(self):
 		"""
-        Add icons to toolbar for measuring features during their acquisition
+        Add icons to toolbar for creating points from given point, distance, azymuth
         """
-        
 		if self.az_action.isChecked():
 			self.mainAzimuthTool.initGui()
 		else:
@@ -367,10 +377,16 @@ class DSGToolsOp:
 			
 	def loadAreaRange(self):
 		"""
-        Add icons to toolbar for measuring features during their acquisition
+        Add icons to toolbar for generating gun range area
         """
-        
 		if self.ar_action.isChecked():
 			self.mainAreaRange.initGui()
 		else:
 			self.mainAreaRange.unload()
+
+	def loadAzimuthGenerator(self):
+		"""
+        Create azimuth and distance list for given geometries, set of points
+        """
+		if self.mainAzimuthGen.isOpen == False:
+			self.mainAzimuthGen.initGui()
