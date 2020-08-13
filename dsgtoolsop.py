@@ -258,6 +258,17 @@ class DSGToolsOp:
 		from .AzimuthGenerator.main import Main as Main_AzimuthGen
 		self.mainAzimuthGen = Main_AzimuthGen(iface)
 
+		self.rd_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'rendezvous.png'),
+			text=u'Plano de chamada',
+			callback=self.loadRendezvous,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.rd_action)
+		from .Rendezvous.main import Main as Main_Rendezvous
+		self.mainRendezvous = Main_Rendezvous(iface)
+
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
@@ -390,3 +401,10 @@ class DSGToolsOp:
         """
 		if self.mainAzimuthGen.isOpen == False:
 			self.mainAzimuthGen.initGui()
+
+	def loadRendezvous(self):
+		"""
+		Show magnetic heading and geographic convergence dockable window
+		"""
+		if self.mainRendezvous.isOpen == False:
+			self.mainRendezvous.initGui()
