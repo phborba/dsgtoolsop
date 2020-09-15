@@ -211,7 +211,73 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.pt_action)
 		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
 		self.mainProfileTool = Main_ProfileTool(iface)
-		
+
+		self.sd_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'shaderIcon.png'),
+			text=u'Sombrear terreno',
+			callback=self.loadShaderTool,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.sd_action)
+		from .Shader.main import Main as Main_Shader
+		self.mainShaderTool = Main_Shader(iface)
+
+		self.az_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'azimuth.png'),
+			text=u'Criação de pontos por azimute e distância',
+			callback=self.loadAzimuthTool,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.az_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.az_action)
+		from .AzimuthDistance.azimuthTool import AzimuthTool as Main_AzimuthTool
+		self.mainAzimuthTool = Main_AzimuthTool(iface)
+
+		self.ar_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
+			text=u'Geração de área de alcance de armamento',
+			callback=self.loadAreaRange,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.ar_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.ar_action)
+		from .AreaRange.areaRange import AreaRange as Main_AreaRange
+		self.mainAreaRange = Main_AreaRange(iface)
+
+		self.azgen_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'azimuthgen.png'),
+			text=u'Gerador de azimute e distância',
+			callback=self.loadAzimuthGenerator,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.azgen_action)
+		from .AzimuthGenerator.main import Main as Main_AzimuthGen
+		self.mainAzimuthGen = Main_AzimuthGen(iface)
+
+		self.rd_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'rendezvous.png'),
+			text=u'Plano de chamada',
+			callback=self.loadRendezvous,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.rd_action)
+		from .Rendezvous.main import Main as Main_Rendezvous
+		self.mainRendezvous = Main_Rendezvous(iface)
+
+		self.tm_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'traff.png'),
+			text=u'Corredores de mobilidade',
+			callback=self.loadMobPath,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.tm_action)
+
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
@@ -277,16 +343,6 @@ class DSGToolsOp:
 		if dlg:
 			dlg.show()
 
-	def loadGeradorAzimutesDistancias(self):
-		"""
-        Add icons to toolbar for generating azimuths and distances
-        """
-        
-		if self.az_action.isChecked():
-			self.mainAzimutes.initGui()
-		else:
-			self.mainAzimutes.unload()
-            
 	def loadMeasureTool(self):
 		"""
         Add icons to toolbar for measuring features during their acquisition
@@ -322,14 +378,50 @@ class DSGToolsOp:
 		from .VirtualFieldGenerator.virtualFieldGenerator import VirtualFieldGenerator
 		dialogVFG = VirtualFieldGenerator(iface)
 		dialogVFG.exec_()
-    
-	def showFiringRangeTool(self):
+
+	def loadShaderTool(self):
 		"""
-        Show sthe convert database dialog
+		Show magnetic heading and geographic convergence dockable window
+		"""
+		if self.mainShaderTool.isOpen == False:
+			self.mainShaderTool.initGui()
+
+	def loadAzimuthTool(self):
+		"""
+        Add icons to toolbar for creating points from given point, distance, azymuth
         """
-		from .FiringRangeTools.firingRangeDialog import FiringRangeDialog
-		dlg = FiringRangeDialog(self.iface)
-		dlg.show()
-		result = dlg.exec_()
-		if result:
-			pass
+		if self.az_action.isChecked():
+			self.mainAzimuthTool.initGui()
+		else:
+			self.mainAzimuthTool.unload()
+			
+	def loadAreaRange(self):
+		"""
+        Add icons to toolbar for generating gun range area
+        """
+		if self.ar_action.isChecked():
+			self.mainAreaRange.initGui()
+		else:
+			self.mainAreaRange.unload()
+
+	def loadAzimuthGenerator(self):
+		"""
+        Create azimuth and distance list for given geometries, set of points
+        """
+		if self.mainAzimuthGen.isOpen == False:
+			self.mainAzimuthGen.initGui()
+
+	def loadRendezvous(self):
+		"""
+		Show magnetic heading and geographic convergence dockable window
+		"""
+		if self.mainRendezvous.isOpen == False:
+			self.mainRendezvous.initGui()
+
+	def loadMobPath(self):
+		"""
+		Show magnetic heading and geographic convergence dockable window
+		"""
+		from .MobilityPath.mobilityPath import MobilityPath
+		dialogMobPath = MobilityPath(iface)
+		dialogMobPath.exec_()

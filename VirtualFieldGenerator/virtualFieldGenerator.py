@@ -41,10 +41,12 @@ class VirtualFieldGenerator(QtWidgets.QDialog, FORM_CLASS):
                 self.mapLayerSelection.addItem(nameFile + '\\' + layer.name())
 
     def getLayer(self):
-        currentLayerName = self.mapLayerSelection.currentText().split('\\')[-1]
+        currentLayerName = self.mapLayerSelection.currentText()
         layers = self.iface.mapCanvas().layers()
         for layer in layers:
-            if layer.name() == currentLayerName:
+            myfilepath= layer.dataProvider().dataSourceUri()
+            (Directory, nameFile) = os.path.split(myfilepath)
+            if (nameFile + '\\' + layer.name()) == currentLayerName:
                 return layer
         return None
 

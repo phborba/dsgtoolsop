@@ -13,6 +13,18 @@
     <height>470</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>449</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>449</width>
+    <height>470</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Criação de pontos por coordenadas</string>
   </property>
@@ -161,7 +173,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>GMMSS.S / GGMMSS.S / Grau decimal / Grauº Minuto' Segundo&quot;</string>
+      <string>GGMMSS.S / Decimal / Grauº Minuto' Segundo&quot;</string>
      </property>
     </widget>
    </item>

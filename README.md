@@ -2,7 +2,7 @@
 ### Ferramentas para planejamento militar do Exército Brasileiro.
 #### DSG - Diretoria de Serviço Geográfico
 
-![](https://img.shields.io/badge/stable--version-2.0.3-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_02_10-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
+![](https://img.shields.io/badge/stable--version-2.1.0-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_09_15-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
 ---
 O DSGTools Op é um conjunto de ferramentas produto dos Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, ministrados desde 2015, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, que visa auxiliar nas atividades de preparo e emprego da tropa.
 
@@ -23,24 +23,20 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 8. **Geocodificação** - A partir de um arquivo CSV contendo endereços (e opcionalmente outros dados), determina a localização geográfica dos mesmos, criando uma camada de pontos atributados com os valores constantes do arquivo. Realiza também o processo inverso: dada uma camada de pontos, determina o endereço de cada um, adicionando um novo atributo com estes valores à camada. Utiliza a Bing Maps API.
 9. **Medição durante aquisição vetorial** - Apresenta ao usuário as medidas da feição sendo desenhada (distância parcial/acumulada para linhas, área para polígonos) como uma tooltip junto ao cursor.
 10. **Simbologia Militar** - Visa substituir o calco impresso pelos planos de informação do QGIS, empregando a simbologia prevista no manual MD33-M-02.
-
----
-### Ferramentas em desenvolvimento
-
-1. **Geração de azimutes e distâncias** - Seleciona-se vários pontos, ou uma linha ou um polígono e é gerado um “csv” com as coordenadas do primeiro ponto e o azimute e distância para os demais pontos. Importante para confecção de pistas de orientação e Quadros Auxiliares de Navegação (QAN).
-2. **Alcance do armamento** - Gera buffers de alcance de armamento com base nos valores de alcance de peças de artilharia definidos em manuais de campanha do Exército, valendo-se também de um azimute de tiro e uma angulação de visada/atuação da peça.
-3. **Plano de chamada** - Espacializa os endereços de elementos de interesse (por exemplo, moradias de militares) e agrupa os pontos gerados através de algoritmos de proximidade espacial, visando subdividir o espaço em regiões de atuação e definir centros de atuação (para endereços de militares, pontos de reunião) mais justos que distribuam uniformemente as distâncias entre o mesmo e cada elemento espacializado.
-4. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
-5. **Sombreamento do terreno** - Através de algoritmos de sombreamento espacial, e valendo-se de serviços online para o cálculo do azimute e da declinação do astro iluminador (Sol ou Lua) com base em data e hora informados, a ferramenta gera uma representação visual do aspecto das sombras do terreno devidas ao relevo.
-6. **Criação de pontos por azimute/distância** - Permite criar novas feições pontuais em camadas vetoriais de pontos a partir de um ponto predefinido e um azimute e distância a partir do mesmo.
-7. **Modelo 3D do terreno** - Tendo-se disponível um Modelo Digital de Elevações, gera uma visualização tridimensional da área de planejamento com todos os elementos representados na interface do QGIS, numa espécie de maquete virtual do popularmente conhecido no jargão militar como "caixão de areia".
+11. **Sombreamento do terreno** - A partir da posição, data e hora indicados, a ferramento calcula a posição do Sol e então gera uma representação visual das sombras no terreno devidas ao relevo.
+12. **Criação de pontos por azimute/distância** - Permite criar novas feições pontuais em camadas vetoriais de pontos a partir de um ponto predefinido e um azimute e distância a partir do mesmo.
+13. **Alcance do armamento** - Gera buffers de alcance de armamento com base em valor definido pelo usuário, valendo-se também de um azimute de tiro e uma angulação de visada/atuação da peça.
+14. **Geração de azimutes e distâncias** - Seleciona-se vários pontos, ou uma linha ou um polígono e é gerado um “csv” com as coordenadas do primeiro ponto e o azimute e distância para os demais pontos.
+15. **Plano de chamada** - A partir de endereços geocodificados, pontos gerados previamente com ferramenta ‘Geocodificação’, agrupa os pontos através de algoritmos de proximidade espacial, visando subdividir o espaço em regiões de atuação e definir centros de atuação mais justos que distribuam uniformemente as distâncias entre o mesmo e cada ponto.
+16. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
 
 ---
 ## Créditos
-1. **Declinação magnética** - valor obtido por meio do geomag.py by Christopher Weiss cmweiss@gmail.com, https://github.com/cmweiss/geomag.  Utilizando modelo de coeficientes WMM 2020.0 do NOAA.
+1. **Declinação magnética** - valor obtido por meio do geomag.py por Christopher Weiss cmweiss@gmail.com, https://github.com/cmweiss/geomag.  Utilizando modelo de coeficientes WMM 2020.0 do NOAA.
 NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information. doi: 10.25921/11v3-da71, 2020, 01/14/2020.
 2. **Perfil do terreno** - adaptação do plugin feito em 2008 por Borys Jurgiel e em 2012 por Borys Jurgiel e Patrice Verchere, https://github.com/etiennesky/profiletool/ .
 3. **Criação de pontos por coordenadas** - adaptação do Trace Digitize Action Copyright (C) 2010  Cédric Möri, with stuff from Stefan Ziegler EMAIL: cmoe@geoing.ch. WEB: www.geoing.ch
+4. **Sombreamento do terreno** - valores de posição solar obtidos a partir do sunposition.py por Samuel Bear Powell, https://github.com/s-bear/sun-position.
 
 ---
-Última versão estável no QGIS: 3.14.1
+Última versão estável no QGIS: 3.14.15
