@@ -41,9 +41,11 @@ class SelectLineTool:
         f = QgsFeature()
         if featureId == None or layer.getFeatures(QgsFeatureRequest(featureId)).nextFeature(f) == False:
             closestFeature = None
+            return [pointstoDraw, None, None]
         
         if layer.geometryType() != qgis.core.QgsWkbTypes.LineGeometry  and closestFeature != None:
-            QMessageBox.warning( iface.mainWindow(), u"Buscador de Geometria Mais Próxima", u"Nenhuma camada vetorial selecionada." )
+            QMessageBox.warning( iface.mainWindow(), u"Buscador de Geometria Mais Próxima", u"Nenhuma camada vetorial linha selecionada." )
+            return [pointstoDraw, None, None]
 
         booltemp = False
         if layer.geometryType() != qgis.core.QgsWkbTypes.PointGeometry :
@@ -83,7 +85,7 @@ class SelectLineTool:
             minDist = -1
             featureId = None
             point = QgsGeometry.fromPointXY(point)
-            f = QgsFeature()    
+            f = QgsFeature() 
             while iter2.nextFeature(f):
                 geom = f.geometry()
                 distance = geom.distance(point)
@@ -108,13 +110,8 @@ class SelectLineTool:
         
         #closest
         layer.select( closestFeature.id() )
-        k = 0
-        while not closestFeature.geometry().vertexAt(k) == QgsPoint(0,0):
-            pt = closestFeature.geometry().vertexAt(k)
-            point2 = tool.toMapCoordinates(layer, QgsPointXY(pt) )
-            pointstoDraw += [[point2.x(),point2.y()]]
-            k += 1
-            # replicate last point (bug #6680)
-            if k > 0 :
-                pointstoDraw += [[point2.x(),point2.y()]]
+        transf = QgsCoordinateTransform(layer.crs(), iface.mapCanvas().mapSettings().destinationCrs(), QgsProject.instance())
+        for point in closestFeature.geometry().vertices():
+            point.transform(transf)
+            pointstoDraw += [[point.x(),point.y()]]
         return [pointstoDraw, layerindex, previousLayer]
