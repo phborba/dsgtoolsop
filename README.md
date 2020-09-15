@@ -2,7 +2,7 @@
 ### Ferramentas para planejamento militar do Exército Brasileiro.
 #### DSG - Diretoria de Serviço Geográfico
 
-![](https://img.shields.io/badge/stable--version-2.0.8-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_08_13-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
+![](https://img.shields.io/badge/stable--version-2.1.0-brightgreen.svg) ![](https://img.shields.io/badge/stable--date-2020_09_15-green.svg) [![maintainer](https://img.shields.io/badge/maintainer-diegobenincasa-blue.svg)](http://github.com/diegobenincasa) [![maintainer](https://img.shields.io/badge/maintainer-JoaoFelipeAGuimaraes-blue.svg)](http://github.com/JoaoFelipeAGuimaraes)
 ---
 O DSGTools Op é um conjunto de ferramentas produto dos Estágios Básico e Avançado de Geoinformação para Corpo de Tropa, ministrados desde 2015, onde são apresentados os conceitos da geoinformação e as suas potencialidades de utilização prática, por intermédio de um SIG, que visa auxiliar nas atividades de preparo e emprego da tropa.
 
@@ -28,10 +28,7 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 13. **Alcance do armamento** - Gera buffers de alcance de armamento com base em valor definido pelo usuário, valendo-se também de um azimute de tiro e uma angulação de visada/atuação da peça.
 14. **Geração de azimutes e distâncias** - Seleciona-se vários pontos, ou uma linha ou um polígono e é gerado um “csv” com as coordenadas do primeiro ponto e o azimute e distância para os demais pontos.
 15. **Plano de chamada** - A partir de endereços geocodificados, pontos gerados previamente com ferramenta ‘Geocodificação’, agrupa os pontos através de algoritmos de proximidade espacial, visando subdividir o espaço em regiões de atuação e definir centros de atuação mais justos que distribuam uniformemente as distâncias entre o mesmo e cada ponto.
-
----
-### Ferramentas em desenvolvimento
-1. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
+16. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
 
 ---
 ## Créditos
@@ -42,4 +39,4 @@ NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnet
 4. **Sombreamento do terreno** - valores de posição solar obtidos a partir do sunposition.py por Samuel Bear Powell, https://github.com/s-bear/sun-position.
 
 ---
-Última versão estável no QGIS: 3.14.1
+Última versão estável no QGIS: 3.14.15

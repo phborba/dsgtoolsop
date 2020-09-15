@@ -10,11 +10,11 @@
 name=DSGTools Op
 qgisMinimumVersion=3.0
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=2.0.3
+version=2.1.0
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
-email=benincasa.diego@eb.mil.br
+email=suporte.dsgtools@dsg.eb.mil.br
 about=
-	PORTUGUÊS
+	+PORTUGUÊS:
 	Ferramentas para planejamento de atividades militares.
 	Atualmente conta com as seguintes funcionalidades:
 	- Simbologia Militar (de acordo com Manual MD33-M-02)
@@ -27,12 +27,18 @@ about=
 	- Perfil do terreno
 	- Geocodificação (direta e reversa)
 	- Medição na aquisição vetorial
+	- Sombreamento do terreno
+	- Criação de pontos por azimute/distância
+	- Alcance do armamento
+	- Geração de azimutes e distâncias 
+	- Plano de chamada 
+	- Corredores de mobilidade
 	
-	ENGLISH
+	+ENGLISH:
 	GIS tools for military planning, specially for the Brazilian Army.
-	Tools currently in the package:
+	Tools currently available:
 	- Military Simbology (Brazilian Army simbology manual MD33-M-02)
-	- Coordinate calculator
+	- Coordinate and dimensions calculator
 	- Angle unit converter
 	- Coordinate-based point creator
 	- Coordinate-based point relocation
@@ -41,6 +47,12 @@ about=
 	- Profile tool
 	- Geocoding (direct and reverse)
 	- In-digitize measure tool
+	- Terrain Shading
+	- Point creation by distance and azimuth
+	- Gun range tool
+	- Azimuth and distance generator
+	- Rendezvous tool
+	- Mobility paths
 
 	Magnetic declination obtained using geomag.py by Christopher Weiss cmweiss@gmail.com. 
 	WMM model by NOAA NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. 
@@ -55,6 +67,9 @@ about=
     EMAIL: cmoe (at) geoing (dot) ch
     WEB  : www.geoing.ch
 
+    Sun position values obtained from sunposition.py
+	Written in 2015 by Samuel Bear Powell
+	https://github.com/s-bear/sun-position.
 
 # End of mandatory metadata
 
@@ -63,6 +78,7 @@ about=
 # Uncomment the following line and add your changelog:
 changelog=
 	PORTUGUÊS
+	2.1.0 - Adicionadas novas funcionalidades pendentes, correção de bugs
 	2.0.3 - Adicionada Simbologia Militar para QGIS 3
 	2.0.2 - Correção de bugs
     2.0.1 - Correção de bugs
@@ -86,6 +102,7 @@ changelog=
 	0.1   - Versão inicial com Simbologia Militar
 
 	ENGLISH
+	2.1.0 - Added pending features, bug fixes
 	2.0.3 - Added Military Symbology for QGIS 3
     2.0.2 - Bug fixes	
     2.0.1 - Bug fixes

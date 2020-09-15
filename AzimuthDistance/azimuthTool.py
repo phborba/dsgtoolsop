@@ -19,7 +19,7 @@ class AzimuthTool(QObject):
 
     def initGui(self):
         iconPath = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'icons', 'azimuth.png')
-        self.enableAction = QAction( QIcon(iconPath), u"Ativar criação por azimute e distância", self.iface.mainWindow())
+        self.enableAction = QAction( QIcon(iconPath), u"Ativar criação de ponto por azimute e distância", self.iface.mainWindow())
         self.enableAction.setCheckable(True)
         self.toolbar = self.iface.addToolBar(u'Criação de ponto por azimute e distância')
         self.toolbar.addAction(self.enableAction)
@@ -82,17 +82,20 @@ class AzimuthTool(QObject):
         bufferRect = QgsRectangle(point.x() - d, point.y() - d, point.x() + d, point.y() + d)
         layerlist = self.iface.mapCanvas().layers()
         for layer in layerlist:
-            try:
-                if layer.geometryType() == 0:
-                    for feature in layer.getFeatures():
-                        transf = QgsCoordinateTransform(layer.crs(), self.canvas.mapSettings().destinationCrs(), QgsProject.instance())
-                        geom = QgsPoint(feature.geometry().asPoint())
-                        geom.transform(transf)
-                        workgeom = QgsGeometry.fromPointXY(QgsPointXY(geom))
-                        if workgeom.intersects(bufferRect):
-                            return layer, feature.geometry().asPoint()
-            except:
-                return
+            if layer.geometryType() == 0:
+                for feature in layer.getFeatures():
+                    transf = QgsCoordinateTransform(layer.crs(), self.canvas.mapSettings().destinationCrs(), QgsProject.instance())
+                    if feature.geometry().isMultipart():
+                        workgeom = feature.geometry().coerceToType(1)[0].asPoint()
+                    else:
+                        workgeom = feature.geometry().asPoint()
+                    geom = QgsPoint(workgeom)
+                    geom.transform(transf)
+                    geom = QgsGeometry.fromPointXY(QgsPointXY(geom))
+                    if geom.intersects(bufferRect):
+                        return layer, workgeom
+            else:
+                continue
 
     def doWork(self, point, button):
         if button == QtCore.Qt.LeftButton:
@@ -113,3 +116,6 @@ class AzimuthTool(QObject):
             worklayer.dataProvider().addFeatures([feat_new])
             worklayer.triggerRepaint()
             QMessageBox.information(None , u"Aviso", u"Ponto criado com\n\nAzimute: {} º\n\nDistância: {}".format(ang, d))
+            return
+        else:
+            return

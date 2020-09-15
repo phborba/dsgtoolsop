@@ -9,7 +9,6 @@ from math import *
 import os
 import processing
 
-
 class AreaRange(QObject):
 
     def __init__(self, iface):
@@ -101,17 +100,20 @@ class AreaRange(QObject):
         bufferRect = QgsRectangle(point.x() - d, point.y() - d, point.x() + d, point.y() + d)
         layerlist = self.iface.mapCanvas().layers()
         for layer in layerlist:
-            try:
-                if layer.geometryType() == 0:
-                    for feature in layer.getFeatures():
-                        transf = QgsCoordinateTransform(layer.crs(), self.canvas.mapSettings().destinationCrs(), QgsProject.instance())
-                        geom = QgsPoint(feature.geometry().asPoint())
-                        geom.transform(transf)
-                        workgeom = QgsGeometry.fromPointXY(QgsPointXY(geom))
-                        if workgeom.intersects(bufferRect):
-                            return layer, feature.geometry().asPoint()
-            except:
-                return
+            if layer.geometryType() == 0:
+                for feature in layer.getFeatures():
+                    transf = QgsCoordinateTransform(layer.crs(), self.canvas.mapSettings().destinationCrs(), QgsProject.instance())
+                    if feature.geometry().isMultipart():
+                        workgeom = feature.geometry().coerceToType(1)[0].asPoint()
+                    else:
+                        workgeom = feature.geometry().asPoint()
+                    geom = QgsPoint(workgeom)
+                    geom.transform(transf)
+                    geom = QgsGeometry.fromPointXY(QgsPointXY(geom))
+                    if geom.intersects(bufferRect):
+                        return layer, workgeom
+            else:
+                continue
 
     def generateArea(self, point, dist, azimuth, op_angle):
         edge_pt_1 = QgsPointXY(point.x() + dist * (1 / cos(radians(op_angle / 2))) * sin(radians(azimuth + op_angle / 2)), point.y() + dist * (1 / cos(radians(op_angle / 2))) * cos(radians(azimuth + op_angle / 2)))
@@ -150,4 +152,7 @@ class AreaRange(QObject):
 
             dtprovider.addFeatures([output_feature])
             output_layer.updateExtents()
-            QMessageBox.information(None , u"Aviso", u"Ponto criado com\n\nAzimute: {} º\n\nDistância: {}".format(ang, d))
+            QMessageBox.information(None , u"Aviso", u"Ponto criado com\n\nAzimute: {} º\n\nDistância: {}\n\nAbertura: {} º".format(ang, d, op))
+            return
+        else:
+            return

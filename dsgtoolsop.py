@@ -269,6 +269,15 @@ class DSGToolsOp:
 		from .Rendezvous.main import Main as Main_Rendezvous
 		self.mainRendezvous = Main_Rendezvous(iface)
 
+		self.tm_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'traff.png'),
+			text=u'Corredores de mobilidade',
+			callback=self.loadMobPath,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.tm_action)
+
 	def loadDeterminarMI(self):
 		"""
 		Finds topographic chart MI that contains a user-clicked point
@@ -408,3 +417,11 @@ class DSGToolsOp:
 		"""
 		if self.mainRendezvous.isOpen == False:
 			self.mainRendezvous.initGui()
+
+	def loadMobPath(self):
+		"""
+		Show magnetic heading and geographic convergence dockable window
+		"""
+		from .MobilityPath.mobilityPath import MobilityPath
+		dialogMobPath = MobilityPath(iface)
+		dialogMobPath.exec_()
