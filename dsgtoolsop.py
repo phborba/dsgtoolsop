@@ -111,55 +111,6 @@ class DSGToolsOp:
 		self.bdgexGuiManager = BDGExGuiManager(self, self.iface, self.dsgToolsOp, toolbar = None)
 		self.bdgexGuiManager.initGui()
 
-		action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'dimensionsvf.png'),
-			text=u'Calculadora de Coordenadas e Dimensões',
-			callback=self.loadVirtualFieldGenerator,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(action)
-        
-		self.auc_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'convang.png'),
-			text=u'Conversor de unidades angulares',
-			callback=self.loadAngleUnitConverter,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.auc_action)
-
-		self.nd_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'numericaldigitize.png'),
-			text=u'Criação de pontos por coordenadas',
-			callback=self.loadNumericalDigitize,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.nd_action)
-
-		self.dec_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'declconv.png'),
-			text=u'Declinação magnética e convergência meridiana',
-			callback=self.loadDeclinacaoConvergencia,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.dec_action)
-		from .DeclinacaoConvergencia.main import Main as Main_DecConv
-		self.mainDecConv = Main_DecConv(iface)
-        
-		self.geo_action = self.add_action(
-		 	os.path.join(os.path.dirname(__file__), 'icons', 'geocoder.png'),
-		 	text=u'Geocodificação',
-		 	callback=self.loadGeocoding,
-		 	parent=self.dsgToolsOp,
-		 	add_to_menu=False,
-		 	add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.geo_action)
-		from .QuickGeocoder.geocoder import QuickGeocoder as Main_Geocoding
-		self.mainGeocoding = Main_Geocoding(iface)
-        
 		self.ms_action = self.add_action(
 		 	os.path.join(os.path.dirname(__file__), 'icons', 'militarySimbology.png'),
 		 	text=u'Simbologia Militar',
@@ -180,26 +131,16 @@ class DSGToolsOp:
 		from .DeterminarMIArea.main import Main as Main_MIArea
 		self.mainMIArea = Main_MIArea(iface)
         
-		self.mt_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'measuretool.png'),
-			text=u'Medição durante aquisição vetorial',
-			callback=self.loadMeasureTool,
+		self.dec_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'declconv.png'),
+			text=u'Declinação magnética e convergência meridiana',
+			callback=self.loadDeclinacaoConvergencia,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
-		self.mt_action.setCheckable(True)
-		self.dsgToolsOp.addAction(self.mt_action)
-		from .measureTool.measureTool import MeasureTool as Main_MeasureTool
-		self.mainMeasureTool = Main_MeasureTool(iface)
-        
-		self.mv_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'numericalvertexedit.png'),
-			text=u'Mover pontos por coordenadas',
-			callback=self.loadMoveVertex,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.mv_action)
+		self.dsgToolsOp.addAction(self.dec_action)
+		from .DeclinacaoConvergencia.main import Main as Main_DecConv
+		self.mainDecConv = Main_DecConv(iface)
         
 		self.pt_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'profileIcon.png'),
@@ -212,6 +153,17 @@ class DSGToolsOp:
 		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
 		self.mainProfileTool = Main_ProfileTool(iface)
 
+		self.vis_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'visib.png'),
+			text=u'Mapa de visibilidade',
+			callback=self.loadVisibility,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.vis_action)
+		from .Visibility.main import Main as Main_Visib
+		self.mainVisib = Main_Visib(iface)
+
 		self.sd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'shaderIcon.png'),
 			text=u'Sombrear terreno',
@@ -222,6 +174,33 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.sd_action)
 		from .Shader.main import Main as Main_Shader
 		self.mainShaderTool = Main_Shader(iface)
+
+		self.tm_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'traff.png'),
+			text=u'Corredores de mobilidade',
+			callback=self.loadMobPath,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.tm_action)
+
+		self.nd_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'numericaldigitize.png'),
+			text=u'Criação de pontos por coordenadas',
+			callback=self.loadNumericalDigitize,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.nd_action)
+
+		self.mv_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'numericalvertexedit.png'),
+			text=u'Mover pontos por coordenadas',
+			callback=self.loadMoveVertex,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.mv_action)
 
 		self.az_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'azimuth.png'),
@@ -234,6 +213,28 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.az_action)
 		from .AzimuthDistance.azimuthTool import AzimuthTool as Main_AzimuthTool
 		self.mainAzimuthTool = Main_AzimuthTool(iface)
+		
+		self.geo_action = self.add_action(
+		 	os.path.join(os.path.dirname(__file__), 'icons', 'geocoder.png'),
+		 	text=u'Geocodificação',
+		 	callback=self.loadGeocoding,
+		 	parent=self.dsgToolsOp,
+		 	add_to_menu=False,
+		 	add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.geo_action)
+		from .QuickGeocoder.geocoder import QuickGeocoder as Main_Geocoding
+		self.mainGeocoding = Main_Geocoding(iface)
+
+		self.azgen_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'azimuthgen.png'),
+			text=u'Gerador de azimute e distância',
+			callback=self.loadAzimuthGenerator,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.azgen_action)
+		from .AzimuthGenerator.main import Main as Main_AzimuthGen
+		self.mainAzimuthGen = Main_AzimuthGen(iface)
 
 		self.ar_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
@@ -247,17 +248,6 @@ class DSGToolsOp:
 		from .AreaRange.areaRange import AreaRange as Main_AreaRange
 		self.mainAreaRange = Main_AreaRange(iface)
 
-		self.azgen_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'azimuthgen.png'),
-			text=u'Gerador de azimute e distância',
-			callback=self.loadAzimuthGenerator,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.azgen_action)
-		from .AzimuthGenerator.main import Main as Main_AzimuthGen
-		self.mainAzimuthGen = Main_AzimuthGen(iface)
-
 		self.rd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'rendezvous.png'),
 			text=u'Plano de chamada',
@@ -269,25 +259,39 @@ class DSGToolsOp:
 		from .Rendezvous.main import Main as Main_Rendezvous
 		self.mainRendezvous = Main_Rendezvous(iface)
 
-		self.tm_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'traff.png'),
-			text=u'Corredores de mobilidade',
-			callback=self.loadMobPath,
+		self.vfaction = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'dimensionsvf.png'),
+			text=u'Calculadora de Coordenadas e Dimensões',
+			callback=self.loadVirtualFieldGenerator,
 			parent=self.dsgToolsOp,
 			add_to_menu=False,
 			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.tm_action)
+		self.dsgToolsOp.addAction(self.vfaction)
+		
+		self.auc_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'convang.png'),
+			text=u'Conversor de unidades angulares',
+			callback=self.loadAngleUnitConverter,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.auc_action)
 
-	def loadDeterminarMI(self):
-		"""
-		Finds topographic chart MI that contains a user-clicked point
-		"""
-		if self.mainMI.isOpen == False:
-			self.mainMI.initGui()
+		self.mt_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'measuretool.png'),
+			text=u'Medição durante aquisição vetorial',
+			callback=self.loadMeasureTool,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.mt_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.mt_action)
+		from .measureTool.measureTool import MeasureTool as Main_MeasureTool
+		self.mainMeasureTool = Main_MeasureTool(iface)
 
 	def loadDeterminarMIArea(self):
 		"""
-        Finds topographic chart MI that contains a user-defined box
+        Finds topographic chart within a user-defined box
         """
 		if self.mainMIArea.isOpen == False:
 			self.mainMIArea.initGui()
@@ -312,14 +316,14 @@ class DSGToolsOp:
     
 	def loadDeclinacaoConvergencia(self):
 		"""
-        Show magnetic heading and geographic convergence dockable window
+        Computes magnetic heading and meridian convergence
         """
 		if self.mainDecConv.isOpen == False:
 			self.mainDecConv.initGui()
     
 	def loadAngleUnitConverter(self):
 		"""
-        Show angle unit converter dialog
+        Convert units from degrees to milliradian
         """
 		from .AngleUnitConverter.main import Main
 		dialogBoxAng = Main(iface)
@@ -327,7 +331,7 @@ class DSGToolsOp:
 
 	def loadGeocoding(self):
 		"""
-        Show geocoding dock widget
+        Geocode and reverse geocode dock
         """
 		if self.mainGeocoding.pluginIsActive == False:
 			self.mainGeocoding.run()
@@ -347,7 +351,6 @@ class DSGToolsOp:
 		"""
         Add icons to toolbar for measuring features during their acquisition
         """
-        
 		if self.mt_action.isChecked():
 			self.mainMeasureTool.initGui()
 		else:
@@ -355,25 +358,23 @@ class DSGToolsOp:
         
 	def loadProfileTool(self):
 		"""
-        Generates a terrain profile
+        Generates terrain profile
         """
 		hasRaster = False
 		for l in QgsProject.instance().mapLayers().values():
 			if l.type() == QgsMapLayer.RasterLayer:
 				hasRaster = True
 				break
-        
 		if hasRaster == False:
 			msgBox = QMessageBox(QMessageBox.Information, u"Informação", u"Não há camadas raster para traçar o perfil.", QMessageBox.Ok)
 			msgBox.exec_()
 			return
-        
 		if self.mainProfileTool.dockOpened == False:
 			self.mainProfileTool.run()
         
 	def loadVirtualFieldGenerator(self):
 		"""
-        Show virtual field generator dialog
+        Computes geometries dimensions and centroids
         """
 		from .VirtualFieldGenerator.virtualFieldGenerator import VirtualFieldGenerator
 		dialogVFG = VirtualFieldGenerator(iface)
@@ -381,14 +382,14 @@ class DSGToolsOp:
 
 	def loadShaderTool(self):
 		"""
-		Show magnetic heading and geographic convergence dockable window
+		Terrain shading based on sun positon on given time and given observer position
 		"""
 		if self.mainShaderTool.isOpen == False:
 			self.mainShaderTool.initGui()
 
 	def loadAzimuthTool(self):
 		"""
-        Add icons to toolbar for creating points from given point, distance, azymuth
+        Adds icons to toolbar for creating points from given point, distance and azymuth
         """
 		if self.az_action.isChecked():
 			self.mainAzimuthTool.initGui()
@@ -397,7 +398,7 @@ class DSGToolsOp:
 			
 	def loadAreaRange(self):
 		"""
-        Add icons to toolbar for generating gun range area
+        Adds icons to toolbar for generating gun range area
         """
 		if self.ar_action.isChecked():
 			self.mainAreaRange.initGui()
@@ -406,22 +407,29 @@ class DSGToolsOp:
 
 	def loadAzimuthGenerator(self):
 		"""
-        Create azimuth and distance list for given geometries, set of points
+        Create azimuth and distance list for given geometries or set of points
         """
 		if self.mainAzimuthGen.isOpen == False:
 			self.mainAzimuthGen.initGui()
 
 	def loadRendezvous(self):
 		"""
-		Show magnetic heading and geographic convergence dockable window
+		From given set os points create Voronoi diagrams and its centroids
 		"""
 		if self.mainRendezvous.isOpen == False:
 			self.mainRendezvous.initGui()
 
 	def loadMobPath(self):
 		"""
-		Show magnetic heading and geographic convergence dockable window
+		Creates raster with paths available from restriction vector layers and slope ranges
 		"""
 		from .MobilityPath.mobilityPath import MobilityPath
 		dialogMobPath = MobilityPath(iface)
 		dialogMobPath.exec_()
+		
+	def loadVisibility(self):
+		"""
+        Creates visibility from given point and observer height 
+        """
+		if self.mainVisib.isOpen == False:
+			self.mainVisib.initGui()

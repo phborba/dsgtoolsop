@@ -31,8 +31,8 @@ class Interface(QtWidgets.QDialog, GUI):
         if self.coords[2].isGeographic() == True:
             self.coords[1] = self.conv_dec_gms(float(str(self.coords[1])))
             self.coords[0] = self.conv_dec_gms(float(str(self.coords[0])))
-        self.latitudeEdit.setText(self.coords[1])
-        self.longitudeEdit.setText(self.coords[0])
+        self.latitudeEdit.setText(str(self.coords[1]))
+        self.longitudeEdit.setText(str(self.coords[0]))
         self.projectionCombo.setCrs(self.coords[2])
         
     def conv_dec_gms(self, base_coord):

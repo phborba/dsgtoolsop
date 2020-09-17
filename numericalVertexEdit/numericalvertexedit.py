@@ -23,7 +23,6 @@ class NumericalVertexEdit:
     self.dialog.finished.connect(self.moveVertex2)
     
     self.tool = VertexFinderTool(self.iface)
-    
 
   def unload(self):
     pass

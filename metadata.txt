@@ -33,6 +33,7 @@ about=
 	- Geração de azimutes e distâncias 
 	- Plano de chamada 
 	- Corredores de mobilidade
+	- Visibilidade
 	
 	+ENGLISH:
 	GIS tools for military planning, specially for the Brazilian Army.
@@ -53,6 +54,7 @@ about=
 	- Azimuth and distance generator
 	- Rendezvous tool
 	- Mobility paths
+	- Visibility
 
 	Magnetic declination obtained using geomag.py by Christopher Weiss cmweiss@gmail.com. 
 	WMM model by NOAA NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. 
