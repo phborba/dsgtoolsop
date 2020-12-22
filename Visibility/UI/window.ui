@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Plano de chamada</string>
+   <string>Mapa de Visibilidade</string>
   </property>
   <widget class="QWidget" name="dockWidgetContents">
    <property name="minimumSize">

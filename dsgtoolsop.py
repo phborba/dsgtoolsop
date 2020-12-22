@@ -21,8 +21,8 @@
 '''
 
 from qgis.PyQt.QtCore import Qt
-from qgis.PyQt import QtGui, QtCore
-import os, sys
+from qgis.PyQt import QtGui, QtCore, uic
+import os, sys, webbrowser
 from qgis.utils import iface
 from qgis.core import QgsMapLayer, QgsProject
 from qgis.PyQt.QtWidgets import QToolBar, QAction, QMessageBox, QMenu
@@ -120,28 +120,6 @@ class DSGToolsOp:
 		 	add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.ms_action)
 
-		self.miA_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
-			text=u'Localizar carta topográfca (MI) por região',
-			callback=self.loadDeterminarMIArea,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.miA_action)
-		from .DeterminarMIArea.main import Main as Main_MIArea
-		self.mainMIArea = Main_MIArea(iface)
-        
-		self.dec_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'declconv.png'),
-			text=u'Declinação magnética e convergência meridiana',
-			callback=self.loadDeclinacaoConvergencia,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.dec_action)
-		from .DeclinacaoConvergencia.main import Main as Main_DecConv
-		self.mainDecConv = Main_DecConv(iface)
-        
 		self.pt_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'profileIcon.png'),
 			text=u'Traçar perfil do terreno',
@@ -164,6 +142,49 @@ class DSGToolsOp:
 		from .Visibility.main import Main as Main_Visib
 		self.mainVisib = Main_Visib(iface)
 
+		self.tm_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'traff.png'),
+			text=u'Corredores de mobilidade (beta)',
+			callback=self.loadMobPath,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.tm_action)
+
+		self.ar_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
+			text=u'Geração de área de alcance de armamento',
+			callback=self.loadAreaRange,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.ar_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.ar_action)
+		from .AreaRange.areaRange import AreaRange as Main_AreaRange
+		self.mainAreaRange = Main_AreaRange(iface)
+
+		self.miA_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
+			text=u'Localizar carta topográfca (MI) por região',
+			callback=self.loadDeterminarMIArea,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.miA_action)
+		from .DeterminarMIArea.main import Main as Main_MIArea
+		self.mainMIArea = Main_MIArea(iface)
+        
+		self.dec_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'declconv.png'),
+			text=u'Declinação magnética e convergência meridiana',
+			callback=self.loadDeclinacaoConvergencia,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.dec_action)
+		from .DeclinacaoConvergencia.main import Main as Main_DecConv
+		self.mainDecConv = Main_DecConv(iface)
+
 		self.sd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'shaderIcon.png'),
 			text=u'Sombrear terreno',
@@ -174,15 +195,6 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.sd_action)
 		from .Shader.main import Main as Main_Shader
 		self.mainShaderTool = Main_Shader(iface)
-
-		self.tm_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'traff.png'),
-			text=u'Corredores de mobilidade',
-			callback=self.loadMobPath,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.dsgToolsOp.addAction(self.tm_action)
 
 		self.nd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'numericaldigitize.png'),
@@ -236,18 +248,6 @@ class DSGToolsOp:
 		from .AzimuthGenerator.main import Main as Main_AzimuthGen
 		self.mainAzimuthGen = Main_AzimuthGen(iface)
 
-		self.ar_action = self.add_action(
-			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
-			text=u'Geração de área de alcance de armamento',
-			callback=self.loadAreaRange,
-			parent=self.dsgToolsOp,
-			add_to_menu=False,
-			add_to_toolbar=False)
-		self.ar_action.setCheckable(True)
-		self.dsgToolsOp.addAction(self.ar_action)
-		from .AreaRange.areaRange import AreaRange as Main_AreaRange
-		self.mainAreaRange = Main_AreaRange(iface)
-
 		self.rd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'rendezvous.png'),
 			text=u'Plano de chamada',
@@ -288,6 +288,24 @@ class DSGToolsOp:
 		self.dsgToolsOp.addAction(self.mt_action)
 		from .measureTool.measureTool import MeasureTool as Main_MeasureTool
 		self.mainMeasureTool = Main_MeasureTool(iface)
+
+		self.ms_action = self.add_action(
+		 	os.path.join(os.path.dirname(__file__), 'icons', 'help.png'),
+		 	text=u'Ajuda',
+		 	callback=self.loadHelp,
+		 	parent=self.dsgToolsOp,
+		 	add_to_menu=False,
+		 	add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.ms_action)
+
+		self.ms_action = self.add_action(
+		 	os.path.join(os.path.dirname(__file__), 'icons', 'dsg.png'),
+		 	text=u'Sobre',
+		 	callback=self.loadAbout,
+		 	parent=self.dsgToolsOp,
+		 	add_to_menu=False,
+		 	add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.ms_action)
 
 	def loadDeterminarMIArea(self):
 		"""
@@ -433,3 +451,17 @@ class DSGToolsOp:
         """
 		if self.mainVisib.isOpen == False:
 			self.mainVisib.initGui()
+			
+	def loadHelp(self):
+		"""
+        Open github wiki page
+        """
+		webbrowser.open('https://github.com/dsgoficial/DSGToolsOp/wiki')
+
+	def loadAbout(self):
+		"""
+        Open "about" window
+        """
+		from .About.about import About
+		dialogAbout = About()
+		dialogAbout.exec_()
