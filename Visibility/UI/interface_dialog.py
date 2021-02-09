@@ -9,12 +9,12 @@ currentPath = os.path.dirname(__file__)
 GUI, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'dialog.ui'))
 
-class Interface(QtWidgets.QDialog, GUI):
+class InterfaceDialog(QtWidgets.QDialog, GUI):
     
     finished = QtCore.pyqtSignal(QgsPointXY, QgsCoordinateReferenceSystem)
     
     def __init__(self):
-        super(Interface, self).__init__()
+        super(InterfaceDialog, self).__init__()
         self.setupUi(self)
         self.initVariables()
         self.initSignals()
@@ -24,7 +24,7 @@ class Interface(QtWidgets.QDialog, GUI):
     
     def initSignals(self):
         self.buttonBox.accepted.connect(self.sendCoords)
-        self.buttonBox.rejected.connect(self.removeSelection)
+        self.buttonBox.rejected.connect(self.cancelButton)
     
     def setCoords(self, coords):
         self.coords = coords
@@ -74,5 +74,5 @@ class Interface(QtWidgets.QDialog, GUI):
         newPoint = transformer.transform(point)
         self.finished.emit(newPoint, newCrs)
         
-    def removeSelection(self):
-        self.iface.mapCanvas().currentLayer().selectByIds([])
+    def cancelButton(self):
+        self.close()

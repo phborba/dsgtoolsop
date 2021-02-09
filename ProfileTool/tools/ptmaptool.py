@@ -73,6 +73,8 @@ class ProfiletoolMapToolRenderer():
                     self.profiletool.rubberband.reset(self.profiletool.polygon)
                     self.profiletool.rubberbandbuf.reset()
                 self.pointstoDraw += newPoints
+            QgsMessageLog.logMessage(str(mapPos.x())+'***'+str(mapPos.y()), level=Qgis.Warning )
+
         if self.profiletool.dockwidget.selectionmethod == 1:
             result = SelectLineTool().getPointTableFromSelectedLine(self.iface, self.tool, newPoints, self.layerindex, self.previousLayer , self.pointstoDraw)
             self.pointstoDraw = result[0]
