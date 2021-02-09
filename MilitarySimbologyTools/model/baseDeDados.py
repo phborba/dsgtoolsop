@@ -43,13 +43,14 @@ class BaseDeDados(QObject):
                     #'comunicacoes' : u'Comunicações',
                     'concentracao_explosao' : u'Alvos',
                     'ativ_isoladas': u'Atividades Isoladas',
-                    'coord_ap_fogo': u'Coordenação de Apoio de Fogo'
+                    'coord_ap_fogo': u'Coordenação de Apoio de Fogo',
+                    'veiculos': u'Veículos'
                    }
         self.grupos = {
            '1_calco_operacoes': {
                'nome': u'CALCO DE OPERAÇÕES',
                'classes': ['tropa_a', 'posto_observacao_a','armamento_a','limite_entre_fracoes', 'linha_de_controle', 'eixo_de_direcao', 'nucleo_defesa',
-                            'objetivo', 'ponto_coordenacao', 'medida_restritiva', 'area_coordenacao','seta_situacao','ativ_isoladas']
+                            'objetivo', 'ponto_coordenacao', 'medida_restritiva', 'area_coordenacao','seta_situacao','ativ_isoladas','veiculos']
            },
            '3_calco_logistica': {
                'nome': u'CALCO DE APOIO LOGÍSTICO',
