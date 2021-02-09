@@ -21,8 +21,8 @@
 '''
 
 from qgis.PyQt.QtCore import Qt
-from qgis.PyQt import QtGui, QtCore
-import os, sys
+from qgis.PyQt import QtGui, QtCore, uic
+import os, sys, webbrowser
 from qgis.utils import iface
 from qgis.core import QgsMapLayer, QgsProject
 from qgis.PyQt.QtWidgets import QToolBar, QAction, QMessageBox, QMenu
@@ -169,6 +169,7 @@ class DSGToolsOp:
 		 	add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.ms_action)
 
+<<<<<<< Updated upstream
 		self.miA_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
 			text=u'Localizar carta topográfca (MI) por região',
@@ -201,6 +202,8 @@ class DSGToolsOp:
 			add_to_toolbar=False)
 		self.dsgToolsOp.addAction(self.mv_action)
         
+=======
+>>>>>>> Stashed changes
 		self.pt_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'profileIcon.png'),
 			text=u'Traçar perfil do terreno',
@@ -212,6 +215,54 @@ class DSGToolsOp:
 		from .ProfileTool.profileplugin import ProfilePlugin as Main_ProfileTool
 		self.mainProfileTool = Main_ProfileTool(iface)
 
+<<<<<<< Updated upstream
+=======
+		self.vis_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'visib.png'),
+			text=u'Mapa de visibilidade',
+			callback=self.loadVisibility,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.vis_action)
+		from .Visibility.main import Main as Main_Visib
+		self.mainVisib = Main_Visib(iface)
+
+		self.ar_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
+			text=u'Geração de área de alcance de armamento',
+			callback=self.loadAreaRange,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.ar_action.setCheckable(True)
+		self.dsgToolsOp.addAction(self.ar_action)
+		from .AreaRange.areaRange import AreaRange as Main_AreaRange
+		self.mainAreaRange = Main_AreaRange(iface)
+
+		self.miA_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'findmiarea.png'),
+			text=u'Localizar carta topográfca (MI) por região',
+			callback=self.loadDeterminarMIArea,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.miA_action)
+		from .DeterminarMIArea.main import Main as Main_MIArea
+		self.mainMIArea = Main_MIArea(iface)
+        
+		self.dec_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'declconv.png'),
+			text=u'Declinação magnética e convergência meridiana',
+			callback=self.loadDeclinacaoConvergencia,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.dec_action)
+		from .DeclinacaoConvergencia.main import Main as Main_DecConv
+		self.mainDecConv = Main_DecConv(iface)
+
+>>>>>>> Stashed changes
 		self.sd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'shaderIcon.png'),
 			text=u'Sombrear terreno',
@@ -223,6 +274,27 @@ class DSGToolsOp:
 		from .Shader.main import Main as Main_Shader
 		self.mainShaderTool = Main_Shader(iface)
 
+<<<<<<< Updated upstream
+=======
+		self.nd_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'numericaldigitize.png'),
+			text=u'Criação de pontos por coordenadas',
+			callback=self.loadNumericalDigitize,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.nd_action)
+
+		self.mv_action = self.add_action(
+			os.path.join(os.path.dirname(__file__), 'icons', 'numericalvertexedit.png'),
+			text=u'Mover pontos por coordenadas',
+			callback=self.loadMoveVertex,
+			parent=self.dsgToolsOp,
+			add_to_menu=False,
+			add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.mv_action)
+
+>>>>>>> Stashed changes
 		self.az_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'azimuth.png'),
 			text=u'Criação de pontos por azimute e distância',
@@ -235,6 +307,7 @@ class DSGToolsOp:
 		from .AzimuthDistance.azimuthTool import AzimuthTool as Main_AzimuthTool
 		self.mainAzimuthTool = Main_AzimuthTool(iface)
 
+<<<<<<< Updated upstream
 		self.ar_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'arearange.png'),
 			text=u'Geração de área de alcance de armamento',
@@ -258,6 +331,8 @@ class DSGToolsOp:
 		from .AzimuthGenerator.main import Main as Main_AzimuthGen
 		self.mainAzimuthGen = Main_AzimuthGen(iface)
 
+=======
+>>>>>>> Stashed changes
 		self.rd_action = self.add_action(
 			os.path.join(os.path.dirname(__file__), 'icons', 'rendezvous.png'),
 			text=u'Plano de chamada',
@@ -284,6 +359,24 @@ class DSGToolsOp:
 		"""
 		if self.mainMI.isOpen == False:
 			self.mainMI.initGui()
+
+		self.ms_action = self.add_action(
+		 	os.path.join(os.path.dirname(__file__), 'icons', 'help.png'),
+		 	text=u'Ajuda',
+		 	callback=self.loadHelp,
+		 	parent=self.dsgToolsOp,
+		 	add_to_menu=False,
+		 	add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.ms_action)
+
+		self.ms_action = self.add_action(
+		 	os.path.join(os.path.dirname(__file__), 'icons', 'dsg.png'),
+		 	text=u'Sobre',
+		 	callback=self.loadAbout,
+		 	parent=self.dsgToolsOp,
+		 	add_to_menu=False,
+		 	add_to_toolbar=False)
+		self.dsgToolsOp.addAction(self.ms_action)
 
 	def loadDeterminarMIArea(self):
 		"""
@@ -424,4 +517,29 @@ class DSGToolsOp:
 		"""
 		from .MobilityPath.mobilityPath import MobilityPath
 		dialogMobPath = MobilityPath(iface)
+<<<<<<< Updated upstream
 		dialogMobPath.exec_()
+=======
+		dialogMobPath.exec_()
+		
+	def loadVisibility(self):
+		"""
+        Creates visibility from given point and observer height 
+        """
+		if self.mainVisib.isOpen == False:
+			self.mainVisib.initGui()
+			
+	def loadHelp(self):
+		"""
+        Open github wiki page
+        """
+		webbrowser.open('https://github.com/dsgoficial/DSGToolsOp/wiki')
+
+	def loadAbout(self):
+		"""
+        Open "about" window
+        """
+		from .About.about import About
+		dialogAbout = About()
+		dialogAbout.exec_()
+>>>>>>> Stashed changes

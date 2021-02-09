@@ -28,7 +28,6 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 13. **Alcance do armamento** - Gera buffers de alcance de armamento com base em valor definido pelo usuário, valendo-se também de um azimute de tiro e uma angulação de visada/atuação da peça.
 14. **Geração de azimutes e distâncias** - Seleciona-se vários pontos, ou uma linha ou um polígono e é gerado um “csv” com as coordenadas do primeiro ponto e o azimute e distância para os demais pontos.
 15. **Plano de chamada** - A partir de endereços geocodificados, pontos gerados previamente com ferramenta ‘Geocodificação’, agrupa os pontos através de algoritmos de proximidade espacial, visando subdividir o espaço em regiões de atuação e definir centros de atuação mais justos que distribuam uniformemente as distâncias entre o mesmo e cada ponto.
-16. **Corredores de mobilidade** - Utilizando-se de um Modelo Digital de Elevações, classifica automaticamente o espaço de acordo com as Diretrizes de Trafegabilidade do Exército Brasileiro para viaturas sobre rodas, viaturas sobre lagartas e tropas a pé. O objetivo é definir as regiões do terreno cujas declividades restrinjam o movimento total ou parcialmente.
 
 ---
 ## Créditos

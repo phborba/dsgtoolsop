@@ -13,6 +13,21 @@
     <height>470</height>
    </rect>
   </property>
+<<<<<<< Updated upstream
+=======
+  <property name="minimumSize">
+   <size>
+    <width>449</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>9999</width>
+    <height>9999</height>
+   </size>
+  </property>
+>>>>>>> Stashed changes
   <property name="windowTitle">
    <string>Criação de pontos por coordenadas</string>
   </property>

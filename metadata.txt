@@ -10,7 +10,7 @@
 name=DSGTools Op
 qgisMinimumVersion=3.0
 description=Ferramentas para planejamento militar do Exército Brasileiro
-version=2.1.0
+version=2.1.1
 author=Exército Brasileiro - Diretoria de Serviço Geográfico
 email=suporte.dsgtools@dsg.eb.mil.br
 about=
@@ -64,7 +64,7 @@ about=
 	
 	Trace Digitize Action - Sets up a Qgis action with/for the vertex tracer tool
     Copyright (C) 2010  Cédric Möri, with stuff from Stefan Ziegler
-    EMAIL: cmoe (at) geoing (dot) ch
+    EMAIL: cmoe@geoing.ch
     WEB  : www.geoing.ch
 
     Sun position values obtained from sunposition.py
