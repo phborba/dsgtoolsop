@@ -93,6 +93,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QPushButton" name="downloadButton">
+      <property name="text">
+       <string>Baixar Cartas na Área</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QPushButton" name="txtButton">
       <property name="text">
        <string>Exportar como texto</string>
