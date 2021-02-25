@@ -18,7 +18,7 @@ A materialização desse conjunto de ferramentas foi denominada DSGTools Op, ide
 3. **Criação de pontos por coordenadas** - Cria um ponto num arquivo existente, a partir de suas coordenadas.
 4. **Relocação de pontos por coordenadas** - Ao selecionar um ponto existente, movê-lo para outra posição a partir das coordenadas da nova posição.
 5. **Declinação magnética e convergência meridiana** - Selecionando-se um ponto, linha ou polígono são apresentadas a Declinação Magnética e Convergência Meridiana do dado selecionado.
-6. **Determinação do MI (Índice de Nomenclatura) da carta** - Ao clicar em uma região da tela que esteja dentro do Brasil aparecerá qual carta engloba aquela região, nas diversas escalas.
+6. **Determinação do MI (Índice de Nomenclatura) da carta** - Ao clicar em uma região da tela que esteja dentro do Brasil aparecerá qual carta engloba aquela região, nas diversas escalas, sendo possível baixar as cartas na região escolhida.
 7. **Perfil do terreno** - Traça um gráfico representativo da variação de elevação do terreno (raster), a partir de uma linha desenhada pelo usuário ou selecionada em uma camada vetorial.
 8. **Geocodificação** - A partir de um arquivo CSV contendo endereços (e opcionalmente outros dados), determina a localização geográfica dos mesmos, criando uma camada de pontos atributados com os valores constantes do arquivo. Realiza também o processo inverso: dada uma camada de pontos, determina o endereço de cada um, adicionando um novo atributo com estes valores à camada. Utiliza a Bing Maps API.
 9. **Medição durante aquisição vetorial** - Apresenta ao usuário as medidas da feição sendo desenhada (distância parcial/acumulada para linhas, área para polígonos) como uma tooltip junto ao cursor.
