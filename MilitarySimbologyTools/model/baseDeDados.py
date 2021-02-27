@@ -1,10 +1,9 @@
 #! -*- coding: UTF-8 -*-
 from qgis.PyQt.QtCore import QObject
 from qgis.PyQt.QtSql import QSqlDatabase
-from qgis.core import QgsDataSourceUri, QgsVectorLayer, QgsRasterLayer, QgsProject, QgsLayerTreeLayer
-from qgis.PyQt import uic, QtGui, QtCore, QtWidgets
+from qgis.core import QgsVectorLayer, QgsRasterLayer, QgsProject
 from qgis.utils import iface
-import os, ogr
+import os, ogr, gdal, re
 
 class BaseDeDados(QObject):
     def __init__(self):
@@ -121,6 +120,7 @@ class BaseDeDados(QObject):
         simbolGroupA = groupMain.insertGroup(0, 'CALCO DE SITUACÃO DAS TROPAS ALIADAS')
         simbolGroupE = groupMain.insertGroup(1, 'CALCO DE SITUACÃO DO INIMIGO')
         simbolGroupO = groupMain.insertGroup(2, 'OUTRAS CAMADAS')
+        simbolGroupR = groupMain.insertGroup(3, 'CAMADAS RASTER')
         subSimbol = {}
         for key, value in self.grupos.items() :
             subSimbol[key] = simbolGroupA.insertGroup(0, value['nome'])
@@ -151,6 +151,20 @@ class BaseDeDados(QObject):
                     layer = QgsVectorLayer(self.Database + "|layername=" + i, i, 'ogr')
                     QgsProject.instance().addMapLayer(layer, False)
                     simbolGroupO.addLayer(layer)
+        raster_info=gdal.Info(self.Database)
+        if not not raster_info:
+            raster_layers = re.findall("GPKG:.*", raster_info)
+            if not raster_layers:
+                raster_layers = re.findall("IDENTIFIER=.*", raster_info)
+                raster_layer = raster_layers[0].replace('IDENTIFIER=','')
+                layer = QgsRasterLayer("GPKG:" + self.Database + ":" + raster_layer, raster_layer, 'gdal')
+                QgsProject.instance().addMapLayer(layer, False)
+                simbolGroupR.addLayer(layer)
+            else:
+                for raster in raster_layers:
+                    layer = QgsRasterLayer(raster, raster[raster.rfind(':')+1:], 'gdal')
+                    QgsProject.instance().addMapLayer(layer, False)
+                    simbolGroupR.addLayer(layer)
         groupMain.removeChildrenGroupWithoutLayers()
         iface.mapCanvas().refresh()
         return 1
