@@ -117,13 +117,13 @@ class BaseDeDados(QObject):
         fileName = fileNameFull.split('/')[-1].split('.')[0]
         root = QgsProject.instance().layerTreeRoot()
         groupMain = root.insertGroup(0, fileName)
-        simbolGroupA = groupMain.insertGroup(0, 'CALCO DE SITUACÃO DAS TROPAS ALIADAS')
-        simbolGroupE = groupMain.insertGroup(1, 'CALCO DE SITUACÃO DO INIMIGO')
-        simbolGroupO = groupMain.insertGroup(2, 'OUTRAS CAMADAS')
-        simbolGroupR = groupMain.insertGroup(3, 'CAMADAS RASTER')
+        symbolGroupA = groupMain.insertGroup(0, 'CALCO DE SITUACÃO DAS TROPAS ALIADAS')
+        symbolGroupE = groupMain.insertGroup(1, 'CALCO DE SITUACÃO DO INIMIGO')
+        symbolGroupO = groupMain.insertGroup(2, 'OUTRAS CAMADAS')
+        symbolGroupR = groupMain.insertGroup(3, 'CAMADAS RASTER')
         subSimbol = {}
         for key, value in self.grupos.items() :
-            subSimbol[key] = simbolGroupA.insertGroup(0, value['nome'])
+            subSimbol[key] = symbolGroupA.insertGroup(0, value['nome'])
         for name in self.getDataBaseLayerName():
             if name == 'limite_entre_fracoes':
                 workname = ['limite_entre_fracoes_esquerdo','limite_entre_fracoes_direito']
@@ -142,7 +142,7 @@ class BaseDeDados(QObject):
                             if 'esquerda' in labels.description():
                                 labels.setActive(False)
                     if i[-2:] == '_i':
-                        simbolGroupE.addLayer(layer)
+                        symbolGroupE.addLayer(layer)
                     else:
                         for key, value in self.grupos.items() :
                             if i in value['classes']:
@@ -150,7 +150,7 @@ class BaseDeDados(QObject):
                 elif i != 'metadata' and i != 'layer_styles':
                     layer = QgsVectorLayer(self.Database + "|layername=" + i, i, 'ogr')
                     QgsProject.instance().addMapLayer(layer, False)
-                    simbolGroupO.addLayer(layer)
+                    symbolGroupO.addLayer(layer)
         raster_info=gdal.Info(self.Database)
         if not not raster_info:
             raster_layers = re.findall("GPKG:.*", raster_info)
@@ -159,12 +159,12 @@ class BaseDeDados(QObject):
                 raster_layer = raster_layers[0].replace('IDENTIFIER=','')
                 layer = QgsRasterLayer("GPKG:" + self.Database + ":" + raster_layer, raster_layer, 'gdal')
                 QgsProject.instance().addMapLayer(layer, False)
-                simbolGroupR.addLayer(layer)
+                symbolGroupR.addLayer(layer)
             else:
                 for raster in raster_layers:
                     layer = QgsRasterLayer(raster, raster[raster.rfind(':')+1:], 'gdal')
                     QgsProject.instance().addMapLayer(layer, False)
-                    simbolGroupR.addLayer(layer)
+                    symbolGroupR.addLayer(layer)
         groupMain.removeChildrenGroupWithoutLayers()
         iface.mapCanvas().refresh()
         return 1
