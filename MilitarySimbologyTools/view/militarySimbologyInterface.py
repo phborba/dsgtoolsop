@@ -37,19 +37,22 @@ class MilitarySimbologyInterface(QtWidgets.QFrame, GUI):
         if dataBasePath:
             self.dataBasePath = dataBasePath
             self.baseDeDados.setCurrentDatabase(self.dataBasePath)
-            if self.baseDeDados.validateDatabase() == 1:
-                if self.baseDeDados.loadLayer():
-                    self.msg( u'Arquivo de simbologia militar carregado com sucesso!')
-                    return 1
-                else:
-                    self.msg( u'Erro ao carregar o arquivo de simbologia militar.')
-                    return 0
-            elif self.baseDeDados.validateDatabase() == 2:
-                self.msg( u'Este arquivo não é de Simbologia Militar.\nSelecione o arquivo correto.')
-                return 0
-            elif self.baseDeDados.validateDatabase() == 3:
-                self.msg( u'Este arquivo foi criado numa versão anterior do DsgToolsOp, não sendo compatível com a versão instalada')
-                return 0
+            if self.baseDeDados.loadLayer():
+                self.msg( u'Arquivo carregado com sucesso!')
+                return 1
+            # if self.baseDeDados.validateDatabase() == 1:
+            #     if self.baseDeDados.loadLayer():
+            #         self.msg( u'Arquivo de simbologia militar carregado com sucesso!')
+            #         return 1
+            #     else:
+            #         self.msg( u'Erro ao carregar o arquivo de simbologia militar.')
+            #         return 0
+            # elif self.baseDeDados.validateDatabase() == 2:
+            #     self.msg( u'Este arquivo não é de Simbologia Militar.\nSelecione o arquivo correto.')
+            #     return 0
+            # elif self.baseDeDados.validateDatabase() == 3:
+            #     self.msg( u'Este arquivo foi criado numa versão anterior do DsgToolsOp, não sendo compatível com a versão instalada')
+            #     return 0
         else:
             return 0
 
