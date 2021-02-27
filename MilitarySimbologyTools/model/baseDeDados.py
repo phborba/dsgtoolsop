@@ -15,7 +15,8 @@ class BaseDeDados(QObject):
         self.listName = {
                     'tropa_a': u'Tropa aliada',
                     'tropa_i': u'Tropa inimiga', 
-                    'limite_entre_fracoes': u'Limite entre frações',
+                    'limite_entre_fracoes_esquerdo': u'Limite entre frações - texto esquerdo',
+                    'limite_entre_fracoes_direito': u'Limite entre frações - texto direito',
                     'linha_de_controle': u'Linha de controle',
                     'eixo_de_direcao': u'Eixo de direcao',
                     'armamento_a': u'Armamento aliado',
@@ -49,7 +50,7 @@ class BaseDeDados(QObject):
         self.grupos = {
            '1_calco_operacoes': {
                'nome': u'CALCO DE OPERAÇÕES',
-               'classes': ['tropa_a', 'posto_observacao_a','armamento_a','limite_entre_fracoes', 'linha_de_controle', 'eixo_de_direcao', 'nucleo_defesa',
+               'classes': ['tropa_a', 'posto_observacao_a','armamento_a','limite_entre_fracoes_esquerdo','limite_entre_fracoes_direito', 'linha_de_controle', 'eixo_de_direcao', 'nucleo_defesa',
                             'objetivo', 'ponto_coordenacao', 'medida_restritiva', 'area_coordenacao','seta_situacao','ativ_isoladas','veiculos']
            },
            '3_calco_logistica': {
@@ -124,19 +125,32 @@ class BaseDeDados(QObject):
         for key, value in self.grupos.items() :
             subSimbol[key] = simbolGroupA.insertGroup(0, value['nome'])
         for name in self.getDataBaseLayerName():
-            if name in self.listName:
-                layer = QgsVectorLayer(self.Database + "|layername=" + name, self.listName[name], 'ogr')
-                QgsProject.instance().addMapLayer(layer, False)
-                if name[-2:] == '_i':
-                    simbolGroupE.addLayer(layer)
-                else:
-                    for key, value in self.grupos.items() :
-                        if name in value['classes']:
-                            subSimbol[key].addLayer(layer)
-            elif name != 'metadata' and name != 'layer_styles':
-                layer = QgsVectorLayer(self.Database + "|layername=" + name, name, 'ogr')
-                QgsProject.instance().addMapLayer(layer, False)
-                simbolGroupO.addLayer(layer)
+            if name == 'limite_entre_fracoes':
+                workname = ['limite_entre_fracoes_esquerdo','limite_entre_fracoes_direito']
+            else:
+                workname = [name]
+            for i in workname:
+                if i in self.listName:
+                    layer = QgsVectorLayer(self.Database + "|layername=" + name, self.listName[i], 'ogr')
+                    QgsProject.instance().addMapLayer(layer, False)
+                    if i == 'limite_entre_fracoes_esquerdo':
+                        for labels in layer.labeling().rootRule().children():
+                            if 'direita' in labels.description():
+                                labels.setActive(False)
+                    elif i == 'limite_entre_fracoes_direito':
+                        for labels in layer.labeling().rootRule().children():
+                            if 'esquerda' in labels.description():
+                                labels.setActive(False)
+                    if i[-2:] == '_i':
+                        simbolGroupE.addLayer(layer)
+                    else:
+                        for key, value in self.grupos.items() :
+                            if i in value['classes']:
+                                subSimbol[key].addLayer(layer)
+                elif i != 'metadata' and i != 'layer_styles':
+                    layer = QgsVectorLayer(self.Database + "|layername=" + i, i, 'ogr')
+                    QgsProject.instance().addMapLayer(layer, False)
+                    simbolGroupO.addLayer(layer)
         groupMain.removeChildrenGroupWithoutLayers()
         iface.mapCanvas().refresh()
         return 1
