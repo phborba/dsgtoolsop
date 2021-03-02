@@ -1,7 +1,7 @@
 #! -*- coding: UTF-8 -*-
 from qgis.PyQt.QtCore import QObject
 from qgis.PyQt.QtSql import QSqlDatabase
-from qgis.core import QgsVectorLayer, QgsRasterLayer, QgsProject
+from qgis.core import QgsVectorLayer, QgsRasterLayer, QgsProject, QgsProjectBadLayerHandler
 from qgis.utils import iface
 import os, ogr, gdal, re
 
@@ -71,17 +71,16 @@ class BaseDeDados(QObject):
         }
         self.Database = None
 
-    def getVersionDatabase(self):
+    def checkTableFromDatabase(self, tablename):
         allTables = [l.GetName() for l in ogr.Open(self.Database)]
-        if 'metadata' in allTables:
-            layer = QgsVectorLayer(self.Database + "|layername=metadata", "metadata", 'ogr')
+        if tablename in allTables:
+            layer = QgsVectorLayer(self.Database + "|layername=" + tablename, '', 'ogr')
+            attrList = []
             for i in layer.getFeatures():
-                if i[1] is not None:
-                    return (i[1])
-                return 'not available'
+                attrList.append(i[0])
         else:
-            return 'not available'
-
+            attrList = ['table not available']
+        return attrList
 
     def setCurrentDatabase(self, pathDatabase):
         pathDatabase.replace('\\','/')
@@ -104,23 +103,21 @@ class BaseDeDados(QObject):
             x = f.readline()
         g.close()
 
-    def validateDatabase(self):
-        if self.getVersionDatabase() == 'not available':
-            return 2
-        elif self.getVersionDatabase() < 1.5:
-            return 3
+    def loadDatabase(self):
+        projects = self.checkTableFromDatabase('qgis_projects')
+        if projects[0] == 'table not available':
+            return self.loadSymbLayers()
         else:
-            return 1
+            return self.loadProject()
 
-    def loadLayer(self):
+    def loadSymbLayers(self):
         fileNameFull = self.Database
         fileName = fileNameFull.split('/')[-1].split('.')[0]
         root = QgsProject.instance().layerTreeRoot()
-        groupMain = root.insertGroup(0, fileName)
-        symbolGroupA = groupMain.insertGroup(0, 'CALCO DE SITUACÃO DAS TROPAS ALIADAS')
-        symbolGroupE = groupMain.insertGroup(1, 'CALCO DE SITUACÃO DO INIMIGO')
-        symbolGroupO = groupMain.insertGroup(2, 'OUTRAS CAMADAS')
-        symbolGroupR = groupMain.insertGroup(3, 'CAMADAS RASTER')
+        self.groupMain = root.insertGroup(0, fileName)
+        symbolGroupA = self.groupMain.insertGroup(0, 'CALCO DE SITUACÃO DAS TROPAS ALIADAS')
+        symbolGroupE = self.groupMain.insertGroup(1, 'CALCO DE SITUACÃO DO INIMIGO')
+        symbolGroupO = self.groupMain.insertGroup(2, 'OUTRAS CAMADAS')
         subSimbol = {}
         for key, value in self.grupos.items() :
             subSimbol[key] = symbolGroupA.insertGroup(0, value['nome'])
@@ -147,10 +144,17 @@ class BaseDeDados(QObject):
                         for key, value in self.grupos.items() :
                             if i in value['classes']:
                                 subSimbol[key].addLayer(layer)
-                elif i != 'metadata' and i != 'layer_styles':
+                elif i not in ['metadata', 'layer_styles']:
                     layer = QgsVectorLayer(self.Database + "|layername=" + i, i, 'ogr')
                     QgsProject.instance().addMapLayer(layer, False)
                     symbolGroupO.addLayer(layer)
+        self.loadRasterLayers()
+        self.groupMain.removeChildrenGroupWithoutLayers()
+        iface.mapCanvas().refresh()
+        return 1
+
+    def loadRasterLayers(self):
+        symbolGroupR = self.groupMain.insertGroup(3, 'CAMADAS RASTER')
         raster_info=gdal.Info(self.Database)
         if not not raster_info:
             raster_layers = re.findall("GPKG:.*", raster_info)
@@ -165,6 +169,32 @@ class BaseDeDados(QObject):
                     layer = QgsRasterLayer(raster, raster[raster.rfind(':')+1:], 'gdal')
                     QgsProject.instance().addMapLayer(layer, False)
                     symbolGroupR.addLayer(layer)
-        groupMain.removeChildrenGroupWithoutLayers()
-        iface.mapCanvas().refresh()
-        return 1
+
+    def loadProject(self):
+        file_path = self.Database.replace('\\','/')
+        gpkgname=file_path.split('/')[-1]
+
+        projectList = self.checkTableFromDatabase('qgis_projects')
+        projectName = projectList[0]
+
+        tempProject=QgsProject.instance()
+        tempProject.setBadLayerHandler(QgsProjectBadLayerHandler())
+        tempProject.read('geopackage:' + file_path + '?projectName=' + projectName)
+
+        layersList=QgsProject.instance().mapLayers()
+        for i in layersList:
+            layer = QgsProject.instance().mapLayer(i)
+            layerPath = layer.dataProvider().dataSourceUri()
+            if gpkgname in layerPath:
+                if layer.providerType() == 'gdal':
+                    if layerPath.endswith('.gpkg'):
+                        newPath = file_path
+                    else:
+                        newPath = layerPath.replace(layerPath[:layerPath.rfind(':')], 'GPKG:' + file_path)
+                else:
+                    newPath = layerPath.replace(layerPath[:layerPath.find('|')],file_path)
+                layer.dataProvider().setDataSourceUri(newPath)
+                layer.setDataSource(newPath, layer.name(), layer.providerType(), layer.dataProvider().ProviderOptions())
+
+        QgsProject.instance().write('geopackage:' + file_path + '?projectName=' + projectName)
+        return 2
