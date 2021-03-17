@@ -102,7 +102,6 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.dialogFind.exec_()
 
     def doWorkBox(self, choice):
-        self.fillListBoxInit()
         if choice == 'small':
             multi = 24
         else:
@@ -118,6 +117,9 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                 carta_InfDir = self.findChart(inf_dir,1)
 
             self.featuresByScale = {1:{}, 2:{}, 3:{}, 4:{}}
+            featDict = {25:1, 50:2, 100:3, 250:4}
+            self.chartsByScale = {0: {}, 1:{}, 2:{}, 3:{}, 4:{}, 5:{}, 6:{}, 7:{}}
+            chartsDict = {1:0, 2:1, 5:2, 10:3, 25:4, 50:5, 100:6, 250:7}
             
             geom_SupEsq = carta_SupEsq[2].center()
             geom_InfDir = carta_InfDir[2].center()
@@ -134,19 +136,18 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                     idxX = geom_SupEsq.x() + i*(multi * 0.3125/60)
                     pt = QgsPointXY(idxX, idxY)
                     if multi == 24:
-                        scaleDict = {25:1, 50:2, 100:3, 250:4}
                         for scale in [25, 50, 100, 250]:
                             chart = self.findChart(pt, scale)
-                            self.fillListBox(scale, chart)
-                            self.featuresByScale[scaleDict[scale]][chart[0]] = chart[2]
+                            self.chartsByScale[chartsDict[scale]][chart[0]] = chart[1]
+                            self.featuresByScale[featDict[scale]][chart[0]] = chart[2]
                     else:
                         for scale in [1, 2, 5, 10]:
                             chart = self.findChart(pt, scale)
-                            self.fillListBox(scale, chart)
+                            self.chartsByScale[chartsDict[scale]][chart[0]] = chart[1]
 
-            self.fillListBoxFinish()
+            self.fillListBox()
     
-    def fillListBoxInit(self):
+    def fillListBox(self):
         self.mapList.clear()
         self.item = []
 
@@ -160,22 +161,20 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.item.append(QTreeWidgetItem(['1:250.000','']))
 
         self.mapList.addTopLevelItems([self.item[0], self.item[1], self.item[2], self.item[3], self.item[4], self.item[5], self.item[6], self.item[7]])  
-
-    def fillListBox(self, scale, data):
-        scaleDict = {1:0, 2:1, 5:2, 10:3, 25:4, 50:5, 100:6, 250:7}
-        if data[1]:
-            if data[1][0] == '-':
-                item_temp = QTreeWidgetItem([data[0], ''])
-                self.item[scaleDict[scale]].addChild(item_temp)
-            else:
-                item_temp = QTreeWidgetItem([data[0],data[1]])
-                self.item[scaleDict[scale]].addChild(item_temp)
-
-    def fillListBoxFinish(self):
-        for s in range(8):
-            self.item[s].setExpanded(True)
-            if self.item[s].childCount() == 0:
-                self.mapList.invisibleRootItem().removeChild(self.item[s])
+        
+        for listNum in range(8):
+            for key in self.chartsByScale[listNum]:
+                if self.chartsByScale[listNum][key]:
+                    if self.chartsByScale[listNum][key][0] == '-':
+                        item_temp = QTreeWidgetItem([key, ''])
+                        self.item[listNum].addChild(item_temp)
+                    else:
+                        item_temp = QTreeWidgetItem([key, self.chartsByScale[listNum][key]])
+                        self.item[listNum].addChild(item_temp)
+            self.item[listNum].setExpanded(True)
+            if self.item[listNum].childCount() == 0:
+                self.mapList.invisibleRootItem().removeChild(self.item[listNum])
+        
         self.mapList.header().setSectionResizeMode(QHeaderView.ResizeToContents)
 
     def selectScale(self):
