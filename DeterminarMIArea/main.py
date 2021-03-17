@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-from qgis.core import QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsVectorLayer, QgsGeometry, QgsProject, QgsRectangle, QgsGeometry, QgsMapLayer, QgsWkbTypes, QgsPointXY
-from qgis.gui import QgsMapToolEmitPoint, QgsVertexMarker, QgsMapToolIdentifyFeature, QgsMapToolIdentify, QgsMapMouseEvent, QgsRubberBand
+from qgis.core import QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject, QgsRectangle, QgsMapLayer, QgsWkbTypes, QgsPointXY
+from qgis.gui import QgsMapToolEmitPoint, QgsMapToolIdentifyFeature, QgsMapToolIdentify, QgsRubberBand
 from qgis.PyQt import uic, QtWidgets, QtCore
 from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView
 from qgis.PyQt.QtCore import pyqtSignal, Qt
-from ..auxiliar.auxMI2 import Auxiliar
 from .interface_dialog import InterfaceDialog
+from .find_dialog import FindDialog
 import processing, gdal, os, requests, tempfile
 from PIL import Image
-
+import string, math
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'detMIArea_dockwidget_base.ui'))
@@ -24,7 +24,9 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.setupUi(self)
         self.iface = iface
         self.dialog = InterfaceDialog()
+        self.dialogFind = FindDialog()
         self.isOpen = False
+        self.openFiles()
 
     def initGui(self):
         self.initVariables()
@@ -47,46 +49,27 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.boxButton.setChecked(False)
         self.geometryButton.setChecked(False)
         self.mapList.clear()
+        self.closeFiles()
 
     def initVariables(self):
         self.canvas = self.iface.mapCanvas()
         self.myToolBox = RectangleMapTool(self.canvas)
         self.myToolGeom = GeometryMapTool(self.canvas, self.iface)
         self.currentTool = self.canvas.mapTool()
-        self.filePathGpkg = Auxiliar().pathGpkg()
         self.scaleSelected = 0
-        self.featuresByScale = {1:'',2:'',3:'',4:''}
         self.webParamDict = {1:[975,1090,6,6], 2:[1600,1600,4,4], 3:[1600,1600,4,4], 4:[1450,1200,5,4]} #[width,height,ncol,nrow]
 
     def initSignals(self):
         self.closeEvent = self.closeDock
         self.boxButton.clicked.connect(self.getFromBox)
         self.geometryButton.clicked.connect(self.getFromGeometry)
-        self.myToolBox.boxCreated.connect(self.doWorkBox)
-        self.myToolGeom.geometrySelected.connect(self.doWorkGeom)
+        self.myToolBox.boxCreated.connect(self.findDialog)
+        self.myToolGeom.geometrySelected.connect(self.findDialog)
+        self.dialogFind.finished.connect(self.doWorkBox)
         self.downloadButton.clicked.connect(self.selectScale)
         self.dialog.finished.connect(self.downloadMaps)
         self.txtButton.clicked.connect(self.exportTxt)
         self.csvButton.clicked.connect(self.exportCsv) 
-
-    def findDataGeom(self, rect, scale):
-        scalesDict = {25:1 , 50:2 , 100:3 , 250:4}
-        scaleLayer = self.filePathGpkg + "|layername=" + str(scale)
-        generalMap = QgsVectorLayer(scaleLayer, "General Map", "ogr")
-        generalMap.selectAll()
-        featureList = generalMap.selectedFeatures()
-        generalMap.removeSelection()
-        found = {}
-        filteredFeaturesList = []
-
-        for i in featureList:
-            if QgsGeometry.fromRect(rect).intersects(i.geometry()):
-                found[i[1]] = i[2]
-                filteredFeaturesList.append(i)
-
-        self.featuresByScale[scalesDict[scale]] = filteredFeaturesList
-        
-        return found
 
     def getFromBox(self, state):
         if state:
@@ -116,63 +99,97 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
             if l.type() == QgsMapLayer.VectorLayer:
                 l.removeSelection()
 
-    def doWorkBox(self, r):
-        if r is not None:
-            f25 = self.findDataGeom(r, 25)
-            f50 = self.findDataGeom(r, 50)
-            f100 = self.findDataGeom(r, 100)
-            f250 = self.findDataGeom(r, 250)
+    def findDialog(self, geom):
+        self.workgeom = geom
+        self.dialogFind.exec_()
 
-            self.fillListBox(f25, f50, f100, f250)
-    
-    def doWorkGeom(self, g):
-        r = g.boundingBox()
-        self.doWorkBox(r)
-		
-    def fillListBox(self, f25, f50, f100, f250):
-        self.mapList.clear()
+    def doWorkBox(self, choice):
+        self.fillListBoxInit()
+        if choice == 'small':
+            multi = 24
+        else:
+            multi = 1
+        if self.workgeom is not None:
+            sup_esq = self.getWGSPoint(QgsPointXY(self.workgeom.xMinimum(), self.workgeom.yMaximum()))
+            inf_dir = self.getWGSPoint(QgsPointXY(self.workgeom.xMaximum(), self.workgeom.yMinimum()))
 
-        scales = (f25, f50, f100, f250)
-        item = []
+            if multi == 24:
+                carta_SupEsq = self.findChart(sup_esq,25)
+                carta_InfDir = self.findChart(inf_dir,25)
+            else:
+                carta_SupEsq = self.findChart(sup_esq,1)
+                carta_InfDir = self.findChart(inf_dir,1)
 
-        item.append(QTreeWidgetItem(['1:25.000','']))
-        item.append(QTreeWidgetItem(['1:50.000','']))
-        item.append(QTreeWidgetItem(['1:100.000','']))
-        item.append(QTreeWidgetItem(['1:250.000','']))
-        item.append(QTreeWidgetItem([u'Não existentes','']))
+            self.featuresByScale = {1:{}, 2:{}, 3:{}, 4:{}}
+            
+            geom_SupEsq = carta_SupEsq[2].center()
+            geom_InfDir = carta_InfDir[2].center()
+            
+            nStepXi = (geom_InfDir.x() - geom_SupEsq.x())/(multi * 0.3125/60)
+            nStepYi = (geom_SupEsq.y() - geom_InfDir.y())/(multi * 0.3125/60)
+            
+            nStepX = int(nStepXi)
+            nStepY = int(nStepYi)
 
-        self.mapList.addTopLevelItems([item[0], item[1], item[2], item[3], item[4]])  
-        for s in range(4):
-            scale_item = scales[s]
-            for c in scale_item.keys():
-                if scale_item[c] != '':
-                    if scale_item[c][0] != '-':
-                        item_temp = QTreeWidgetItem([c, scale_item[c]])                                                                
-                        item[s].addChild(item_temp)
+            for j in range(nStepY+1):
+                idxY = geom_SupEsq.y() - j*(multi * 0.3125/60)
+                for i in range(nStepX+1):
+                    idxX = geom_SupEsq.x() + i*(multi * 0.3125/60)
+                    pt = QgsPointXY(idxX, idxY)
+                    if multi == 24:
+                        scaleDict = {25:1, 50:2, 100:3, 250:4}
+                        for scale in [25, 50, 100, 250]:
+                            chart = self.findChart(pt, scale)
+                            self.fillListBox(scale, chart)
+                            self.featuresByScale[scaleDict[scale]][chart[0]] = chart[2]
                     else:
-                        item_temp = QTreeWidgetItem([c,''])
-                        item[4].addChild(item_temp)
-                else:
-                    item_temp = QTreeWidgetItem([c,''])
-                    item[4].addChild(item_temp)
-            item[s].setExpanded(True)
+                        for scale in [1, 2, 5, 10]:
+                            chart = self.findChart(pt, scale)
+                            self.fillListBox(scale, chart)
 
-        item[4].setExpanded(True)
+            self.fillListBoxFinish()
+    
+    def fillListBoxInit(self):
+        self.mapList.clear()
+        self.item = []
 
-        if item[4].childCount() == 0:
-            self.mapList.invisibleRootItem().removeChild(item[4])
-        
+        self.item.append(QTreeWidgetItem(['1:1.000','']))
+        self.item.append(QTreeWidgetItem(['1:2.000','']))
+        self.item.append(QTreeWidgetItem(['1:5.000','']))
+        self.item.append(QTreeWidgetItem(['1:10.000','']))
+        self.item.append(QTreeWidgetItem(['1:25.000','']))
+        self.item.append(QTreeWidgetItem(['1:50.000','']))
+        self.item.append(QTreeWidgetItem(['1:100.000','']))
+        self.item.append(QTreeWidgetItem(['1:250.000','']))
+
+        self.mapList.addTopLevelItems([self.item[0], self.item[1], self.item[2], self.item[3], self.item[4], self.item[5], self.item[6], self.item[7]])  
+
+    def fillListBox(self, scale, data):
+        scaleDict = {1:0, 2:1, 5:2, 10:3, 25:4, 50:5, 100:6, 250:7}
+        if data[1]:
+            if data[1][0] == '-':
+                item_temp = QTreeWidgetItem([data[0], ''])
+                self.item[scaleDict[scale]].addChild(item_temp)
+            else:
+                item_temp = QTreeWidgetItem([data[0],data[1]])
+                self.item[scaleDict[scale]].addChild(item_temp)
+
+    def fillListBoxFinish(self):
+        for s in range(8):
+            self.item[s].setExpanded(True)
+            if self.item[s].childCount() == 0:
+                self.mapList.invisibleRootItem().removeChild(self.item[s])
         self.mapList.header().setSectionResizeMode(QHeaderView.ResizeToContents)
 
     def selectScale(self):
         self.dialog.exec_()
 
     def processImages(self, layerWMS, webScaleParamList, outputFolder):
-        scaleFeaturesList = self.featuresByScale[self.scaleSelected]
+        scaleFeaturesDict = self.featuresByScale[self.scaleSelected]
         width, height, ncol, nrow =  webScaleParamList
         
-        for feat in scaleFeaturesList:
-            bboxStr = feat.geometry().boundingBox().asWktCoordinates().replace(',','').split(' ')
+        for feat in scaleFeaturesDict.keys():
+            bboxStr = scaleFeaturesDict[feat].asWktCoordinates().replace(',','').split(' ')
             bbox = []
             for i in bboxStr:
                 bbox.append(float(i))
@@ -189,12 +206,12 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                     ymax = bbox[3] - dy * line
                     imageURL = "http://bdgex.eb.mil.br/mapcache?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&BBOX={},{},{},{}&SRS=EPSG:4326&WIDTH={}&HEIGHT={}&LAYERS={}&STYLES=,,,&FORMAT=image/png&DPI=96&MAP_RESOLUTION=96&FORMAT_OPTIONS=dpi:96&TRANSPARENT=TRUE".format(xmin, ymin, xmax, ymax, width, height, layerWMS)
                     partialImage = requests.get(imageURL, allow_redirects=True)
-                    temp_file = temp_path.name + '/temp_image.png'
+                    temp_file = os.path.join(temp_path.name, 'temp_image.png')
                     open(temp_file, "wb").write(partialImage.content)
                     complete_image.paste(Image.open(temp_file), (width * column, height * line))
         
-            complete_image.save(temp_path.name + '/complete_image.png')
-            outputFile = outputFolder + '/' + feat[2] + ".tif"
+            complete_image.save(os.path.join(temp_path.name, 'complete_image.png'))
+            outputFile = os.path.join(outputFolder, feat + ".tif")
             
             p1=gdal.GCP(bbox[0], bbox[1], 0, 0, height * nrow)
             p2=gdal.GCP(bbox[2], bbox[1], 0, width * ncol, height * nrow)
@@ -202,10 +219,9 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
             p4=gdal.GCP(bbox[2], bbox[3], 0, width * ncol, 0)
             
             opt = gdal.TranslateOptions(format = 'GTiff', GCPs = [p1,p2,p3,p4])
-            gdal.Translate(outputFile, temp_path.name + '/complete_image.png', options = opt)
-            
-            processing.run("gdal:assignprojection", {'INPUT': outputFile,
-            'CRS' : "EPSG:4326"})
+            gdal.Translate(outputFile, os.path.join(temp_path.name, 'complete_image.png'), options = opt)
+            temp_path.cleanup()
+            processing.run("gdal:assignprojection", {'INPUT': outputFile, 'CRS' : "EPSG:4326"})
             
         return
 
@@ -281,12 +297,228 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
             
         csvFile.close()    
 
+    def getWGSPoint(self, pt):
+        crsSrc = self.canvas.mapSettings().destinationCrs()
+        crsDest = QgsCoordinateReferenceSystem(4326, QgsCoordinateReferenceSystem.EpsgCrsId)
+        
+        coordinateTransformer = QgsCoordinateTransform(crsSrc, crsDest, QgsProject.instance())
+        wgsPt = coordinateTransformer.transform(pt)
+        return wgsPt
+
+    def openFiles(self):
+        filePath = os.path.dirname(os.path.dirname(__file__))
+        filePath250 = os.path.join(filePath, "auxiliar", "MIR250.csv")
+        filePath100 = os.path.join(filePath, "auxiliar", "MI100.csv")
+        self.file250 = open(filePath250, 'r')
+        self.file100 = open(filePath100, 'r')
+    
+    def closeFiles(self):
+        self.file250.close()
+        self.file100.close()
+
+    def findChart(self, point, escala):
+        alpha = string.ascii_uppercase
+        alphabet = {i: alpha[i-1] for i in range(1,len(alpha)+1)}
+        self.scaleIndex={
+            500 : {
+                0: "V",
+                1: "X",
+                2: "Y",
+                3: "Z"
+            },
+            250 : {
+                0: "A",
+                1: "B",
+                2: "C",
+                3: "D"
+            },
+            100 : {
+                0: "I",
+                1: "II",
+                2: "III",
+                3: "IV",
+                4: "V",
+                5: "VI"
+            },
+            50 : {
+                0: "1",
+                1: "2",
+                2: "3",
+                3: "4"
+            },
+            25 : {
+                0: "NO",
+                1: "NE",
+                2: "SO",
+                3: "SE"
+            },
+            10 : {
+                0: "F",
+                1: "D",
+                2: "B",
+                3: "E",
+                4: "C",
+                5: "A"
+            },
+            5 : {
+                0: "I",
+                1: "II",
+                2: "III",
+                3: "IV"
+            },
+            2 : {
+                0: "1",
+                1: "2",
+                2: "3",
+                3: "4",
+                4: "5",
+                5: "6"
+            },
+            1 : {
+                0: "A",
+                1: "B",
+                2: "C",
+                3: "D"
+            }
+        }
+        nomeFolha = ""
+        miFolha = ""
+        scaleX = 6.0
+        scaleY = 4.0
+        
+        # 1:1.000.000
+        hemisferio = 'S' if point.y() < 0 else 'N'
+        nomeFolha += hemisferio
+        linha = math.floor(abs(point.y()/4)) + 1
+        linhaAlpha = alphabet[linha]
+        nomeFolha += linhaAlpha
+        nomeFolha += '-'
+        fuso = 30 + int(point.x()/6)
+        nomeFolha += str(fuso)
+        
+        # 1:500.000 init
+        esqFuso = -180 + (fuso-1) * 6
+        infFuso = linha * 4
+
+        if hemisferio == 'S':
+            infFuso *= -1
+        else:
+            infFuso -= 4        
+        
+        for scales in [500, 250, 100, 50, 25, 10, 5, 2, 1]:
+            scaleX, scaleY, esqFuso, infFuso, nomeFolha, miFolha = self.scaleFinder(point, scaleX, scaleY, esqFuso, infFuso, scales, nomeFolha, miFolha)
+            if escala == scales:
+                rect = QgsRectangle(esqFuso, infFuso, esqFuso + scaleX, infFuso + scaleY)
+                return (nomeFolha, miFolha, rect) 
+
+    def findMI(self, nome, arq):
+        for l in arq:
+            line = l.split(";")
+            if line[0] == nome:
+                arq.seek(0)
+                return line[1].rstrip()
+            
+        return ""
+
+    def scaleFinder(self, point, scaleX, scaleY, esqFuso, infFuso, mapScale, nomeFolha, miFolha):
+        if mapScale == 10:
+            scaleX, scaleY, esqFuso, infFuso, pos = self.positionFinder23(point, scaleX, scaleY, esqFuso, infFuso)
+        elif mapScale in [100, 2]:
+            scaleX, scaleY, esqFuso, infFuso, pos = self.positionFinder32(point, scaleX, scaleY, esqFuso, infFuso)
+        else:
+            scaleX, scaleY, esqFuso, infFuso, pos = self.positionFinder22(point, scaleX, scaleY, esqFuso, infFuso)
+        
+        nome = self.scaleIndex[mapScale][pos]
+        nomeFolha += '-' + nome
+
+        if mapScale == 250:
+            miFolha = self.findMI(nomeFolha, self.file250)
+        elif mapScale == 100:
+            miFolha = self.findMI(nomeFolha, self.file100)
+        else:
+            miFolha += '-' + nome
+        
+        return scaleX, scaleY, esqFuso, infFuso, nomeFolha, miFolha
+
+    def positionFinder22(self, point, scaleX, scaleY, esqFuso, infFuso):
+        scaleX /= 2
+        scaleY /= 2
+        
+        if point.x() < esqFuso + scaleX:
+            if point.y() > infFuso + scaleY:
+                pos = 0
+            else:
+                pos = 2
+        else:
+            if point.y() > infFuso + scaleY:
+                pos = 1
+            else:
+                pos = 3
+
+        esqFuso = esqFuso + int(pos%2)*scaleX
+        inf = 0 if pos > 1 else 1
+        infFuso = infFuso + inf*scaleY
+
+        return scaleX, scaleY, esqFuso, infFuso, pos
+
+    def positionFinder23(self, point, scaleX, scaleY, esqFuso, infFuso):
+        scaleX /= 2
+        scaleY /= 3
+        
+        if point.y() < infFuso + scaleY:
+            if point.x() > esqFuso + scaleX:
+                pos = 0
+            else:
+                pos = 3
+        elif point.y() < infFuso + 2*scaleY:
+            if point.x() > esqFuso + scaleX:
+                pos = 1
+            else:
+                pos = 4
+        else:
+            if point.x() > esqFuso + scaleX:
+                pos = 2
+            else:
+                pos = 5
+
+        esq = 0 if pos > 2 else 1
+        esqFuso = esqFuso + esq*scaleX
+        infFuso = infFuso + int(pos%3)*scaleY
+
+        return scaleX, scaleY, esqFuso, infFuso, pos
+
+    def positionFinder32(self, point, scaleX, scaleY, esqFuso, infFuso):
+        scaleX /= 3
+        scaleY /= 2
+        
+        if point.x() < esqFuso + scaleX:
+            if point.y() > infFuso + scaleY:
+                pos = 0
+            else:
+                pos = 3
+        elif point.x() < esqFuso + scaleX*2:
+            if point.y() > infFuso + scaleY:
+                pos = 1
+            else:
+                pos = 4
+        else:
+            if point.y() > infFuso + scaleY:
+                pos = 2
+            else:
+                pos = 5
+
+        esqFuso = esqFuso + int(pos%3)*scaleX
+        inf = 0 if pos > 2 else 1
+        infFuso = infFuso + inf*scaleY
+
+        return scaleX, scaleY, esqFuso, infFuso, pos
+
 
 
 
 class GeometryMapTool(QgsMapToolIdentifyFeature):
     
-    geometrySelected = pyqtSignal(QgsGeometry)
+    geometrySelected = pyqtSignal(QgsRectangle)
     
     def __init__(self, canvas, iface):
         self.canvas = canvas
@@ -309,8 +541,9 @@ class GeometryMapTool(QgsMapToolIdentifyFeature):
             geometry = feature.geometry()
             transformer = QgsCoordinateTransform(layer.crs(), QgsCoordinateReferenceSystem(4326, QgsCoordinateReferenceSystem.EpsgCrsId), QgsProject.instance())
             geometry.transform(transformer)
-         
-        self.geometrySelected.emit(geometry)
+        else:
+            return
+        self.geometrySelected.emit(geometry.boundingBox())
 
 
 
