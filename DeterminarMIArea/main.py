@@ -2,7 +2,7 @@
 from qgis.core import QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject, QgsRectangle, QgsMapLayer, QgsWkbTypes, QgsPointXY
 from qgis.gui import QgsMapToolEmitPoint, QgsMapToolIdentifyFeature, QgsMapToolIdentify, QgsRubberBand
 from qgis.PyQt import uic, QtWidgets, QtCore
-from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView
+from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView, QMessageBox
 from qgis.PyQt.QtCore import pyqtSignal, Qt
 from .interface_dialog import InterfaceDialog
 from .find_dialog import FindDialog
@@ -102,7 +102,8 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.dialogFind.exec_()
 
     def doWorkBox(self, choice):
-        if choice == 'small':
+        self.choice = choice
+        if self.choice == 'small':
             multi = 24
         else:
             multi = 1
@@ -178,7 +179,10 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.mapList.header().setSectionResizeMode(QHeaderView.ResizeToContents)
 
     def selectScale(self):
-        self.dialog.exec_()
+        if self.choice == 'small':
+            self.dialog.exec_()
+        else:
+            QMessageBox.warning(self, u"Aviso:", u"Opção apenas disponível para pequenas escalas (até 25.000)")
 
     def processImages(self, layerWMS, webScaleParamList, outputFolder):
         scaleFeaturesDict = self.featuresByScale[self.scaleSelected]
@@ -250,21 +254,25 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         csvFile.write(u'*********************************************\n\n')
         
         itemCount = self.mapList.invisibleRootItem().childCount()
-        scale_list = (u'1:25.000', u'1:50.000', u'1:100.000', u'1:250.000')
+        scale_list = (u'1:1.000', u'1:2.000', u'1:5.000', u'1:10.000', u'1:25.000', u'1:50.000', u'1:100.000', u'1:250.000')
 		
         for i in range(itemCount):
             currentItem = self.mapList.invisibleRootItem().child(i)
 
-            for s in range(4):
+            for s in range(8):
                 if currentItem.text(0) == scale_list[s]:
                     csvFile.write(scale_list[s]+':\n')
                     csvFile.write(u'---------\n\n')
                     csvFile.write(u'{0:20} | {1:10}\n'.format(u'Nomenclatura', u'MI/MIR'))
                     csvFile.write(u'------------           ------    \n\n')
                 
-                    for j in range(currentItem.childCount()):
-                        csvFile.write(u'{0:20} | {1:10}\n'.format(currentItem.child(j).text(0), currentItem.child(j).text(1)))
-                
+                    if s in range(4):
+                        for j in range(currentItem.childCount()):
+                            csvFile.write(u'{0:30} | {1:20}\n'.format(currentItem.child(j).text(0), currentItem.child(j).text(1)))
+                    else:
+                        for j in range(currentItem.childCount()):
+                            csvFile.write(u'{0:20} | {1:10}\n'.format(currentItem.child(j).text(0), currentItem.child(j).text(1)))
+                    
                     csvFile.write(u'\n')
                     csvFile.write(u'---------------------------------\n\n\n')
 
