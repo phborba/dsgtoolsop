@@ -110,9 +110,8 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         else:
             multi = 1
         if self.workgeom is not None:
-            sup_esq = self.getWGSPoint(QgsPointXY(self.workgeom.xMinimum(), self.workgeom.yMaximum()))
-            inf_dir = self.getWGSPoint(QgsPointXY(self.workgeom.xMaximum(), self.workgeom.yMinimum()))
-
+            sup_esq = QgsPointXY(self.workgeom.xMinimum(), self.workgeom.yMaximum())
+            inf_dir = QgsPointXY(self.workgeom.xMaximum(), self.workgeom.yMinimum())
             if multi == 24:
                 carta_SupEsq = self.findChart(sup_esq,25)
                 carta_InfDir = self.findChart(inf_dir,25)
@@ -296,14 +295,6 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                 csvFile.write(u'{};{};{}\n'.format(currentItem.text(0),currentItem.child(j).text(0), currentItem.child(j).text(1)))
             
         csvFile.close()    
-
-    def getWGSPoint(self, pt):
-        crsSrc = self.canvas.mapSettings().destinationCrs()
-        crsDest = QgsCoordinateReferenceSystem(4326, QgsCoordinateReferenceSystem.EpsgCrsId)
-        
-        coordinateTransformer = QgsCoordinateTransform(crsSrc, crsDest, QgsProject.instance())
-        wgsPt = coordinateTransformer.transform(pt)
-        return wgsPt
 
     def openFiles(self):
         filePath = os.path.dirname(os.path.dirname(__file__))
