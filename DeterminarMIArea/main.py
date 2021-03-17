@@ -6,9 +6,8 @@ from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView
 from qgis.PyQt.QtCore import pyqtSignal, Qt
 from .interface_dialog import InterfaceDialog
 from .find_dialog import FindDialog
-import processing, gdal, os, requests, tempfile
+import processing, gdal, os, requests, tempfile, string, math, json
 from PIL import Image
-import string, math
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'detMIArea_dockwidget_base.ui'))
@@ -49,7 +48,6 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         self.boxButton.setChecked(False)
         self.geometryButton.setChecked(False)
         self.mapList.clear()
-        self.closeFiles()
 
     def initVariables(self):
         self.canvas = self.iface.mapCanvas()
@@ -298,15 +296,11 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
 
     def openFiles(self):
         filePath = os.path.dirname(os.path.dirname(__file__))
-        filePath250 = os.path.join(filePath, "auxiliar", "MIR250.csv")
-        filePath100 = os.path.join(filePath, "auxiliar", "MI100.csv")
-        self.file250 = open(filePath250, 'r')
-        self.file100 = open(filePath100, 'r')
+        filePath250 = os.path.join(filePath, "auxiliar", "json", "MIR250.json")
+        filePath100 = os.path.join(filePath, "auxiliar", "json", "MI100.json")
+        self.file250 = json.load(open(filePath250))
+        self.file100 = json.load(open(filePath100))
     
-    def closeFiles(self):
-        self.file250.close()
-        self.file100.close()
-
     def findChart(self, point, escala):
         alpha = string.ascii_uppercase
         alphabet = {i: alpha[i-1] for i in range(1,len(alpha)+1)}
@@ -403,14 +397,12 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                 return (nomeFolha, miFolha, rect) 
 
     def findMI(self, nome, arq):
-        for l in arq:
-            line = l.split(";")
-            if line[0] == nome:
-                arq.seek(0)
-                return line[1].rstrip()
-            
-        return ""
-
+        try:
+            mi = str(arq[nome]['MI'])
+            return mi
+        except:
+            return ""
+        
     def scaleFinder(self, point, scaleX, scaleY, esqFuso, infFuso, mapScale, nomeFolha, miFolha):
         if mapScale == 10:
             scaleX, scaleY, esqFuso, infFuso, pos = self.positionFinder23(point, scaleX, scaleY, esqFuso, infFuso)
