@@ -204,7 +204,7 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
                 for line in range(nrow):
                     ymin = bbox[3] - dy * (line + 1)
                     ymax = bbox[3] - dy * line
-                    imageURL = "http://bdgex.eb.mil.br/mapcache?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&BBOX={},{},{},{}&SRS=EPSG:4326&WIDTH={}&HEIGHT={}&LAYERS={}&STYLES=,,,&FORMAT=image/png&DPI=96&MAP_RESOLUTION=96&FORMAT_OPTIONS=dpi:96&TRANSPARENT=TRUE".format(xmin, ymin, xmax, ymax, width, height, layerWMS)
+                    imageURL = "https://bdgex.eb.mil.br/mapcache?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&BBOX={},{},{},{}&SRS=EPSG:4326&WIDTH={}&HEIGHT={}&LAYERS={}&STYLES=,,,&FORMAT=image/png&DPI=96&MAP_RESOLUTION=96&FORMAT_OPTIONS=dpi:96&TRANSPARENT=TRUE".format(xmin, ymin, xmax, ymax, width, height, layerWMS)
                     partialImage = requests.get(imageURL, allow_redirects=True)
                     temp_file = os.path.join(temp_path.name, 'temp_image.png')
                     open(temp_file, "wb").write(partialImage.content)
