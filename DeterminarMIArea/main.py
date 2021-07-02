@@ -6,7 +6,8 @@ from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView, QMess
 from qgis.PyQt.QtCore import pyqtSignal, Qt
 from .interface_dialog import InterfaceDialog
 from .find_dialog import FindDialog
-import processing, gdal, os, requests, tempfile, string, math, json
+import processing, os, requests, tempfile, string, math, json
+from osgeo import gdal
 from PIL import Image
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
