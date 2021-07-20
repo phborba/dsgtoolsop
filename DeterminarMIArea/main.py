@@ -6,7 +6,7 @@ from qgis.PyQt.QtWidgets import QFileDialog, QTreeWidgetItem, QHeaderView, QMess
 from qgis.PyQt.QtCore import pyqtSignal, Qt
 from .interface_dialog import InterfaceDialog
 from .find_dialog import FindDialog
-import processing, os, requests, tempfile, string, math, json
+import processing, os, requests, tempfile, string, math, csv
 from osgeo import gdal
 from PIL import Image
 
@@ -304,11 +304,19 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
 
     def openFiles(self):
         filePath = os.path.dirname(os.path.dirname(__file__))
-        filePath250 = os.path.join(filePath, "auxiliar", "json", "MIR250.json")
-        filePath100 = os.path.join(filePath, "auxiliar", "json", "MI100.json")
-        self.file250 = json.load(open(filePath250))
-        self.file100 = json.load(open(filePath100))
-    
+        filePath250 = os.path.join(filePath, "auxiliar", "csv", "MIR250.csv")
+        filePath100 = os.path.join(filePath, "auxiliar", "csv", "MI100.csv")
+        pathCsvExceptions25k = os.path.join(filePath, "auxiliar", "csv", "exclusionList25k.csv")
+        pathCsvExceptions50k = os.path.join(filePath, "auxiliar", "csv", "exclusionList50k.csv")
+        with open(filePath250, 'r') as file:
+            self.file250 = {x[0]: x[1] for x in csv.reader(file, delimiter=';')}
+        with open(filePath100, 'r') as file:
+            self.file100 = {x[0]: x[1] for x in csv.reader(file, delimiter=';')}
+        with open(pathCsvExceptions25k, 'r') as file:
+            self.exceptions25k = [x[0] for x in csv.reader(file)]
+        with open(pathCsvExceptions50k, 'r') as file:
+            self.exceptions50k = [x[0] for x in csv.reader(file)]
+        
     def findChart(self, point, escala):
         alpha = string.ascii_uppercase
         alphabet = {i: alpha[i-1] for i in range(1,len(alpha)+1)}
@@ -406,11 +414,14 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
 
     def findMI(self, nome, arq):
         try:
-            mi = str(arq[nome]['MI'])
+            mi = str(arq[nome])
             return mi
         except:
             return ""
-        
+
+    def miExclusion(self, mi, arq):
+        return 
+
     def scaleFinder(self, point, scaleX, scaleY, esqFuso, infFuso, mapScale, nomeFolha, miFolha):
         if mapScale == 10:
             scaleX, scaleY, esqFuso, infFuso, pos = self.positionFinder23(point, scaleX, scaleY, esqFuso, infFuso)
@@ -422,12 +433,19 @@ class Main(QtWidgets.QDockWidget, FORM_CLASS):
         nome = self.scaleIndex[mapScale][pos]
         nomeFolha += '-' + nome
 
+        if miFolha:
+                miFolha += '-' + nome
+
         if mapScale == 250:
             miFolha = self.findMI(nomeFolha, self.file250)
         elif mapScale == 100:
-            miFolha = self.findMI(nomeFolha, self.file100)
-        else:
-            miFolha += '-' + nome
+            miFolha = self.findMI(nomeFolha, self.file100)    
+        elif mapScale == 50:
+            if nomeFolha in self.exceptions50k:
+                miFolha = ""
+        elif mapScale == 25:
+            if nomeFolha in self.exceptions25k:
+                miFolha = ""
         
         return scaleX, scaleY, esqFuso, infFuso, nomeFolha, miFolha
 
