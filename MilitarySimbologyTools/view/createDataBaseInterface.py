@@ -51,7 +51,7 @@ class CreateDataBaseInterface(QtWidgets.QDialog, FORM_CLASS):
             if os.path.isfile(path):
                 QMessageBox.warning(self, u"Aviso:", u'Arquivo de simbologia militar criado com sucesso!\nAguarde o carregamento automático')
                 self.baseDeDados.setCurrentDatabase(path)
-                if self.baseDeDados.loadLayer():
+                if self.baseDeDados.loadDatabase():
                     QMessageBox.warning(self, u"Aviso:", u'Arquivo de simbologia militar carregado com sucesso!')
                     return 1
                 else:
